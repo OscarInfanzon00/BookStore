@@ -13,6 +13,7 @@ namespace BookStore
 {
     public partial class frmEmployee : Form
     {
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
 
         string FirstName;
         string MiddleName;

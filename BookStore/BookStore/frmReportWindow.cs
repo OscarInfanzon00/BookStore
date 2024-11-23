@@ -12,6 +12,7 @@ namespace BookStore
 {
     public partial class frmReportWindow : Form
     {
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
         public frmReportWindow()
         {
             InitializeComponent();

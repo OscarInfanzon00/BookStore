@@ -14,8 +14,7 @@ namespace BookStoreTitleStores
 {
     public partial class frmTitle : Form
     {
-        //public string connectionString = "Data Source=(LocalDB)MSSQLLocalDB;AttachDbFilename=C:\\Users\\carlo\\Downloads\\BookStore.MDF;Integrated Security=True;Connect Timeout=30";
-        //private int? bookId = null;
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
         public frmTitle()
         {
             InitializeComponent();

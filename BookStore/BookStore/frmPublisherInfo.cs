@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace BookStore {
     public partial class frmPublisherInfo : Form {
+        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
+
         public frmPublisherInfo () {
             InitializeComponent();
         }
