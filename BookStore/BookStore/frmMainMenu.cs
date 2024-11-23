@@ -218,42 +218,42 @@ namespace BookStore
             // authorToolStripMenuItem
             // 
             this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.authorToolStripMenuItem.Text = "Author";
             this.authorToolStripMenuItem.Click += new System.EventHandler(this.authorToolStripMenuItem_Click);
             // 
             // publisherToolStripMenuItem
             // 
             this.publisherToolStripMenuItem.Name = "publisherToolStripMenuItem";
-            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.publisherToolStripMenuItem.Text = "Publisher";
             this.publisherToolStripMenuItem.Click += new System.EventHandler(this.publisherToolStripMenuItem_Click);
             // 
             // titleToolStripMenuItem
             // 
             this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
-            this.titleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.titleToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.titleToolStripMenuItem.Text = "Title";
             this.titleToolStripMenuItem.Click += new System.EventHandler(this.titleToolStripMenuItem_Click);
             // 
             // storesToolStripMenuItem
             // 
             this.storesToolStripMenuItem.Name = "storesToolStripMenuItem";
-            this.storesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.storesToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.storesToolStripMenuItem.Text = "Stores";
             this.storesToolStripMenuItem.Click += new System.EventHandler(this.storesToolStripMenuItem_Click);
             // 
             // employeeToolStripMenuItem
             // 
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.employeeToolStripMenuItem.Text = "Employee";
             this.employeeToolStripMenuItem.Click += new System.EventHandler(this.employeeToolStripMenuItem_Click);
             // 
             // discountToolStripMenuItem
             // 
             this.discountToolStripMenuItem.Name = "discountToolStripMenuItem";
-            this.discountToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.discountToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.discountToolStripMenuItem.Text = "Discount";
             this.discountToolStripMenuItem.Click += new System.EventHandler(this.discountToolStripMenuItem_Click);
             // 
@@ -377,7 +377,7 @@ namespace BookStore
             // 
             // buttonReports
             // 
-            this.buttonReports.Location = new System.Drawing.Point(695, 712);
+            this.buttonReports.Location = new System.Drawing.Point(696, 712);
             this.buttonReports.Name = "buttonReports";
             this.buttonReports.Size = new System.Drawing.Size(141, 57);
             this.buttonReports.TabIndex = 6;

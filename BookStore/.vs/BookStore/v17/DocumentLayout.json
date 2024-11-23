@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\frmtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\frmtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -61,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\frmemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -202,7 +202,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 14,
           "Children": [
             {
               "$type": "Bookmark",
@@ -214,132 +214,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "frmPublisherInfo.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
-              "RelativeToolTip": "BookStore\\frmPublisherInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:28:58.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "frmReportWindow.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmReportWindow.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmReportWindow.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:07:06.523Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "frmReportWindow.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmReportWindow.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs",
-              "RelativeToolTip": "BookStore\\frmReportWindow.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAUwA4AAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:11:43.938Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "frmSalesReport.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmSalesReport.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmSalesReport.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:07:11.163Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "frmSalesReport.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmSalesReport.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs",
-              "RelativeToolTip": "BookStore\\frmSalesReport.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:12:04.337Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "frmShoppingCartOrder.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmShoppingCartOrder.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmShoppingCartOrder.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:07:12.371Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "frmShoppingCartOrder.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmShoppingCartOrder.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs",
-              "RelativeToolTip": "BookStore\\frmShoppingCartOrder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:44:18.64Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "frmStores.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmStores.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmStores.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:30:41.385Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmStores.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmStores.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs",
-              "RelativeToolTip": "BookStore\\frmStores.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:33:11.256Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "frmTitle.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmTitle.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmTitle.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:33:15.615Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "frmTitle.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs",
               "RelativeDocumentMoniker": "BookStore\\frmTitle.cs",
@@ -348,177 +223,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAADPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T17:33:16.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "frmPublisherInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmPublisherInfo.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:30:51.129Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "frmOrderSummary.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmOrderSummary.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
-              "RelativeToolTip": "BookStore\\frmOrderSummary.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:06:51.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "frmOrderSummary.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmOrderSummary.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmOrderSummary.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:04:07.557Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "frmMainMenu.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmMainMenu.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
-              "RelativeToolTip": "BookStore\\frmMainMenu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:24:07.126Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "frmMainMenu.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmMainMenu.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmMainMenu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:04:05.272Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "frmEmployee.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmEmployee.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmEmployee.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:30:40.63Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "frmDiscounts.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmDiscounts.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs",
-              "RelativeToolTip": "BookStore\\frmDiscounts.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:26:46.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "frmDiscounts.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmDiscounts.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmDiscounts.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:26:56.796Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "frmAuthorInfo.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmAuthorInfo.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
-              "RelativeToolTip": "BookStore\\frmAuthorInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:28:25.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "frmAuthorInfo.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmAuthorInfo.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmAuthorInfo.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:30:35.397Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "frmAbout.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAbout.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmAbout.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAbout.cs [Design]",
-              "RelativeToolTip": "BookStore\\frmAbout.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:03:01.381Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "dbo.authors.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-23T05:03:48.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "frmEmployee.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmEmployee.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
-              "RelativeToolTip": "BookStore\\frmEmployee.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAADPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:33:06.333Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "frmPublisherInfo.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.Designer.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.Designer.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.Designer.cs",
-              "RelativeToolTip": "BookStore\\frmPublisherInfo.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:30:52.848Z",
               "EditorCaption": ""
             },
             {
@@ -629,6 +333,282 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "frmPublisherInfo.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
+              "RelativeToolTip": "BookStore\\frmPublisherInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T22:28:58.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "frmMainMenu.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmMainMenu.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmMainMenu.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:04:05.272Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "dbo.authors.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-23T05:03:48.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "frmReportWindow.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmReportWindow.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmReportWindow.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:07:06.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "frmReportWindow.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmReportWindow.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmReportWindow.cs",
+              "RelativeToolTip": "BookStore\\frmReportWindow.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAUwA4AAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:11:43.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "frmSalesReport.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmSalesReport.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmSalesReport.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:07:11.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "frmSalesReport.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmSalesReport.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmSalesReport.cs",
+              "RelativeToolTip": "BookStore\\frmSalesReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:12:04.337Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "frmShoppingCartOrder.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmShoppingCartOrder.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmShoppingCartOrder.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:07:12.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "frmShoppingCartOrder.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmShoppingCartOrder.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmShoppingCartOrder.cs",
+              "RelativeToolTip": "BookStore\\frmShoppingCartOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T19:44:18.64Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "frmStores.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmStores.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmStores.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:30:41.385Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "frmStores.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmStores.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmStores.cs",
+              "RelativeToolTip": "BookStore\\frmStores.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:33:11.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmTitle.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmTitle.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmTitle.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:33:15.615Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "frmPublisherInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmPublisherInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T22:30:51.129Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "frmOrderSummary.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmOrderSummary.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
+              "RelativeToolTip": "BookStore\\frmOrderSummary.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:06:51.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "frmOrderSummary.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmOrderSummary.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmOrderSummary.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:04:07.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "frmMainMenu.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmMainMenu.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
+              "RelativeToolTip": "BookStore\\frmMainMenu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:24:07.126Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "frmEmployee.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmEmployee.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmEmployee.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:30:40.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "frmDiscounts.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmDiscounts.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs",
+              "RelativeToolTip": "BookStore\\frmDiscounts.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:26:46.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "frmDiscounts.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmDiscounts.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmDiscounts.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmDiscounts.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:26:56.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "frmAuthorInfo.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmAuthorInfo.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
+              "RelativeToolTip": "BookStore\\frmAuthorInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T22:28:25.433Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "frmAuthorInfo.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmAuthorInfo.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmAuthorInfo.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T22:30:35.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "frmAbout.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAbout.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmAbout.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAbout.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmAbout.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T18:03:01.381Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "frmEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmEmployee.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
+              "RelativeToolTip": "BookStore\\frmEmployee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAADPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T17:33:06.333Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "frmPublisherInfo.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.Designer.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.Designer.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.Designer.cs",
+              "RelativeToolTip": "BookStore\\frmPublisherInfo.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T22:30:52.848Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 24,
               "Title": "frmAuthorInfo.Designer.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.Designer.cs",
@@ -637,8 +617,7 @@
               "RelativeToolTip": "BookStore\\frmAuthorInfo.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T22:29:30.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T22:29:30.594Z"
             },
             {
               "$type": "Document",
@@ -650,8 +629,7 @@
               "RelativeToolTip": "BookStore\\frmShoppingCartOrder.Designer.cs",
               "ViewState": "AgIAAMQAAAAAAAAAAAAIwNwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:44:29.049Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T19:44:29.049Z"
             },
             {
               "$type": "Document",
@@ -663,8 +641,7 @@
               "RelativeToolTip": "BookStore\\frmOrderSummary.Designer.cs",
               "ViewState": "AgIAAH8AAAAAAAAAAAAIwI4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T19:52:20.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T19:52:20.429Z"
             },
             {
               "$type": "Document",
@@ -676,8 +653,7 @@
               "RelativeToolTip": "BookStore\\frmReportWindow.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T18:48:37.392Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T18:48:37.392Z"
             },
             {
               "$type": "Bookmark",
@@ -693,8 +669,7 @@
               "RelativeToolTip": "BookStore\\frmDiscounts.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-23T17:26:45.597Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-23T17:26:45.597Z"
             },
             {
               "$type": "Document",
@@ -750,7 +725,8 @@
               "RelativeToolTip": "BookStore\\App.config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-23T03:21:14.584Z"
+              "WhenOpened": "2024-11-23T03:21:14.584Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
