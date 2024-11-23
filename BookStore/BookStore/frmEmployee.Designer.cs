@@ -41,6 +41,7 @@
             this.maskedTextBoxHiringDate = new System.Windows.Forms.MaskedTextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -57,7 +58,7 @@
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(385, 117);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(227, 22);
             this.txtFirstName.TabIndex = 1;
@@ -76,7 +77,7 @@
             // txtMiddleName
             // 
             this.txtMiddleName.Location = new System.Drawing.Point(385, 159);
-            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4);
             this.txtMiddleName.Name = "txtMiddleName";
             this.txtMiddleName.Size = new System.Drawing.Size(227, 22);
             this.txtMiddleName.TabIndex = 3;
@@ -117,7 +118,7 @@
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(385, 207);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(227, 22);
             this.txtLastName.TabIndex = 7;
@@ -125,7 +126,7 @@
             // txtJoblvl
             // 
             this.txtJoblvl.Location = new System.Drawing.Point(385, 256);
-            this.txtJoblvl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtJoblvl.Margin = new System.Windows.Forms.Padding(4);
             this.txtJoblvl.Name = "txtJoblvl";
             this.txtJoblvl.Size = new System.Drawing.Size(227, 22);
             this.txtJoblvl.TabIndex = 8;
@@ -133,7 +134,7 @@
             // maskedTextBoxHiringDate
             // 
             this.maskedTextBoxHiringDate.Location = new System.Drawing.Point(385, 306);
-            this.maskedTextBoxHiringDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.maskedTextBoxHiringDate.Margin = new System.Windows.Forms.Padding(4);
             this.maskedTextBoxHiringDate.Mask = "00/00/0000";
             this.maskedTextBoxHiringDate.Name = "maskedTextBoxHiringDate";
             this.maskedTextBoxHiringDate.Size = new System.Drawing.Size(227, 22);
@@ -142,8 +143,8 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(240, 421);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Location = new System.Drawing.Point(194, 421);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(141, 57);
             this.btnSave.TabIndex = 10;
@@ -153,8 +154,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(471, 421);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Location = new System.Drawing.Point(534, 421);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(141, 57);
             this.btnCancel.TabIndex = 11;
@@ -162,11 +163,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(363, 421);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(141, 57);
+            this.buttonClear.TabIndex = 12;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // frmEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.maskedTextBoxHiringDate);
@@ -181,7 +194,7 @@
             this.Controls.Add(this.lblFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEmployee";
             this.Text = "Employee Info";
             this.Load += new System.EventHandler(this.frmEmployee_Load);
@@ -204,6 +217,7 @@
         private System.Windows.Forms.MaskedTextBox maskedTextBoxHiringDate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

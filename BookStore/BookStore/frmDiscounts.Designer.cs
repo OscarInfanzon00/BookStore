@@ -39,6 +39,7 @@
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblType
@@ -125,7 +126,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(250, 433);
+            this.btnSave.Location = new System.Drawing.Point(200, 433);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(141, 57);
@@ -136,7 +137,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(483, 433);
+            this.btnCancel.Location = new System.Drawing.Point(533, 433);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(141, 57);
@@ -145,11 +146,23 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btn_Click);
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(367, 433);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(141, 57);
+            this.buttonClear.TabIndex = 10;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // frmDiscounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtDiscount);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.TextBox txtDiscount;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button buttonClear;
     }
 }

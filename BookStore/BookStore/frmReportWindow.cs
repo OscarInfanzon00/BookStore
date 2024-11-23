@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookStore
 {
-    public partial class ReportWindow : Form
+    public partial class frmReportWindow : Form
     {
-        public ReportWindow()
+        public frmReportWindow()
         {
             InitializeComponent();
         }
@@ -27,7 +27,7 @@ namespace BookStore
 
         }
 
-        public ReportWindow(DataTable saleDetails, decimal subtotal, decimal tax, decimal total)
+        public frmReportWindow(DataTable saleDetails, decimal subtotal, decimal tax, decimal total)
         {
             InitializeComponent();
 
@@ -36,6 +36,16 @@ namespace BookStore
             lblSubtotal.Text = $"Subtotal: ${subtotal:F2}";
             lblTax.Text = $"Tax: ${tax:F2}";
             lblTotal.Text = $"Total: ${total:F2}";
+        }
+
+        private void lblSubtotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTax_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,11 +47,12 @@
             this.txtYTDSales = new System.Windows.Forms.RichTextBox();
             this.txtNotes = new System.Windows.Forms.RichTextBox();
             this.txtPubDate = new System.Windows.Forms.DateTimePicker();
+            this.buttonClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(250, 439);
+            this.btnSave.Location = new System.Drawing.Point(183, 439);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(161, 50);
@@ -62,7 +63,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(459, 439);
+            this.btnCancel.Location = new System.Drawing.Point(573, 439);
             this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(161, 50);
@@ -242,11 +243,23 @@
             this.txtPubDate.TabIndex = 17;
             this.txtPubDate.Value = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(378, 439);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(161, 50);
+            this.buttonClear.TabIndex = 18;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
+            // 
             // frmTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.txtPubDate);
             this.Controls.Add(this.txtNotes);
             this.Controls.Add(this.txtYTDSales);
@@ -296,6 +309,7 @@
         private System.Windows.Forms.RichTextBox txtYTDSales;
         private System.Windows.Forms.RichTextBox txtNotes;
         private System.Windows.Forms.DateTimePicker txtPubDate;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 

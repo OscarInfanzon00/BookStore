@@ -97,6 +97,10 @@
             // 
             // dataGridViewTable
             // 
+            this.dataGridViewTable.AllowUserToAddRows = false;
+            this.dataGridViewTable.AllowUserToDeleteRows = false;
+            this.dataGridViewTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTable.Location = new System.Drawing.Point(52, 252);
             this.dataGridViewTable.Name = "dataGridViewTable";
@@ -129,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 641);
+            this.ClientSize = new System.Drawing.Size(1307, 656);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonGenerateReport);
             this.Controls.Add(this.dataGridViewTable);

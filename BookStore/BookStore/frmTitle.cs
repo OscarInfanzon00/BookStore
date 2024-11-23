@@ -144,6 +144,12 @@ namespace BookStoreTitleStores
         {
 
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            ClearInputs();
+        }
+
         //public frmTitle(int bookId) : this()
         //{
         //this.bookId = bookId;

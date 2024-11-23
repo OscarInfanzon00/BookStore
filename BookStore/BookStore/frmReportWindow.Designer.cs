@@ -1,6 +1,6 @@
 ﻿namespace BookStore
 {
-    partial class ReportWindow
+    partial class frmReportWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportWindow));
             this.buttonClose = new System.Windows.Forms.Button();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.lblSubtotal = new System.Windows.Forms.Label();
@@ -39,7 +39,7 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(213, 707);
+            this.buttonClose.Location = new System.Drawing.Point(216, 729);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(141, 57);
             this.buttonClose.TabIndex = 0;
@@ -49,6 +49,10 @@
             // 
             // dataGridViewOrder
             // 
+            this.dataGridViewOrder.AllowUserToAddRows = false;
+            this.dataGridViewOrder.AllowUserToDeleteRows = false;
+            this.dataGridViewOrder.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewOrder.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrder.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewOrder.Name = "dataGridViewOrder";
@@ -59,36 +63,38 @@
             // 
             // lblSubtotal
             // 
-            this.lblSubtotal.Location = new System.Drawing.Point(13, 641);
+            this.lblSubtotal.Location = new System.Drawing.Point(-207, 641);
             this.lblSubtotal.Name = "lblSubtotal";
             this.lblSubtotal.Size = new System.Drawing.Size(539, 23);
             this.lblSubtotal.TabIndex = 2;
             this.lblSubtotal.Text = "lblSubtotal";
             this.lblSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblSubtotal.Click += new System.EventHandler(this.lblSubtotal_Click);
             // 
             // lblTax
             // 
-            this.lblTax.Location = new System.Drawing.Point(13, 664);
+            this.lblTax.Location = new System.Drawing.Point(-207, 664);
             this.lblTax.Name = "lblTax";
             this.lblTax.Size = new System.Drawing.Size(539, 23);
             this.lblTax.TabIndex = 3;
             this.lblTax.Text = "lblTax";
             this.lblTax.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTax.Click += new System.EventHandler(this.lblTax_Click);
             // 
             // lblTotal
             // 
-            this.lblTotal.Location = new System.Drawing.Point(16, 687);
+            this.lblTotal.Location = new System.Drawing.Point(-204, 687);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(536, 23);
             this.lblTotal.TabIndex = 4;
             this.lblTotal.Text = "lblTotal";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // ReportWindow
+            // frmReportWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(576, 776);
+            this.ClientSize = new System.Drawing.Size(576, 798);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTax);
             this.Controls.Add(this.lblSubtotal);
@@ -96,7 +102,7 @@
             this.Controls.Add(this.buttonClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ReportWindow";
+            this.Name = "frmReportWindow";
             this.Text = "Report Window";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewOrder)).EndInit();

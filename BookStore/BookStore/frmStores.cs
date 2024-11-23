@@ -130,6 +130,11 @@ namespace BookStoreTitleStores
         {
 
         }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            ClearStoreInputs();
+        }
         //public frmStores(int storesId) : this()
         // {
         // this.storesId = storesId;

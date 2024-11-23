@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -22,53 +23,63 @@ namespace BookStore
             InitializeComponent();
         }
 
-        private void CheckValues()
+        public bool ValidateEmployeeInputs()
         {
-          // Bellow 3 lines pull values of text boxes and puts them into strings
+            string errorMessage = "";
+            bool isValid = true;
 
-          FirstName = txtFirstName.Text;
-          MiddleName = txtMiddleName.Text;
-          LastName = txtLastName.Text;
-
-
-         // checks if any of the three name entries contain a string 
-          bool FisNumber = FirstName.Any(char.IsDigit);
-          bool MisNumber = MiddleName.Any(char.IsDigit);
-          bool LisNumber = LastName.Any(char.IsDigit);
-
-            // checks if any of the above tests returned true or if any of the name text boxes are blank
-
-
-            if (FisNumber == true || txtFirstName.Text == "")
+            // Validate txtFirstName (Required)
+            if (string.IsNullOrWhiteSpace(txtFirstName.Text))
             {
-                MessageBox.Show("Enter a valid Name into the First Name Text Box");
-            }
-            else
-            {
-                MessageBox.Show("Passed Test1");
-            }
-            
-            if (MisNumber == true || txtMiddleName.Text == "")
-            {
-                MessageBox.Show("Enter a valid Name into the Middle Name Text Box");
-            }
-            else
-            {
-                MessageBox.Show("Passed Test2");
+                errorMessage += "Employee Name is required.\n";
+                isValid = false;
             }
 
-            if (LisNumber == true || txtLastName.Text == "")
+            // Validate txtMiddleName (Required)
+            if (string.IsNullOrWhiteSpace(txtMiddleName.Text))
             {
-                MessageBox.Show("Enter a valid Name into the Last Name Text Box");
-            }
-            else
-            {
-                MessageBox.Show("Passed Test3");
+                errorMessage += "Employee Middle Name is required.\n";
+                isValid = false;
             }
 
+            // Validate txtLastName (Required)
+            if (string.IsNullOrWhiteSpace(txtLastName.Text))
+            {
+                errorMessage += "Employee Last Name is required.\n";
+                isValid = false;
+            }
+
+            // Validate txtJoblvl (Required)
+            if (string.IsNullOrWhiteSpace(txtJoblvl.Text))
+            {
+                errorMessage += "A Job lvl is required.\n";
+                isValid = false;
+            }
+
+            // Validate 
+            if (!maskedTextBoxHiringDate.MaskCompleted)
+            {
+                errorMessage += "Add a Hiring Date.\n";
+                isValid = false;
+            }
+
+            // Display error messages, if any
+            if (!isValid)
+            {
+                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return isValid;
         }
 
-
+        public void ClearEmployeeInputs()
+        {
+            txtFirstName.Text = "";
+            txtMiddleName.Text = "";
+            txtLastName.Text = "";
+            txtJoblvl.Text = "";
+            maskedTextBoxHiringDate.Text = "";
+        }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
@@ -77,12 +88,22 @@ namespace BookStore
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CheckValues();
+            if (ValidateEmployeeInputs())
+            {
+                MessageBox.Show("Inputs are valid. Proceeding with save operation.");
+                ClearEmployeeInputs();
+                // Add logic to save store data here
+            }
         }
 
         private void frmEmployee_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            ClearEmployeeInputs();
         }
     }
 }

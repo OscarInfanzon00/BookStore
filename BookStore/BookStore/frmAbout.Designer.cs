@@ -58,10 +58,10 @@
             // 
             // btnMainMenu
             // 
-            this.btnMainMenu.Location = new System.Drawing.Point(197, 366);
+            this.btnMainMenu.Location = new System.Drawing.Point(163, 366);
             this.btnMainMenu.Margin = new System.Windows.Forms.Padding(4);
             this.btnMainMenu.Name = "btnMainMenu";
-            this.btnMainMenu.Size = new System.Drawing.Size(141, 57);
+            this.btnMainMenu.Size = new System.Drawing.Size(193, 57);
             this.btnMainMenu.TabIndex = 3;
             this.btnMainMenu.Text = "Back to Main Menu";
             this.btnMainMenu.UseVisualStyleBackColor = true;
@@ -78,7 +78,7 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Version 1.0.0\r\n\r\nThis is an FIU project for COP4226\r\n";
             // 
-            // About
+            // frmAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -91,7 +91,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "About";
+            this.Name = "frmAbout";
             this.Text = "About";
             this.ResumeLayout(false);
             this.PerformLayout();
