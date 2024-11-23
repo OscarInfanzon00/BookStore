@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\salesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\salesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\salesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\salesreport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\salesreport.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,7 +49,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -57,12 +61,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\Form1.cs",
+              "RelativeDocumentMoniker": "BookStore\\Form1.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\Form1.cs [Design]",
+              "RelativeToolTip": "BookStore\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-23T05:40:03.227Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SalesReport.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.cs",
               "RelativeDocumentMoniker": "BookStore\\SalesReport.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.cs*",
-              "RelativeToolTip": "BookStore\\SalesReport.cs*",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.cs",
+              "RelativeToolTip": "BookStore\\SalesReport.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T05:34:05.335Z",
@@ -70,33 +86,24 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SalesReport.cs [Design]",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.cs",
               "RelativeDocumentMoniker": "BookStore\\SalesReport.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.cs [Design]*",
-              "RelativeToolTip": "BookStore\\SalesReport.cs [Design]*",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.cs [Design]",
+              "RelativeToolTip": "BookStore\\SalesReport.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T05:29:51.468Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "dbo.authors.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-11-23T05:03:48.219Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SalesReport.Designer.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.Designer.cs",
               "RelativeDocumentMoniker": "BookStore\\SalesReport.Designer.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.Designer.cs*",
-              "RelativeToolTip": "BookStore\\SalesReport.Designer.cs*",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\SalesReport.Designer.cs",
+              "RelativeToolTip": "BookStore\\SalesReport.Designer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-23T05:30:57.188Z",
@@ -104,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "App.config",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\App.config",
               "RelativeDocumentMoniker": "BookStore\\App.config",
@@ -117,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\MainMenu.cs",
               "RelativeDocumentMoniker": "BookStore\\MainMenu.cs",
@@ -130,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\Program.cs",
               "RelativeDocumentMoniker": "BookStore\\Program.cs",
@@ -142,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainMenu.cs [Design]",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\MainMenu.cs",
               "RelativeDocumentMoniker": "BookStore\\MainMenu.cs",
@@ -153,12 +160,21 @@
               "EditorCaption": " [Design]"
             },
             {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "dbo.authors.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_DOWNLOADS_BOOKSTORE.MDF/True/SqlTable/dbo.authors.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-11-23T05:03:48.219Z"
+            },
+            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "MainMenu.Designer.cs",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\MainMenu.Designer.cs",
               "RelativeDocumentMoniker": "BookStore\\MainMenu.Designer.cs",
