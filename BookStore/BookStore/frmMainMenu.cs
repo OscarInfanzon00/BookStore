@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStoreTitleStores;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -208,41 +209,43 @@ namespace BookStore
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
             this.addToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.addToolStripMenuItem.Text = "Add";
+            this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // authorToolStripMenuItem
             // 
             this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.authorToolStripMenuItem.Text = "Author";
             // 
             // publisherToolStripMenuItem
             // 
             this.publisherToolStripMenuItem.Name = "publisherToolStripMenuItem";
-            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.publisherToolStripMenuItem.Text = "Publisher";
             // 
             // titleToolStripMenuItem
             // 
             this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
-            this.titleToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.titleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.titleToolStripMenuItem.Text = "Title";
+            this.titleToolStripMenuItem.Click += new System.EventHandler(this.titleToolStripMenuItem_Click);
             // 
             // storesToolStripMenuItem
             // 
             this.storesToolStripMenuItem.Name = "storesToolStripMenuItem";
-            this.storesToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.storesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.storesToolStripMenuItem.Text = "Stores";
             // 
             // employeeToolStripMenuItem
             // 
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.employeeToolStripMenuItem.Text = "Employee";
             // 
             // discountToolStripMenuItem
             // 
             this.discountToolStripMenuItem.Name = "discountToolStripMenuItem";
-            this.discountToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.discountToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.discountToolStripMenuItem.Text = "Discount";
             // 
             // helpToolStripMenuItem
@@ -340,32 +343,33 @@ namespace BookStore
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 189);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(22, 183);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 16);
+            this.label5.Size = new System.Drawing.Size(130, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Select a table";
             // 
             // buttonNewOrder
             // 
-            this.buttonNewOrder.Location = new System.Drawing.Point(434, 712);
+            this.buttonNewOrder.Location = new System.Drawing.Point(473, 712);
             this.buttonNewOrder.Name = "buttonNewOrder";
-            this.buttonNewOrder.Size = new System.Drawing.Size(209, 52);
+            this.buttonNewOrder.Size = new System.Drawing.Size(141, 57);
             this.buttonNewOrder.TabIndex = 5;
             this.buttonNewOrder.Text = "New Order";
             this.buttonNewOrder.UseVisualStyleBackColor = true;
             // 
             // buttonReports
             // 
-            this.buttonReports.Location = new System.Drawing.Point(703, 712);
+            this.buttonReports.Location = new System.Drawing.Point(695, 712);
             this.buttonReports.Name = "buttonReports";
-            this.buttonReports.Size = new System.Drawing.Size(209, 52);
+            this.buttonReports.Size = new System.Drawing.Size(141, 57);
             this.buttonReports.TabIndex = 6;
             this.buttonReports.Text = "Reports";
             this.buttonReports.UseVisualStyleBackColor = true;
             this.buttonReports.Click += new System.EventHandler(this.buttonReports_Click);
             // 
-            // MainMenu
+            // frmMainMenu
             // 
             this.ClientSize = new System.Drawing.Size(1307, 788);
             this.Controls.Add(this.buttonReports);
@@ -378,7 +382,7 @@ namespace BookStore
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "MainMenu";
+            this.Name = "frmMainMenu";
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenu_Load_1);
             this.menuStrip.ResumeLayout(false);
@@ -424,6 +428,17 @@ namespace BookStore
         private void MainMenu_Load_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void addToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void titleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTitle frmTitle = new frmTitle();
+            frmTitle.Show();
         }
     }
 }

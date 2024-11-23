@@ -44,28 +44,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(488, 35);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(510, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(313, 26);
+            this.label1.Size = new System.Drawing.Size(280, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Select from what a dates range";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(394, 96);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(380, 96);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.Size = new System.Drawing.Size(57, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "From";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(875, 96);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(867, 96);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 16);
+            this.label3.Size = new System.Drawing.Size(36, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "To";
             // 
@@ -87,7 +89,7 @@
             // 
             this.buttonApply.Location = new System.Drawing.Point(584, 176);
             this.buttonApply.Name = "buttonApply";
-            this.buttonApply.Size = new System.Drawing.Size(136, 42);
+            this.buttonApply.Size = new System.Drawing.Size(141, 57);
             this.buttonApply.TabIndex = 5;
             this.buttonApply.Text = "Apply";
             this.buttonApply.UseVisualStyleBackColor = true;
@@ -105,9 +107,9 @@
             // 
             // buttonGenerateReport
             // 
-            this.buttonGenerateReport.Location = new System.Drawing.Point(493, 584);
+            this.buttonGenerateReport.Location = new System.Drawing.Point(480, 578);
             this.buttonGenerateReport.Name = "buttonGenerateReport";
-            this.buttonGenerateReport.Size = new System.Drawing.Size(136, 45);
+            this.buttonGenerateReport.Size = new System.Drawing.Size(141, 57);
             this.buttonGenerateReport.TabIndex = 7;
             this.buttonGenerateReport.Text = "Generate Report";
             this.buttonGenerateReport.UseVisualStyleBackColor = true;
@@ -115,15 +117,15 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(695, 584);
+            this.buttonCancel.Location = new System.Drawing.Point(685, 578);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(136, 45);
+            this.buttonCancel.Size = new System.Drawing.Size(141, 57);
             this.buttonCancel.TabIndex = 8;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // SalesReport
+            // frmSalesReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,7 +141,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "SalesReport";
+            this.Name = "frmSalesReport";
             this.Text = "Sales Report";
             this.Load += new System.EventHandler(this.SalesReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();

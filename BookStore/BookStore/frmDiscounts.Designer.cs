@@ -61,7 +61,7 @@
             "Type 2",
             "Type 3"});
             this.comboBoxType.Location = new System.Drawing.Point(367, 117);
-            this.comboBoxType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxType.Name = "comboBoxType";
             this.comboBoxType.Size = new System.Drawing.Size(227, 24);
             this.comboBoxType.TabIndex = 1;
@@ -70,7 +70,7 @@
             // 
             this.lblLowQTY.AutoSize = true;
             this.lblLowQTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowQTY.Location = new System.Drawing.Point(224, 171);
+            this.lblLowQTY.Location = new System.Drawing.Point(230, 171);
             this.lblLowQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLowQTY.Name = "lblLowQTY";
             this.lblLowQTY.Size = new System.Drawing.Size(101, 25);
@@ -80,7 +80,7 @@
             // txtLowQTY
             // 
             this.txtLowQTY.Location = new System.Drawing.Point(367, 175);
-            this.txtLowQTY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLowQTY.Margin = new System.Windows.Forms.Padding(4);
             this.txtLowQTY.Name = "txtLowQTY";
             this.txtLowQTY.Size = new System.Drawing.Size(227, 22);
             this.txtLowQTY.TabIndex = 3;
@@ -89,7 +89,7 @@
             // 
             this.lblHighQTY.AutoSize = true;
             this.lblHighQTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighQTY.Location = new System.Drawing.Point(220, 224);
+            this.lblHighQTY.Location = new System.Drawing.Point(226, 224);
             this.lblHighQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHighQTY.Name = "lblHighQTY";
             this.lblHighQTY.Size = new System.Drawing.Size(105, 25);
@@ -100,7 +100,7 @@
             // 
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(224, 274);
+            this.lblDiscount.Location = new System.Drawing.Point(237, 274);
             this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(94, 25);
@@ -110,7 +110,7 @@
             // txtHighQTY
             // 
             this.txtHighQTY.Location = new System.Drawing.Point(367, 224);
-            this.txtHighQTY.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHighQTY.Margin = new System.Windows.Forms.Padding(4);
             this.txtHighQTY.Name = "txtHighQTY";
             this.txtHighQTY.Size = new System.Drawing.Size(227, 22);
             this.txtHighQTY.TabIndex = 6;
@@ -118,7 +118,7 @@
             // txtDiscount
             // 
             this.txtDiscount.Location = new System.Drawing.Point(367, 274);
-            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(227, 22);
             this.txtDiscount.TabIndex = 7;
@@ -126,7 +126,7 @@
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(250, 433);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(141, 57);
             this.btnSave.TabIndex = 8;
@@ -137,7 +137,7 @@
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(483, 433);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(141, 57);
             this.btnCancel.TabIndex = 9;
@@ -162,7 +162,7 @@
             this.Controls.Add(this.lblType);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDiscounts";
             this.Text = "Discounts Info";
             this.Load += new System.EventHandler(this.frmDiscounts_Load);

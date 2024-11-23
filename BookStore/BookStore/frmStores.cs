@@ -125,6 +125,11 @@ namespace BookStoreTitleStores
         {
 
         }
+
+        private void txtAddress_TextChanged(object sender, EventArgs e)
+        {
+
+        }
         //public frmStores(int storesId) : this()
         // {
         // this.storesId = storesId;

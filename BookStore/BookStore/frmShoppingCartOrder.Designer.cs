@@ -37,8 +37,8 @@
             this.textBoxQTY = new System.Windows.Forms.TextBox();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridViewShoppingCart = new System.Windows.Forms.DataGridView();
             this.buttonRemove = new System.Windows.Forms.Button();
+            this.dataGridViewShoppingCart = new System.Windows.Forms.DataGridView();
             this.buttonCancelOrder = new System.Windows.Forms.Button();
             this.buttonSubmitOrder = new System.Windows.Forms.Button();
             this.labelSubtotal = new System.Windows.Forms.Label();
@@ -52,10 +52,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(632, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 18);
+            this.label1.Size = new System.Drawing.Size(94, 27);
             this.label1.TabIndex = 0;
             this.label1.Text = "Find Title";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -108,7 +109,7 @@
             // 
             this.buttonAddProduct.Location = new System.Drawing.Point(670, 312);
             this.buttonAddProduct.Name = "buttonAddProduct";
-            this.buttonAddProduct.Size = new System.Drawing.Size(177, 51);
+            this.buttonAddProduct.Size = new System.Drawing.Size(141, 57);
             this.buttonAddProduct.TabIndex = 6;
             this.buttonAddProduct.Text = "Add Product";
             this.buttonAddProduct.UseVisualStyleBackColor = true;
@@ -124,6 +125,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shopping Cart";
             // 
+            // buttonRemove
+            // 
+            this.buttonRemove.Location = new System.Drawing.Point(538, 199);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(141, 57);
+            this.buttonRemove.TabIndex = 1;
+            this.buttonRemove.Text = "Remove";
+            this.buttonRemove.UseVisualStyleBackColor = true;
+            // 
             // dataGridViewShoppingCart
             // 
             this.dataGridViewShoppingCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -134,29 +144,20 @@
             this.dataGridViewShoppingCart.Size = new System.Drawing.Size(1170, 150);
             this.dataGridViewShoppingCart.TabIndex = 0;
             // 
-            // buttonRemove
-            // 
-            this.buttonRemove.Location = new System.Drawing.Point(522, 197);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(177, 56);
-            this.buttonRemove.TabIndex = 1;
-            this.buttonRemove.Text = "Remove";
-            this.buttonRemove.UseVisualStyleBackColor = true;
-            // 
             // buttonCancelOrder
             // 
             this.buttonCancelOrder.Location = new System.Drawing.Point(51, 717);
             this.buttonCancelOrder.Name = "buttonCancelOrder";
-            this.buttonCancelOrder.Size = new System.Drawing.Size(191, 48);
+            this.buttonCancelOrder.Size = new System.Drawing.Size(141, 57);
             this.buttonCancelOrder.TabIndex = 8;
             this.buttonCancelOrder.Text = "Cancel order";
             this.buttonCancelOrder.UseVisualStyleBackColor = true;
             // 
             // buttonSubmitOrder
             // 
-            this.buttonSubmitOrder.Location = new System.Drawing.Point(270, 717);
+            this.buttonSubmitOrder.Location = new System.Drawing.Point(218, 717);
             this.buttonSubmitOrder.Name = "buttonSubmitOrder";
-            this.buttonSubmitOrder.Size = new System.Drawing.Size(191, 48);
+            this.buttonSubmitOrder.Size = new System.Drawing.Size(141, 57);
             this.buttonSubmitOrder.TabIndex = 9;
             this.buttonSubmitOrder.Text = "Submit order";
             this.buttonSubmitOrder.UseVisualStyleBackColor = true;

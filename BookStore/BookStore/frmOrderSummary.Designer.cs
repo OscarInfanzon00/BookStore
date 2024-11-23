@@ -37,23 +37,31 @@
             this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).BeginInit();
             this.SuspendLayout();
-
+            // 
+            // lblOrderNumber
+            // 
             this.lblOrderNumber.AutoSize = true;
             this.lblOrderNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblOrderNumber.Location = new System.Drawing.Point(20, 20);
+            this.lblOrderNumber.Location = new System.Drawing.Point(27, 25);
+            this.lblOrderNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(116, 17);
+            this.lblOrderNumber.Size = new System.Drawing.Size(134, 20);
             this.lblOrderNumber.TabIndex = 0;
             this.lblOrderNumber.Text = "Order Number:";
-      
+            // 
+            // lblCustomerDetails
+            // 
             this.lblCustomerDetails.AutoSize = true;
             this.lblCustomerDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCustomerDetails.Location = new System.Drawing.Point(20, 50);
+            this.lblCustomerDetails.Location = new System.Drawing.Point(27, 62);
+            this.lblCustomerDetails.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCustomerDetails.Name = "lblCustomerDetails";
-            this.lblCustomerDetails.Size = new System.Drawing.Size(136, 17);
+            this.lblCustomerDetails.Size = new System.Drawing.Size(162, 20);
             this.lblCustomerDetails.TabIndex = 1;
             this.lblCustomerDetails.Text = "Customer Details:";
-
+            // 
+            // dgvOrderItems
+            // 
             this.dgvOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ItemName,
@@ -61,70 +69,108 @@
             this.Price,
             this.Subtotal,
             this.Discount});
-            this.dgvOrderItems.Location = new System.Drawing.Point(20, 80);
+            this.dgvOrderItems.Location = new System.Drawing.Point(27, 98);
+            this.dgvOrderItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvOrderItems.Name = "dgvOrderItems";
-            this.dgvOrderItems.Size = new System.Drawing.Size(600, 167);
+            this.dgvOrderItems.RowHeadersWidth = 51;
+            this.dgvOrderItems.Size = new System.Drawing.Size(814, 254);
             this.dgvOrderItems.TabIndex = 2;
-
+            // 
+            // ItemName
+            // 
             this.ItemName.HeaderText = "Item Name";
+            this.ItemName.MinimumWidth = 6;
             this.ItemName.Name = "ItemName";
             this.ItemName.Width = 200;
-
+            // 
+            // Quantity
+            // 
             this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
             this.Quantity.Name = "Quantity";
-
+            this.Quantity.Width = 125;
+            // 
+            // Price
+            // 
             this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
-
+            this.Price.Width = 125;
+            // 
+            // Subtotal
+            // 
             this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.MinimumWidth = 6;
             this.Subtotal.Name = "Subtotal";
-
+            this.Subtotal.Width = 125;
+            // 
+            // Discount
+            // 
             this.Discount.HeaderText = "Discount";
+            this.Discount.MinimumWidth = 6;
             this.Discount.Name = "Discount";
-
+            this.Discount.Width = 125;
+            // 
+            // lblTotalPrice
+            // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblTotalPrice.Location = new System.Drawing.Point(20, 250);
+            this.lblTotalPrice.Location = new System.Drawing.Point(26, 356);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(99, 20);
+            this.lblTotalPrice.Size = new System.Drawing.Size(123, 25);
             this.lblTotalPrice.TabIndex = 3;
             this.lblTotalPrice.Text = "Total Price:";
-
-            this.btnConfirm.Location = new System.Drawing.Point(20, 300);
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(27, 444);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(100, 30);
+            this.btnConfirm.Size = new System.Drawing.Size(141, 57);
             this.btnConfirm.TabIndex = 4;
             this.btnConfirm.Text = "Confirm Order";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-
-            this.btnClear.Location = new System.Drawing.Point(140, 300);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(189, 444);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(100, 30);
+            this.btnClear.Size = new System.Drawing.Size(141, 57);
             this.btnClear.TabIndex = 5;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
-
-            this.btnEdit.Location = new System.Drawing.Point(260, 300);
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Location = new System.Drawing.Point(356, 444);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(100, 30);
+            this.btnEdit.Size = new System.Drawing.Size(141, 57);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "Edit Order";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-
-            this.btnCancel.Location = new System.Drawing.Point(380, 300);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(523, 444);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(100, 30);
+            this.btnCancel.Size = new System.Drawing.Size(141, 57);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel Order";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            // 
+            // frmOrderSummary
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 360);
+            this.ClientSize = new System.Drawing.Size(866, 514);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnClear);
@@ -133,8 +179,10 @@
             this.Controls.Add(this.dgvOrderItems);
             this.Controls.Add(this.lblCustomerDetails);
             this.Controls.Add(this.lblOrderNumber);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "OrderSummary";
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "frmOrderSummary";
             this.Text = "Order Summary";
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItems)).EndInit();
             this.ResumeLayout(false);

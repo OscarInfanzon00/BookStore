@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStores));
             this.txtStoreName = new System.Windows.Forms.RichTextBox();
             this.txtAddress = new System.Windows.Forms.RichTextBox();
             this.txtCity = new System.Windows.Forms.RichTextBox();
@@ -44,8 +45,8 @@
             // 
             // txtStoreName
             // 
-            this.txtStoreName.Location = new System.Drawing.Point(320, 168);
-            this.txtStoreName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStoreName.Location = new System.Drawing.Point(392, 121);
+            this.txtStoreName.Margin = new System.Windows.Forms.Padding(2);
             this.txtStoreName.MaxLength = 40;
             this.txtStoreName.Name = "txtStoreName";
             this.txtStoreName.Size = new System.Drawing.Size(223, 32);
@@ -54,18 +55,19 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(320, 203);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Location = new System.Drawing.Point(392, 156);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.MaxLength = 40;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(223, 32);
             this.txtAddress.TabIndex = 4;
             this.txtAddress.Text = "";
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // txtCity
             // 
-            this.txtCity.Location = new System.Drawing.Point(320, 237);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCity.Location = new System.Drawing.Point(392, 190);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
             this.txtCity.MaxLength = 20;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(223, 32);
@@ -74,8 +76,8 @@
             // 
             // txtState
             // 
-            this.txtState.Location = new System.Drawing.Point(320, 272);
-            this.txtState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtState.Location = new System.Drawing.Point(392, 225);
+            this.txtState.Margin = new System.Windows.Forms.Padding(2);
             this.txtState.MaxLength = 2;
             this.txtState.Name = "txtState";
             this.txtState.Size = new System.Drawing.Size(223, 32);
@@ -85,72 +87,72 @@
             // lblStoreName
             // 
             this.lblStoreName.AutoSize = true;
-            this.lblStoreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStoreName.Location = new System.Drawing.Point(193, 180);
+            this.lblStoreName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblStoreName.Location = new System.Drawing.Point(245, 121);
             this.lblStoreName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStoreName.Name = "lblStoreName";
-            this.lblStoreName.Size = new System.Drawing.Size(88, 18);
+            this.lblStoreName.Size = new System.Drawing.Size(122, 25);
             this.lblStoreName.TabIndex = 8;
-            this.lblStoreName.Text = "Store Name";
+            this.lblStoreName.Text = "Store Name:";
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(219, 215);
+            this.lblAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblAddress.Location = new System.Drawing.Point(276, 156);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(62, 18);
+            this.lblAddress.Size = new System.Drawing.Size(91, 25);
             this.lblAddress.TabIndex = 9;
-            this.lblAddress.Text = "Address";
+            this.lblAddress.Text = "Address:";
             // 
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCity.Location = new System.Drawing.Point(247, 250);
+            this.lblCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblCity.Location = new System.Drawing.Point(312, 190);
             this.lblCity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(33, 18);
+            this.lblCity.Size = new System.Drawing.Size(52, 25);
             this.lblCity.TabIndex = 10;
-            this.lblCity.Text = "City";
+            this.lblCity.Text = "City:";
             // 
             // txtZip
             // 
-            this.txtZip.Location = new System.Drawing.Point(320, 307);
-            this.txtZip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtZip.Location = new System.Drawing.Point(392, 261);
+            this.txtZip.Margin = new System.Windows.Forms.Padding(2);
             this.txtZip.Name = "txtZip";
-            this.txtZip.Size = new System.Drawing.Size(227, 22);
+            this.txtZip.Size = new System.Drawing.Size(223, 22);
             this.txtZip.TabIndex = 12;
             // 
             // lblState
             // 
             this.lblState.AutoSize = true;
-            this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblState.Location = new System.Drawing.Point(242, 284);
+            this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblState.Location = new System.Drawing.Point(300, 225);
             this.lblState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(42, 18);
+            this.lblState.Size = new System.Drawing.Size(64, 25);
             this.lblState.TabIndex = 13;
-            this.lblState.Text = "State";
+            this.lblState.Text = "State:";
             // 
             // lblZip
             // 
             this.lblZip.AutoSize = true;
-            this.lblZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblZip.Location = new System.Drawing.Point(213, 308);
+            this.lblZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblZip.Location = new System.Drawing.Point(266, 257);
             this.lblZip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblZip.Name = "lblZip";
-            this.lblZip.Size = new System.Drawing.Size(68, 18);
+            this.lblZip.Size = new System.Drawing.Size(98, 25);
             this.lblZip.TabIndex = 14;
-            this.lblZip.Text = "Zip Code";
+            this.lblZip.Text = "Zip Code:";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(159, 404);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Location = new System.Drawing.Point(250, 429);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(161, 50);
+            this.btnSave.Size = new System.Drawing.Size(141, 57);
             this.btnSave.TabIndex = 15;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -158,10 +160,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(381, 404);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(474, 429);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(161, 50);
+            this.btnCancel.Size = new System.Drawing.Size(141, 57);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -185,7 +187,8 @@
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtStoreName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmStores";
             this.Text = "Stores Info";
             this.Load += new System.EventHandler(this.frmStores_Load);

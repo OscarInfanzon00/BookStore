@@ -1,6 +1,6 @@
 ﻿namespace BookStore
 {
-    partial class frmReportWindow
+    partial class ReportWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportWindow));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportWindow));
             this.buttonClose = new System.Windows.Forms.Button();
             this.dataGridViewOrder = new System.Windows.Forms.DataGridView();
             this.lblSubtotal = new System.Windows.Forms.Label();
@@ -39,9 +39,9 @@
             // 
             // buttonClose
             // 
-            this.buttonClose.Location = new System.Drawing.Point(203, 725);
+            this.buttonClose.Location = new System.Drawing.Point(213, 707);
             this.buttonClose.Name = "buttonClose";
-            this.buttonClose.Size = new System.Drawing.Size(168, 39);
+            this.buttonClose.Size = new System.Drawing.Size(141, 57);
             this.buttonClose.TabIndex = 0;
             this.buttonClose.Text = "Close";
             this.buttonClose.UseVisualStyleBackColor = true;
