@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,8 @@ namespace BookStore
 {
     public partial class MainMenu : Form
     {
+        string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\oscar\\Downloads\\BookStore.MDF;Integrated Security=True;Connect Timeout=30";
+
         public MainMenu()
         {
             InitializeComponent();
@@ -19,7 +23,107 @@ namespace BookStore
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
 
+                    using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM employee", connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            DataRow firstRow = dataTable.Rows[0];
+
+                            var employeeName = firstRow["fname"].ToString();
+                            var employeeLvl = firstRow["job_lvl"].ToString();
+                            var employeeHiringDate = firstRow["hire_date"].ToString();
+
+                            labelUsername.Text = "Username: " + employeeName;
+                            labelLvl.Text = "Job level: " + employeeLvl;
+                            labelUserHiringDate.Text = employeeHiringDate.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No data found in the table.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void LoadDataInTable(object sender, EventArgs e)
+        {
+            int type = comboBoxTable.SelectedIndex;
+
+            string query = string.Empty;
+
+            switch (type)
+            {
+                case 0:
+                    query = "SELECT * FROM authors";
+                    break;
+                case 1:
+                    query = "SELECT * FROM publishers";
+                    break;
+                case 2:
+                    query = "SELECT * FROM titles";
+                    break;
+                case 3:
+                    query = "SELECT * FROM stores";
+                    break;
+                case 4:
+                    query = "SELECT * FROM employee";
+                    break;
+                case 5:
+                    query = "SELECT * FROM discounts";
+                    break;
+                default:
+                    MessageBox.Show("Invalid type selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+            }
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        FillTable(dataGridViewTable, dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        private void FillTable(DataGridView dataGridView, DataTable dataTable)
+        {
+            if (dataGridView == null || dataTable == null)
+            {
+                throw new ArgumentNullException("DataGridView and DataTable cannot be null.");
+            }
+
+            dataGridView.DataSource = null;
+
+            dataGridView.DataSource = dataTable;
+
+            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void InitializeComponent()
@@ -27,22 +131,22 @@ namespace BookStore
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.authorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.publisherToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.titleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.storesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.discountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxUser = new System.Windows.Forms.GroupBox();
-            this.labelUsername = new System.Windows.Forms.Label();
-            this.labelLvl = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.labelUserHiringDate = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelLvl = new System.Windows.Forms.Label();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.dataGridViewTable = new System.Windows.Forms.DataGridView();
             this.comboBoxTable = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -76,6 +180,20 @@ namespace BookStore
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // openDBToolStripMenuItem
+            // 
+            this.openDBToolStripMenuItem.Name = "openDBToolStripMenuItem";
+            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openDBToolStripMenuItem.Text = "Open DB";
+            this.openDBToolStripMenuItem.Click += new System.EventHandler(this.openDBToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -89,6 +207,42 @@ namespace BookStore
             this.addToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
             this.addToolStripMenuItem.Text = "Add";
             // 
+            // authorToolStripMenuItem
+            // 
+            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
+            this.authorToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.authorToolStripMenuItem.Text = "Author";
+            // 
+            // publisherToolStripMenuItem
+            // 
+            this.publisherToolStripMenuItem.Name = "publisherToolStripMenuItem";
+            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.publisherToolStripMenuItem.Text = "Publisher";
+            // 
+            // titleToolStripMenuItem
+            // 
+            this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
+            this.titleToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.titleToolStripMenuItem.Text = "Title";
+            // 
+            // storesToolStripMenuItem
+            // 
+            this.storesToolStripMenuItem.Name = "storesToolStripMenuItem";
+            this.storesToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.storesToolStripMenuItem.Text = "Stores";
+            // 
+            // employeeToolStripMenuItem
+            // 
+            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.employeeToolStripMenuItem.Text = "Employee";
+            // 
+            // discountToolStripMenuItem
+            // 
+            this.discountToolStripMenuItem.Name = "discountToolStripMenuItem";
+            this.discountToolStripMenuItem.Size = new System.Drawing.Size(158, 26);
+            this.discountToolStripMenuItem.Text = "Discount";
+            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -100,56 +254,8 @@ namespace BookStore
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             this.aboutToolStripMenuItem.Text = "About";
-            // 
-            // openDBToolStripMenuItem
-            // 
-            this.openDBToolStripMenuItem.Name = "openDBToolStripMenuItem";
-            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.openDBToolStripMenuItem.Text = "Open DB";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            // 
-            // authorToolStripMenuItem
-            // 
-            this.authorToolStripMenuItem.Name = "authorToolStripMenuItem";
-            this.authorToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.authorToolStripMenuItem.Text = "Author";
-            // 
-            // publisherToolStripMenuItem
-            // 
-            this.publisherToolStripMenuItem.Name = "publisherToolStripMenuItem";
-            this.publisherToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.publisherToolStripMenuItem.Text = "Publisher";
-            // 
-            // titleToolStripMenuItem
-            // 
-            this.titleToolStripMenuItem.Name = "titleToolStripMenuItem";
-            this.titleToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.titleToolStripMenuItem.Text = "Title";
-            // 
-            // storesToolStripMenuItem
-            // 
-            this.storesToolStripMenuItem.Name = "storesToolStripMenuItem";
-            this.storesToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.storesToolStripMenuItem.Text = "Stores";
-            // 
-            // employeeToolStripMenuItem
-            // 
-            this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.employeeToolStripMenuItem.Text = "Employee";
-            // 
-            // discountToolStripMenuItem
-            // 
-            this.discountToolStripMenuItem.Name = "discountToolStripMenuItem";
-            this.discountToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.discountToolStripMenuItem.Text = "Discount";
             // 
             // groupBoxUser
             // 
@@ -157,32 +263,21 @@ namespace BookStore
             this.groupBoxUser.Controls.Add(this.label3);
             this.groupBoxUser.Controls.Add(this.labelLvl);
             this.groupBoxUser.Controls.Add(this.labelUsername);
-            this.groupBoxUser.Location = new System.Drawing.Point(868, 71);
+            this.groupBoxUser.Location = new System.Drawing.Point(868, 55);
             this.groupBoxUser.Name = "groupBoxUser";
             this.groupBoxUser.Size = new System.Drawing.Size(412, 165);
             this.groupBoxUser.TabIndex = 1;
             this.groupBoxUser.TabStop = false;
             this.groupBoxUser.Text = "User Logged In";
-            this.groupBoxUser.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // labelUsername
+            // labelUserHiringDate
             // 
-            this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(17, 33);
-            this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(76, 16);
-            this.labelUsername.TabIndex = 0;
-            this.labelUsername.Text = "User Name";
-            this.labelUsername.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // labelLvl
-            // 
-            this.labelLvl.AutoSize = true;
-            this.labelLvl.Location = new System.Drawing.Point(17, 63);
-            this.labelLvl.Name = "labelLvl";
-            this.labelLvl.Size = new System.Drawing.Size(27, 16);
-            this.labelLvl.TabIndex = 1;
-            this.labelLvl.Text = "Lvl:";
+            this.labelUserHiringDate.AutoSize = true;
+            this.labelUserHiringDate.Location = new System.Drawing.Point(17, 126);
+            this.labelUserHiringDate.Name = "labelUserHiringDate";
+            this.labelUserHiringDate.Size = new System.Drawing.Size(71, 16);
+            this.labelUserHiringDate.TabIndex = 3;
+            this.labelUserHiringDate.Text = "00/00/0000";
             // 
             // label3
             // 
@@ -193,19 +288,29 @@ namespace BookStore
             this.label3.TabIndex = 2;
             this.label3.Text = "Working with us since:";
             // 
-            // labelUserHiringDate
+            // labelLvl
             // 
-            this.labelUserHiringDate.AutoSize = true;
-            this.labelUserHiringDate.Location = new System.Drawing.Point(17, 126);
-            this.labelUserHiringDate.Name = "labelUserHiringDate";
-            this.labelUserHiringDate.Size = new System.Drawing.Size(71, 16);
-            this.labelUserHiringDate.TabIndex = 3;
-            this.labelUserHiringDate.Text = "00/00/0000";
-            this.labelUserHiringDate.Click += new System.EventHandler(this.label4_Click);
+            this.labelLvl.AutoSize = true;
+            this.labelLvl.Location = new System.Drawing.Point(17, 63);
+            this.labelLvl.Name = "labelLvl";
+            this.labelLvl.Size = new System.Drawing.Size(27, 16);
+            this.labelLvl.TabIndex = 1;
+            this.labelLvl.Text = "Lvl:";
+            // 
+            // labelUsername
+            // 
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Location = new System.Drawing.Point(17, 33);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(76, 16);
+            this.labelUsername.TabIndex = 0;
+            this.labelUsername.Text = "User Name";
             // 
             // dataGridViewTable
             // 
+            this.dataGridViewTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dataGridViewTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewTable.Location = new System.Drawing.Point(27, 256);
             this.dataGridViewTable.Name = "dataGridViewTable";
             this.dataGridViewTable.RowHeadersWidth = 51;
@@ -228,6 +333,7 @@ namespace BookStore
             this.comboBoxTable.Name = "comboBoxTable";
             this.comboBoxTable.Size = new System.Drawing.Size(173, 24);
             this.comboBoxTable.TabIndex = 3;
+            this.comboBoxTable.SelectedIndexChanged += new System.EventHandler(this.LoadDataInTable);
             // 
             // label5
             // 
@@ -237,7 +343,6 @@ namespace BookStore
             this.label5.Size = new System.Drawing.Size(89, 16);
             this.label5.TabIndex = 4;
             this.label5.Text = "Select a table";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // buttonNewOrder
             // 
@@ -256,6 +361,7 @@ namespace BookStore
             this.buttonReports.TabIndex = 6;
             this.buttonReports.Text = "Reports";
             this.buttonReports.UseVisualStyleBackColor = true;
+            this.buttonReports.Click += new System.EventHandler(this.buttonReports_Click);
             // 
             // MainMenu
             // 
@@ -282,24 +388,34 @@ namespace BookStore
 
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void openDBToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            MainMenu_Load(sender, e);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SqlConnection connection = null;
 
+            try
+            {
+                connection = new SqlConnection(connectionString);
+                if (connection != null && connection.State == ConnectionState.Open)
+                {
+                    connection.Close();
+                }
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void buttonReports_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
+            SalesReport salesReport = new SalesReport();
+            salesReport.Show();
         }
     }
 }
