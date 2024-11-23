@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace BookStore
 {
-    public partial class MainMenu : Form
+    public partial class frmMainMenu : Form
     {
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\oscar\\Downloads\\BookStore.MDF;Integrated Security=True;Connect Timeout=30";
 
-        public MainMenu()
+        public frmMainMenu()
         {
             InitializeComponent();
         }
@@ -39,10 +39,12 @@ namespace BookStore
                             DataRow firstRow = dataTable.Rows[0];
 
                             var employeeName = firstRow["fname"].ToString();
+                            var employeeMiddleName = firstRow["minit"].ToString();
+                            var employeeLastName = firstRow["lname"].ToString();
                             var employeeLvl = firstRow["job_lvl"].ToString();
                             var employeeHiringDate = firstRow["hire_date"].ToString();
 
-                            labelUsername.Text = "Username: " + employeeName;
+                            labelUsername.Text = "Username: " + employeeName + " " + employeeMiddleName + ". " + employeeLastName;
                             labelLvl.Text = "Job level: " + employeeLvl;
                             labelUserHiringDate.Text = employeeHiringDate.ToString();
                         }
@@ -128,7 +130,7 @@ namespace BookStore
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -183,14 +185,14 @@ namespace BookStore
             // openDBToolStripMenuItem
             // 
             this.openDBToolStripMenuItem.Name = "openDBToolStripMenuItem";
-            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.openDBToolStripMenuItem.Text = "Open DB";
             this.openDBToolStripMenuItem.Click += new System.EventHandler(this.openDBToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -378,6 +380,7 @@ namespace BookStore
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MainMenu";
             this.Text = "Main Menu";
+            this.Load += new System.EventHandler(this.MainMenu_Load_1);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.groupBoxUser.ResumeLayout(false);
@@ -414,8 +417,13 @@ namespace BookStore
 
         private void buttonReports_Click(object sender, EventArgs e)
         {
-            SalesReport salesReport = new SalesReport();
+            frmSalesReport salesReport = new frmSalesReport();
             salesReport.Show();
+        }
+
+        private void MainMenu_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

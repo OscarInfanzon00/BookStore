@@ -10,3 +10,4 @@ C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug
 C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.pdb
 C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.SalesReport.resources
 C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.Form1.resources
+C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.ReportWindow.resources

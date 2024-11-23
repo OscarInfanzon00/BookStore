@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace BookStore
 {
-    public partial class SalesReport : Form
+    public partial class frmSalesReport : Form
     {
         string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\oscar\\Downloads\\BookStore.MDF;Integrated Security=True;Connect Timeout=30";
 
-        public SalesReport()
+        public frmSalesReport()
         {
             InitializeComponent();
         }
@@ -78,5 +78,56 @@ namespace BookStore
 
             dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+
+        private void buttonGenerateReport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    DateTime startDate = dateTimePickerFrom.Value.Date;
+                    DateTime endDate = dateTimePickerTo.Value.Date;
+
+                    string query = @"
+                SELECT 
+                    s.ord_num,
+                    s.ord_date,
+                    s.qty,
+                    t.title,
+                    t.price,
+                    (s.qty * t.price) AS subtotal
+                FROM sales s
+                INNER JOIN titles t ON s.title_id = t.title_id
+                WHERE s.ord_date BETWEEN @StartDate AND @EndDate";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@StartDate", startDate);
+                        command.Parameters.AddWithValue("@EndDate", endDate);
+
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                        {
+                            DataTable saleDetails = new DataTable();
+                            adapter.Fill(saleDetails);
+
+                            // Calculate totals
+                            decimal subtotal = saleDetails.AsEnumerable().Sum(row => row.Field<decimal>("subtotal"));
+                            decimal tax = subtotal * 0.07M; // Assuming 7% tax
+                            decimal total = subtotal + tax;
+
+                            frmReportWindow reportWindow = new frmReportWindow(saleDetails, subtotal, tax, total);
+                            reportWindow.ShowDialog();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
 }

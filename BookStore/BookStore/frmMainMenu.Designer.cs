@@ -1,6 +1,6 @@
 ﻿namespace BookStore
 {
-    partial class MainMenu
+    partial class frmMainMenu
     {
         /// <summary>
         /// Required designer variable.

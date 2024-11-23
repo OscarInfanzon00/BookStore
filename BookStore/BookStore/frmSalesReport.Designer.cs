@@ -1,6 +1,6 @@
 ﻿namespace BookStore
 {
-    partial class SalesReport
+    partial class frmSalesReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SalesReport));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSalesReport));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -111,6 +111,7 @@
             this.buttonGenerateReport.TabIndex = 7;
             this.buttonGenerateReport.Text = "Generate Report";
             this.buttonGenerateReport.UseVisualStyleBackColor = true;
+            this.buttonGenerateReport.Click += new System.EventHandler(this.buttonGenerateReport_Click);
             // 
             // buttonCancel
             // 

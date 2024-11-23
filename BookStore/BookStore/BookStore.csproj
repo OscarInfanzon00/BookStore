@@ -46,34 +46,97 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ShoppingCartOrder.cs">
+    <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShoppingCartOrder.Designer.cs">
-      <DependentUpon>ShoppingCartOrder.cs</DependentUpon>
+    <Compile Include="frmAbout.Designer.cs">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="SalesReport.cs">
+    <Compile Include="frmDiscounts.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesReport.Designer.cs">
-      <DependentUpon>SalesReport.cs</DependentUpon>
+    <Compile Include="frmDiscounts.Designer.cs">
+      <DependentUpon>frmDiscounts.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainMenu.cs">
+    <Compile Include="frmEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainMenu.Designer.cs">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <Compile Include="frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStores.Designer.cs">
+      <DependentUpon>frmStores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTitle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTitle.Designer.cs">
+      <DependentUpon>frmTitle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmOrderSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmOrderSummary.Designer.cs">
+      <DependentUpon>frmOrderSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportWindow.Designer.cs">
+      <DependentUpon>frmReportWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmShoppingCartOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmShoppingCartOrder.Designer.cs">
+      <DependentUpon>frmShoppingCartOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalesReport.Designer.cs">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ShoppingCartOrder.resx">
-      <DependentUpon>ShoppingCartOrder.cs</DependentUpon>
+    <EmbeddedResource Include="frmAbout.resx">
+      <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesReport.resx">
-      <DependentUpon>SalesReport.cs</DependentUpon>
+    <EmbeddedResource Include="frmDiscounts.resx">
+      <DependentUpon>frmDiscounts.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainMenu.resx">
-      <DependentUpon>MainMenu.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStores.resx">
+      <DependentUpon>frmStores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTitle.resx">
+      <DependentUpon>frmTitle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmOrderSummary.resx">
+      <DependentUpon>frmOrderSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportWindow.resx">
+      <DependentUpon>frmReportWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmShoppingCartOrder.resx">
+      <DependentUpon>frmShoppingCartOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalesReport.resx">
+      <DependentUpon>frmSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
