@@ -8,6 +8,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace BookStore {
     public partial class frmAuthorInfo : Form {
@@ -58,33 +59,46 @@ namespace BookStore {
             this.Close();
         }
 
-        private bool ValidateEntries () {
-            string errorMessage = "";
-            string zipCode = txtZip.Text.Replace("-", "").Trim();
+        private bool ValidateEntries()
+        {
+            StringBuilder errorMessage = new StringBuilder();
 
             if (string.IsNullOrEmpty(txtFirstName.Text))
-                errorMessage += "First Name is required. \n";
-            if (string.IsNullOrEmpty(txtLastName.Text))
-                errorMessage += "Last Name is required. \n";
-            if (string.IsNullOrEmpty(txtPhoneNumber.Text.Trim()) || !txtPhoneNumber.MaskFull)
-                errorMessage += "Phone number is missing or is not the required 14 digit length. \n";
-            if (string.IsNullOrEmpty(txtAddress.Text))
-                errorMessage += "Address is required. \n";
-            if (string.IsNullOrEmpty(txtCity.Text))
-                errorMessage += "City is required. \n";
-            if (comboBoxState.SelectedIndex==-1)
-                errorMessage += "State is required. \n";
-            if (string.IsNullOrEmpty(zipCode) || (zipCode.Length != 5 && zipCode.Length != 9))
-                errorMessage += "ZIP code is missing or is not the required 5/9 digit length. \n";
+                errorMessage.AppendLine("First Name is required.");
+            else if (txtFirstName.Text.Contains(" "))
+                errorMessage.AppendLine("First Name should not contain spaces.");
 
-            if (errorMessage != "") {
-                errorMessage += "Please fix listed entries and resubmit.";
-                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            if (string.IsNullOrEmpty(txtLastName.Text))
+                errorMessage.AppendLine("Last Name is required.");
+            else if (txtLastName.Text.Contains(" "))
+                errorMessage.AppendLine("Last Name should not contain spaces.");
+
+            if (string.IsNullOrEmpty(txtPhoneNumber.Text.Trim()) || !txtPhoneNumber.MaskFull)
+                errorMessage.AppendLine("Phone number is missing or does not have the required 14 digits.");
+
+            if (string.IsNullOrEmpty(txtAddress.Text))
+                errorMessage.AppendLine("Address is required.");
+
+            if (string.IsNullOrEmpty(txtCity.Text))
+                errorMessage.AppendLine("City is required.");
+
+            if (comboBoxState.SelectedIndex == -1)
+                errorMessage.AppendLine("State is required.");
+
+            string zipCode = txtZip.Text.Replace("-", "").Trim();
+            if (string.IsNullOrEmpty(zipCode) || (zipCode.Length != 5 && zipCode.Length != 9))
+                errorMessage.AppendLine("ZIP code is missing or does not have the required 5 or 9 digits.");
+
+            if (errorMessage.Length > 0)
+            {
+                errorMessage.AppendLine("Please fix the listed entries and resubmit.");
+                MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
             return true;
         }
+
 
         private void ClearForm () {
             txtFirstName.Text = string.Empty;

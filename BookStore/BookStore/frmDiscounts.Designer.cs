@@ -71,7 +71,7 @@
             // 
             this.lblLowQTY.AutoSize = true;
             this.lblLowQTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowQTY.Location = new System.Drawing.Point(230, 171);
+            this.lblLowQTY.Location = new System.Drawing.Point(230, 145);
             this.lblLowQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLowQTY.Name = "lblLowQTY";
             this.lblLowQTY.Size = new System.Drawing.Size(101, 25);
@@ -80,8 +80,9 @@
             // 
             // txtLowQTY
             // 
-            this.txtLowQTY.Location = new System.Drawing.Point(367, 175);
+            this.txtLowQTY.Location = new System.Drawing.Point(367, 149);
             this.txtLowQTY.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLowQTY.MaxLength = 100;
             this.txtLowQTY.Name = "txtLowQTY";
             this.txtLowQTY.Size = new System.Drawing.Size(227, 22);
             this.txtLowQTY.TabIndex = 3;
@@ -90,7 +91,7 @@
             // 
             this.lblHighQTY.AutoSize = true;
             this.lblHighQTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighQTY.Location = new System.Drawing.Point(226, 224);
+            this.lblHighQTY.Location = new System.Drawing.Point(226, 179);
             this.lblHighQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHighQTY.Name = "lblHighQTY";
             this.lblHighQTY.Size = new System.Drawing.Size(105, 25);
@@ -101,7 +102,7 @@
             // 
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(237, 274);
+            this.lblDiscount.Location = new System.Drawing.Point(237, 209);
             this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(94, 25);
@@ -110,16 +111,18 @@
             // 
             // txtHighQTY
             // 
-            this.txtHighQTY.Location = new System.Drawing.Point(367, 224);
+            this.txtHighQTY.Location = new System.Drawing.Point(367, 179);
             this.txtHighQTY.Margin = new System.Windows.Forms.Padding(4);
+            this.txtHighQTY.MaxLength = 100;
             this.txtHighQTY.Name = "txtHighQTY";
             this.txtHighQTY.Size = new System.Drawing.Size(227, 22);
             this.txtHighQTY.TabIndex = 6;
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(367, 274);
+            this.txtDiscount.Location = new System.Drawing.Point(367, 209);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDiscount.MaxLength = 100;
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(227, 22);
             this.txtDiscount.TabIndex = 7;

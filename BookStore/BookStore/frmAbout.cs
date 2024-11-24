@@ -17,5 +17,10 @@ namespace WindowsFormsApp
 
             this.Close();
         }
+
+        private void frmAbout_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

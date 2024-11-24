@@ -93,6 +93,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAbout";
             this.Text = "About";
+            this.Load += new System.EventHandler(this.frmAbout_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

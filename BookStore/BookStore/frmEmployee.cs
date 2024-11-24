@@ -26,34 +26,30 @@ namespace BookStore
 
         public bool ValidateEmployeeInputs()
         {
-            string errorMessage = "";
+            StringBuilder errorMessage = new StringBuilder();
             bool isValid = true;
 
-            // Validate txtFirstName (Required)
             if (string.IsNullOrWhiteSpace(txtFirstName.Text))
             {
-                errorMessage += "Employee Name is required.\n";
+                errorMessage.AppendLine("Employee First Name is required.");
                 isValid = false;
             }
 
-            // Validate txtMiddleName (Required)
             if (string.IsNullOrWhiteSpace(txtMiddleName.Text))
             {
-                errorMessage += "Employee Middle Name is required.\n";
+                errorMessage.AppendLine("Employee Middle Name is required.");
                 isValid = false;
             }
 
-            // Validate txtLastName (Required)
             if (string.IsNullOrWhiteSpace(txtLastName.Text))
             {
-                errorMessage += "Employee Last Name is required.\n";
+                errorMessage.AppendLine("Employee Last Name is required.");
                 isValid = false;
             }
 
-            // Validate txtJoblvl (Required)
-            if (string.IsNullOrWhiteSpace(txtJoblvl.Text))
+            if (comboBoxJob.SelectedIndex == -1)
             {
-                errorMessage += "A Job lvl is required.\n";
+                errorMessage.AppendLine("Job level is required.");
                 isValid = false;
             }
             
@@ -64,28 +60,27 @@ namespace BookStore
                 isValid = false;
             }
 
-            // Validate 
             if (!maskedTextBoxHiringDate.MaskCompleted)
             {
-                errorMessage += "Add a Hiring Date.\n";
+                errorMessage.AppendLine("Hiring Date is required.");
                 isValid = false;
             }
 
-            // Display error messages, if any
             if (!isValid)
             {
-                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return isValid;
         }
+
 
         public void ClearEmployeeInputs()
         {
             txtFirstName.Text = "";
             txtMiddleName.Text = "";
             txtLastName.Text = "";
-            txtJoblvl.Text = "";
+            comboBoxJob.SelectedIndex = -1;
             maskedTextBoxHiringDate.Text = "";
             ComboBoxJob.SelectedIndex = -1;
         }
@@ -101,7 +96,6 @@ namespace BookStore
             {
                 MessageBox.Show("Inputs are valid. Proceeding with save operation.");
                 ClearEmployeeInputs();
-                // Add logic to save store data here
             }
         }
 

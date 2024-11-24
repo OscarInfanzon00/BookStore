@@ -29,26 +29,44 @@ namespace BookStore {
             this.Close();
         }
 
-        private bool ValidateEntries () {
-            string errorMessage = "";
+        private bool ValidateEntries()
+        {
+            StringBuilder errorMessage = new StringBuilder();
+            bool isValid = true;
 
-            if (string.IsNullOrEmpty(txtName.Text))
-                errorMessage += "Name is required. \n";
-            if (string.IsNullOrEmpty(txtCity.Text))
-                errorMessage += "City is required. \n";
-            if (comboBoxState.SelectedIndex==-1)
-                errorMessage += "State is required. \n";
-            if (comboBoxCountry.SelectedIndex==-1)
-                errorMessage += "Country is required. \n";
-
-            if (errorMessage != "") {
-                errorMessage += "Please fix listed entries and resubmit.";
-                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
+                errorMessage.AppendLine("Name is required.");
+                isValid = false;
             }
 
-            return true;
+            if (string.IsNullOrWhiteSpace(txtCity.Text))
+            {
+                errorMessage.AppendLine("City is required.");
+                isValid = false;
+            }
+
+            if (comboBoxState.SelectedIndex == -1)
+            {
+                errorMessage.AppendLine("State is required.");
+                isValid = false;
+            }
+
+            if (comboBoxCountry.SelectedIndex == -1)
+            {
+                errorMessage.AppendLine("Country is required.");
+                isValid = false;
+            }
+
+            if (!isValid)
+            {
+                errorMessage.AppendLine("Please fix listed entries and resubmit.");
+                MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            return isValid;
         }
+
 
         private void ClearForm () {
             txtName.Text = string.Empty;

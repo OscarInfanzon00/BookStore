@@ -149,6 +149,7 @@ namespace BookStore {
             // 
             this.txtFirstName.Location = new System.Drawing.Point(370, 96);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFirstName.MaxLength = 100;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(227, 22);
             this.txtFirstName.TabIndex = 0;
@@ -157,6 +158,7 @@ namespace BookStore {
             // 
             this.txtLastName.Location = new System.Drawing.Point(370, 122);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtLastName.MaxLength = 100;
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(227, 22);
             this.txtLastName.TabIndex = 1;
@@ -165,6 +167,7 @@ namespace BookStore {
             // 
             this.txtAddress.Location = new System.Drawing.Point(370, 174);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAddress.MaxLength = 100;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(227, 22);
             this.txtAddress.TabIndex = 3;
@@ -173,6 +176,7 @@ namespace BookStore {
             // 
             this.txtCity.Location = new System.Drawing.Point(370, 200);
             this.txtCity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCity.MaxLength = 100;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(227, 22);
             this.txtCity.TabIndex = 4;

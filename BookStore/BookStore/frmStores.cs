@@ -23,52 +23,53 @@ namespace BookStoreTitleStores
         }
         public bool ValidateStoreInputs()
         {
-            string errorMessage = "";
+            StringBuilder errorMessage = new StringBuilder();
             bool isValid = true;
 
-            // Validate txtStoreName (Required)
             if (string.IsNullOrWhiteSpace(txtStoreName.Text))
             {
-                errorMessage += "Store Name is required.\n";
+                errorMessage.AppendLine("Store Name is required.");
                 isValid = false;
             }
 
-            // Validate txtAddress (Required)
             if (string.IsNullOrWhiteSpace(txtAddress.Text))
             {
-                errorMessage += "Address is required.\n";
+                errorMessage.AppendLine("Address is required.");
                 isValid = false;
             }
 
-            // Validate txtCity (Required)
             if (string.IsNullOrWhiteSpace(txtCity.Text))
             {
-                errorMessage += "City is required.\n";
+                errorMessage.AppendLine("City is required.");
                 isValid = false;
             }
 
-            // Validate txtState (Required and 2 characters)
-            if (comboBoxState.SelectedIndex==-1)
+            if (comboBoxState.SelectedIndex == -1)
             {
-                errorMessage += "State is required.\n";
+                errorMessage.AppendLine("State is required.");
                 isValid = false;
             }
 
-            // Validate txtZip (Numeric, 5 or 9 digits)
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtZip.Text, @"^\d{5}(-\d{4})?$"))
+            if (!IsValidZipCode(txtZip.Text))
             {
-                errorMessage += "ZIP code must be a valid 5-digit or 9-digit code (e.g., 12345 or 12345-6789).\n";
+                errorMessage.AppendLine("ZIP code must be a valid 5-digit or 9-digit code (e.g., 12345 or 12345-6789).");
                 isValid = false;
             }
 
-            // Display error messages, if any
             if (!isValid)
             {
-                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorMessage.AppendLine("Please fix the listed entries and resubmit.");
+                MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return isValid;
         }
+
+        private bool IsValidZipCode(string zipCode)
+        {
+            return System.Text.RegularExpressions.Regex.IsMatch(zipCode, @"^\d{5}(-\d{4})?$");
+        }
+
         public void ClearStoreInputs()
         {
             txtStoreName.Text = "";
@@ -83,7 +84,6 @@ namespace BookStoreTitleStores
             {
                 MessageBox.Show("Inputs are valid. Proceeding with save operation.");
                 ClearStoreInputs();
-                // Add logic to save store data here
             }
            
 

@@ -149,7 +149,7 @@ namespace BookStore
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
             if (dataGridViewShoppingCart.Rows.Count > 0) {
-                if(comboBoxDiscount.SelectedIndex==-1 || comboBoxPayment.SelectedIndex == -1) {
+                if(comboBoxDiscount.SelectedIndex!=-1 && comboBoxPayment.SelectedIndex != -1) {
                     frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total);
                     orderSummaryForm.Show();
                     Close();

@@ -74,7 +74,7 @@ namespace BookStore {
             // 
             this.lblState.AutoSize = true;
             this.lblState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblState.Location = new System.Drawing.Point(269, 188);
+            this.lblState.Location = new System.Drawing.Point(269, 191);
             this.lblState.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblState.Name = "lblState";
             this.lblState.Size = new System.Drawing.Size(64, 25);
@@ -85,7 +85,7 @@ namespace BookStore {
             // 
             this.lblCountry.AutoSize = true;
             this.lblCountry.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblCountry.Location = new System.Drawing.Point(246, 214);
+            this.lblCountry.Location = new System.Drawing.Point(246, 222);
             this.lblCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(87, 25);
@@ -118,6 +118,7 @@ namespace BookStore {
             // 
             this.txtName.Location = new System.Drawing.Point(362, 139);
             this.txtName.Margin = new System.Windows.Forms.Padding(2);
+            this.txtName.MaxLength = 100;
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(227, 22);
             this.txtName.TabIndex = 0;
@@ -126,6 +127,7 @@ namespace BookStore {
             // 
             this.txtCity.Location = new System.Drawing.Point(362, 165);
             this.txtCity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCity.MaxLength = 100;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(227, 22);
             this.txtCity.TabIndex = 1;
@@ -196,7 +198,7 @@ namespace BookStore {
             "WV",
             "WI",
             "WY"});
-            this.comboBoxState.Location = new System.Drawing.Point(362, 189);
+            this.comboBoxState.Location = new System.Drawing.Point(362, 192);
             this.comboBoxState.Name = "comboBoxState";
             this.comboBoxState.Size = new System.Drawing.Size(227, 24);
             this.comboBoxState.TabIndex = 7;
@@ -400,7 +402,7 @@ namespace BookStore {
             "Yemen",
             "Zambia",
             "Zimbabwe"});
-            this.comboBoxCountry.Location = new System.Drawing.Point(362, 214);
+            this.comboBoxCountry.Location = new System.Drawing.Point(362, 222);
             this.comboBoxCountry.Name = "comboBoxCountry";
             this.comboBoxCountry.Size = new System.Drawing.Size(227, 24);
             this.comboBoxCountry.TabIndex = 8;

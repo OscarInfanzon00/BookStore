@@ -28,45 +28,61 @@ namespace BookStore
 
         public bool ValidateDiscountsInputs()
         {
-            string errorMessage = "";
+            StringBuilder errorMessage = new StringBuilder();
             bool isValid = true;
 
-            // Validate comboBoxType (Required)
-            if (comboBoxType.SelectedIndex==-1)
+            if (comboBoxType.SelectedIndex == -1)
             {
-                errorMessage += "Select a Discount Type.\n";
+                errorMessage.AppendLine("Select a Discount Type.");
                 isValid = false;
             }
 
-            // Validate txtDiscount (Required)
             if (string.IsNullOrWhiteSpace(txtDiscount.Text))
             {
-                errorMessage += "Discount is required.\n";
+                errorMessage.AppendLine("Discount is required.");
+                isValid = false;
+            }
+            else if (!IsNumeric(txtDiscount.Text))
+            {
+                errorMessage.AppendLine("Discount must be a valid number.");
                 isValid = false;
             }
 
-            // Validate txtHighQTY (Required)
             if (string.IsNullOrWhiteSpace(txtHighQTY.Text))
             {
-                errorMessage += "High QTY is required.\n";
+                errorMessage.AppendLine("High QTY is required.");
+                isValid = false;
+            }
+            else if (!IsNumeric(txtHighQTY.Text))
+            {
+                errorMessage.AppendLine("High QTY must be a valid number.");
                 isValid = false;
             }
 
-            // Validate txtLowQTY (Required)
             if (string.IsNullOrWhiteSpace(txtLowQTY.Text))
             {
-                errorMessage += "Low QTY is required.\n";
+                errorMessage.AppendLine("Low QTY is required.");
+                isValid = false;
+            }
+            else if (!IsNumeric(txtLowQTY.Text))
+            {
+                errorMessage.AppendLine("Low QTY must be a valid number.");
                 isValid = false;
             }
 
-            // Display error messages, if any
             if (!isValid)
             {
-                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return isValid;
         }
+
+        private bool IsNumeric(string input)
+        {
+            return decimal.TryParse(input, out _);
+        }
+
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -74,7 +90,6 @@ namespace BookStore
             {
                 MessageBox.Show("Inputs are valid. Proceeding with save operation.");
                 ClearDiscountsInputs();
-                // Add logic to save store data here
             }
         }
 

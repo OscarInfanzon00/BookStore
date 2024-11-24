@@ -21,73 +21,57 @@ namespace BookStoreTitleStores
         }
         public bool ValidateInputs()
         {
-            string errorMessage = "";
+            StringBuilder errorMessage = new StringBuilder();
             bool isValid = true;
 
-            // Validate txtTitle (Required)
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
-                errorMessage += "Title is required.\n";
+                errorMessage.AppendLine("Title is required.");
                 isValid = false;
             }
 
-            // Validate txtType (Required)
             if (string.IsNullOrWhiteSpace(txtType.Text))
             {
-                errorMessage += "Type is required.\n";
+                errorMessage.AppendLine("Type is required.");
                 isValid = false;
             }
 
-            // Validate txtPrice (Numeric)
-            if (!decimal.TryParse(txtPrice.Text, out _) || decimal.Parse(txtPrice.Text) < 0)
+            isValid &= ValidateNumericField(txtPrice.Text, "Price", errorMessage);
+            isValid &= ValidateNumericField(txtAdvance.Text, "Advance", errorMessage);
+            isValid &= ValidateNumericField(txtRoyalty.Text, "Royalty", errorMessage);
+            isValid &= ValidateNumericField(txtYTDSales.Text, "Year-to-date sales"  , errorMessage);
+
+            if (txtPubDate.Value.Date > DateTime.Today)
             {
-                errorMessage += "Price must be a valid positive number.\n";
+                errorMessage.AppendLine("Publication date cannot be in the future.");
                 isValid = false;
             }
 
-            // Validate txtAdvance (Numeric)
-            if (!decimal.TryParse(txtAdvance.Text, out _) || decimal.Parse(txtAdvance.Text) < 0)
+            if (comboBoxPubInfo.SelectedIndex == -1)
             {
-                errorMessage += "Advance must be a valid positive number.\n";
+                errorMessage.AppendLine("Publication Info is missing.");
                 isValid = false;
             }
 
-            // Validate txtRoyalty (Numeric)
-            if (!decimal.TryParse(txtRoyalty.Text, out _) || decimal.Parse(txtRoyalty.Text) < 0)
-            {
-                errorMessage += "Royalty must be a valid positive number.\n";
-                isValid = false;
-            }
-
-            // Validate txtYtdsales (Numeric)
-            if (!decimal.TryParse(txtYTDSales.Text, out _) || decimal.Parse(txtYTDSales.Text) < 0)
-            {
-                errorMessage += "Year-to-date sales must be a valid positive number.\n";
-                isValid = false;
-            }
-
-            // Validate txtPubdate (Not in the future)
-            if (txtPubDate.Value > DateTime.Now)
-            {
-                errorMessage += "Publication date cannot be in the future.\n";
-                isValid = false;
-            }
-
-            if (comboBoxPubInfo.SelectedIndex==-1)
-            {
-                errorMessage += "Pub Info is missing.\n";
-                isValid = false;
-            }
-
-            // Display error messages, if any
             if (!isValid)
             {
-                MessageBox.Show(errorMessage, "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                errorMessage.AppendLine("Please fix the listed entries and resubmit.");
+                MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             return isValid;
-
         }
+
+        private bool ValidateNumericField(string inputText, string fieldName, StringBuilder errorMessage)
+        {
+            if (string.IsNullOrWhiteSpace(inputText) || !decimal.TryParse(inputText, out decimal result) || result < 0)
+            {
+                errorMessage.AppendLine($"{fieldName} must be a valid positive number.");
+                return false;
+            }
+            return true;
+        }
+
         public void ClearInputs()
         {
             txtTitle.Text = "";
@@ -108,11 +92,10 @@ namespace BookStoreTitleStores
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (ValidateInputs()) // Validate all inputs
+            if (ValidateInputs()) 
             {
                 MessageBox.Show("Inputs are valid. Proceeding with save operation.");
                 ClearInputs();
-                // Save data logic here
             }
 
 
