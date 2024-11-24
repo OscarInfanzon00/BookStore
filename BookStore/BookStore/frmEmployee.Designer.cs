@@ -42,54 +42,51 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.lblJob = new System.Windows.Forms.Label();
+            this.ComboBoxJob = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.Location = new System.Drawing.Point(235, 114);
-            this.lblFirstName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFirstName.Location = new System.Drawing.Point(176, 93);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(112, 25);
+            this.lblFirstName.Size = new System.Drawing.Size(90, 20);
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name:";
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(385, 117);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFirstName.Location = new System.Drawing.Point(289, 95);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(227, 22);
+            this.txtFirstName.Size = new System.Drawing.Size(171, 20);
             this.txtFirstName.TabIndex = 1;
             // 
             // lblMiddleName
             // 
             this.lblMiddleName.AutoSize = true;
             this.lblMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiddleName.Location = new System.Drawing.Point(215, 160);
-            this.lblMiddleName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMiddleName.Location = new System.Drawing.Point(161, 130);
             this.lblMiddleName.Name = "lblMiddleName";
-            this.lblMiddleName.Size = new System.Drawing.Size(133, 25);
+            this.lblMiddleName.Size = new System.Drawing.Size(105, 20);
             this.lblMiddleName.TabIndex = 2;
             this.lblMiddleName.Text = "Middle Name:";
             // 
             // txtMiddleName
             // 
-            this.txtMiddleName.Location = new System.Drawing.Point(385, 159);
-            this.txtMiddleName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMiddleName.Location = new System.Drawing.Point(289, 129);
             this.txtMiddleName.Name = "txtMiddleName";
-            this.txtMiddleName.Size = new System.Drawing.Size(227, 22);
+            this.txtMiddleName.Size = new System.Drawing.Size(171, 20);
             this.txtMiddleName.TabIndex = 3;
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.Location = new System.Drawing.Point(237, 207);
-            this.lblLastName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLastName.Location = new System.Drawing.Point(178, 168);
             this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(112, 25);
+            this.lblLastName.Size = new System.Drawing.Size(90, 20);
             this.lblLastName.TabIndex = 4;
             this.lblLastName.Text = "Last Name:";
             // 
@@ -97,10 +94,9 @@
             // 
             this.lblJoblvl.AutoSize = true;
             this.lblJoblvl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblJoblvl.Location = new System.Drawing.Point(275, 256);
-            this.lblJoblvl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblJoblvl.Location = new System.Drawing.Point(206, 208);
             this.lblJoblvl.Name = "lblJoblvl";
-            this.lblJoblvl.Size = new System.Drawing.Size(74, 25);
+            this.lblJoblvl.Size = new System.Drawing.Size(56, 20);
             this.lblJoblvl.TabIndex = 5;
             this.lblJoblvl.Text = "Job lvl:";
             // 
@@ -108,45 +104,40 @@
             // 
             this.lblHiringDate.AutoSize = true;
             this.lblHiringDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHiringDate.Location = new System.Drawing.Point(235, 306);
-            this.lblHiringDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblHiringDate.Location = new System.Drawing.Point(173, 288);
             this.lblHiringDate.Name = "lblHiringDate";
-            this.lblHiringDate.Size = new System.Drawing.Size(114, 25);
+            this.lblHiringDate.Size = new System.Drawing.Size(93, 20);
             this.lblHiringDate.TabIndex = 6;
             this.lblHiringDate.Text = "Hiring Date:";
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(385, 207);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtLastName.Location = new System.Drawing.Point(289, 168);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(227, 22);
+            this.txtLastName.Size = new System.Drawing.Size(171, 20);
             this.txtLastName.TabIndex = 7;
             // 
             // txtJoblvl
             // 
-            this.txtJoblvl.Location = new System.Drawing.Point(385, 256);
-            this.txtJoblvl.Margin = new System.Windows.Forms.Padding(4);
+            this.txtJoblvl.Location = new System.Drawing.Point(289, 208);
             this.txtJoblvl.Name = "txtJoblvl";
-            this.txtJoblvl.Size = new System.Drawing.Size(227, 22);
+            this.txtJoblvl.Size = new System.Drawing.Size(171, 20);
             this.txtJoblvl.TabIndex = 8;
             // 
             // maskedTextBoxHiringDate
             // 
-            this.maskedTextBoxHiringDate.Location = new System.Drawing.Point(385, 306);
-            this.maskedTextBoxHiringDate.Margin = new System.Windows.Forms.Padding(4);
+            this.maskedTextBoxHiringDate.Location = new System.Drawing.Point(289, 288);
             this.maskedTextBoxHiringDate.Mask = "00/00/0000";
             this.maskedTextBoxHiringDate.Name = "maskedTextBoxHiringDate";
-            this.maskedTextBoxHiringDate.Size = new System.Drawing.Size(227, 22);
+            this.maskedTextBoxHiringDate.Size = new System.Drawing.Size(171, 20);
             this.maskedTextBoxHiringDate.TabIndex = 9;
             this.maskedTextBoxHiringDate.ValidatingType = typeof(System.DateTime);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(194, 421);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(146, 342);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(141, 57);
+            this.btnSave.Size = new System.Drawing.Size(106, 46);
             this.btnSave.TabIndex = 10;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -154,10 +145,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(534, 421);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCancel.Location = new System.Drawing.Point(400, 342);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(141, 57);
+            this.btnCancel.Size = new System.Drawing.Size(106, 46);
             this.btnCancel.TabIndex = 11;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -165,20 +155,44 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(363, 421);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClear.Location = new System.Drawing.Point(272, 342);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(141, 57);
+            this.buttonClear.Size = new System.Drawing.Size(106, 46);
             this.buttonClear.TabIndex = 12;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // lblJob
+            // 
+            this.lblJob.AutoSize = true;
+            this.lblJob.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJob.Location = new System.Drawing.Point(227, 251);
+            this.lblJob.Name = "lblJob";
+            this.lblJob.Size = new System.Drawing.Size(39, 20);
+            this.lblJob.TabIndex = 13;
+            this.lblJob.Text = "Job:";
+            // 
+            // ComboBoxJob
+            // 
+            this.ComboBoxJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ComboBoxJob.FormattingEnabled = true;
+            this.ComboBoxJob.Items.AddRange(new object[] {
+            "Option 1",
+            "Option 2",
+            "Option 3"});
+            this.ComboBoxJob.Location = new System.Drawing.Point(289, 249);
+            this.ComboBoxJob.Name = "ComboBoxJob";
+            this.ComboBoxJob.Size = new System.Drawing.Size(171, 21);
+            this.ComboBoxJob.TabIndex = 14;
+            // 
             // frmEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 514);
+            this.ClientSize = new System.Drawing.Size(650, 418);
+            this.Controls.Add(this.ComboBoxJob);
+            this.Controls.Add(this.lblJob);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -194,7 +208,6 @@
             this.Controls.Add(this.lblFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEmployee";
             this.Text = "Employee Info";
             this.Load += new System.EventHandler(this.frmEmployee_Load);
@@ -218,6 +231,8 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label lblJob;
+        private System.Windows.Forms.ComboBox ComboBoxJob;
     }
 }
 

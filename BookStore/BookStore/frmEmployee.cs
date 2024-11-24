@@ -56,6 +56,13 @@ namespace BookStore
                 errorMessage += "A Job lvl is required.\n";
                 isValid = false;
             }
+            
+            // Validate ComboBoxJob (Required)
+            if (ComboBoxJob.SelectedIndex == -1)
+            {
+                errorMessage += "Select a Job.\n";
+                isValid = false;
+            }
 
             // Validate 
             if (!maskedTextBoxHiringDate.MaskCompleted)
@@ -80,6 +87,7 @@ namespace BookStore
             txtLastName.Text = "";
             txtJoblvl.Text = "";
             maskedTextBoxHiringDate.Text = "";
+            ComboBoxJob.SelectedIndex = -1;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
