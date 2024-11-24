@@ -73,6 +73,12 @@ namespace BookStoreTitleStores
                 isValid = false;
             }
 
+            if (comboBoxPubInfo.SelectedIndex==-1)
+            {
+                errorMessage += "Pub Info is missing.\n";
+                isValid = false;
+            }
+
             // Display error messages, if any
             if (!isValid)
             {
@@ -91,6 +97,7 @@ namespace BookStoreTitleStores
             txtRoyalty.Text = "";
             txtYTDSales.Text = "";
             txtNotes.Text = "";
+            comboBoxPubInfo.SelectedIndex = -1;
             txtPubDate.Value = DateTime.Now;
         }
         private void btnCancel_Click(object sender, EventArgs e)

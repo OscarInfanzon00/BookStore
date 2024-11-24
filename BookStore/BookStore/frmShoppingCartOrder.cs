@@ -149,9 +149,15 @@ namespace BookStore
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
             if (dataGridViewShoppingCart.Rows.Count > 0) {
-                frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total);
-                orderSummaryForm.Show();
-                Close();
+                if(comboBoxDiscount.SelectedIndex==-1 || comboBoxPayment.SelectedIndex == -1) {
+                    frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total);
+                    orderSummaryForm.Show();
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Please fill the payment terms and discounts", "Payment Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {

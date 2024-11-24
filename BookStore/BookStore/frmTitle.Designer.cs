@@ -48,6 +48,8 @@
             this.txtNotes = new System.Windows.Forms.RichTextBox();
             this.txtPubDate = new System.Windows.Forms.DateTimePicker();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxPubInfo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnSave
@@ -74,7 +76,7 @@
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(378, 53);
+            this.txtTitle.Location = new System.Drawing.Point(378, 42);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.MaxLength = 80;
             this.txtTitle.Multiline = false;
@@ -85,7 +87,7 @@
             // 
             // txtType
             // 
-            this.txtType.Location = new System.Drawing.Point(378, 87);
+            this.txtType.Location = new System.Drawing.Point(378, 76);
             this.txtType.Margin = new System.Windows.Forms.Padding(2);
             this.txtType.MaxLength = 12;
             this.txtType.Multiline = false;
@@ -96,7 +98,7 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(378, 124);
+            this.txtPrice.Location = new System.Drawing.Point(378, 113);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.MaxLength = 8;
             this.txtPrice.Multiline = false;
@@ -109,7 +111,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblTitle.Location = new System.Drawing.Point(289, 53);
+            this.lblTitle.Location = new System.Drawing.Point(289, 42);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(55, 25);
@@ -120,7 +122,7 @@
             // 
             this.lblType.AutoSize = true;
             this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblType.Location = new System.Drawing.Point(281, 87);
+            this.lblType.Location = new System.Drawing.Point(281, 76);
             this.lblType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblType.Name = "lblType";
             this.lblType.Size = new System.Drawing.Size(63, 25);
@@ -131,7 +133,7 @@
             // 
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPrice.Location = new System.Drawing.Point(282, 124);
+            this.lblPrice.Location = new System.Drawing.Point(282, 113);
             this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
             this.lblPrice.Size = new System.Drawing.Size(62, 25);
@@ -142,7 +144,7 @@
             // 
             this.lblAdvance.AutoSize = true;
             this.lblAdvance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblAdvance.Location = new System.Drawing.Point(248, 161);
+            this.lblAdvance.Location = new System.Drawing.Point(248, 150);
             this.lblAdvance.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdvance.Name = "lblAdvance";
             this.lblAdvance.Size = new System.Drawing.Size(96, 25);
@@ -153,7 +155,7 @@
             // 
             this.lblRoyalty.AutoSize = true;
             this.lblRoyalty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblRoyalty.Location = new System.Drawing.Point(262, 199);
+            this.lblRoyalty.Location = new System.Drawing.Point(262, 188);
             this.lblRoyalty.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRoyalty.Name = "lblRoyalty";
             this.lblRoyalty.Size = new System.Drawing.Size(82, 25);
@@ -164,7 +166,7 @@
             // 
             this.lblYtdSales.AutoSize = true;
             this.lblYtdSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblYtdSales.Location = new System.Drawing.Point(231, 236);
+            this.lblYtdSales.Location = new System.Drawing.Point(231, 225);
             this.lblYtdSales.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblYtdSales.Name = "lblYtdSales";
             this.lblYtdSales.Size = new System.Drawing.Size(113, 25);
@@ -175,7 +177,7 @@
             // 
             this.lblNotes.AutoSize = true;
             this.lblNotes.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblNotes.Location = new System.Drawing.Point(275, 275);
+            this.lblNotes.Location = new System.Drawing.Point(275, 264);
             this.lblNotes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNotes.Name = "lblNotes";
             this.lblNotes.Size = new System.Drawing.Size(69, 25);
@@ -186,7 +188,7 @@
             // 
             this.lblPubDate.AutoSize = true;
             this.lblPubDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblPubDate.Location = new System.Drawing.Point(245, 362);
+            this.lblPubDate.Location = new System.Drawing.Point(248, 380);
             this.lblPubDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPubDate.Name = "lblPubDate";
             this.lblPubDate.Size = new System.Drawing.Size(99, 25);
@@ -195,7 +197,7 @@
             // 
             // txtAdvance
             // 
-            this.txtAdvance.Location = new System.Drawing.Point(378, 161);
+            this.txtAdvance.Location = new System.Drawing.Point(378, 150);
             this.txtAdvance.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdvance.MaxLength = 8;
             this.txtAdvance.Multiline = false;
@@ -206,7 +208,7 @@
             // 
             // txtRoyalty
             // 
-            this.txtRoyalty.Location = new System.Drawing.Point(378, 199);
+            this.txtRoyalty.Location = new System.Drawing.Point(378, 188);
             this.txtRoyalty.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoyalty.MaxLength = 4;
             this.txtRoyalty.Multiline = false;
@@ -217,7 +219,7 @@
             // 
             // txtYTDSales
             // 
-            this.txtYTDSales.Location = new System.Drawing.Point(378, 236);
+            this.txtYTDSales.Location = new System.Drawing.Point(378, 225);
             this.txtYTDSales.Margin = new System.Windows.Forms.Padding(2);
             this.txtYTDSales.MaxLength = 4;
             this.txtYTDSales.Multiline = false;
@@ -228,7 +230,7 @@
             // 
             // txtNotes
             // 
-            this.txtNotes.Location = new System.Drawing.Point(378, 275);
+            this.txtNotes.Location = new System.Drawing.Point(378, 264);
             this.txtNotes.Margin = new System.Windows.Forms.Padding(2);
             this.txtNotes.MaxLength = 200;
             this.txtNotes.Name = "txtNotes";
@@ -240,7 +242,7 @@
             // 
             this.txtPubDate.CustomFormat = "1/1/1950 12:00";
             this.txtPubDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtPubDate.Location = new System.Drawing.Point(378, 362);
+            this.txtPubDate.Location = new System.Drawing.Point(378, 383);
             this.txtPubDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtPubDate.MaxDate = new System.DateTime(2025, 12, 31, 0, 0, 0, 0);
             this.txtPubDate.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
@@ -260,11 +262,37 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(254, 350);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 25);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Pub Info:";
+            // 
+            // comboBoxPubInfo
+            // 
+            this.comboBoxPubInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPubInfo.FormattingEnabled = true;
+            this.comboBoxPubInfo.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.comboBoxPubInfo.Location = new System.Drawing.Point(378, 354);
+            this.comboBoxPubInfo.Name = "comboBoxPubInfo";
+            this.comboBoxPubInfo.Size = new System.Drawing.Size(223, 24);
+            this.comboBoxPubInfo.TabIndex = 20;
+            // 
             // frmTitle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.comboBoxPubInfo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.txtPubDate);
             this.Controls.Add(this.txtNotes);
@@ -316,6 +344,8 @@
         private System.Windows.Forms.RichTextBox txtNotes;
         private System.Windows.Forms.DateTimePicker txtPubDate;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxPubInfo;
     }
 }
 

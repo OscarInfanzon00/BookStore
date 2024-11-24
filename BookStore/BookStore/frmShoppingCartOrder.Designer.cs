@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmShoppingCartOrder));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,6 +47,11 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxPayment = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxDiscount = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTitle)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShoppingCart)).BeginInit();
@@ -228,11 +234,69 @@
             this.buttonFind.UseVisualStyleBackColor = true;
             this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(518, 688);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(127, 20);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Payment Terms";
+            // 
+            // comboBoxPayment
+            // 
+            this.comboBoxPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxPayment.FormattingEnabled = true;
+            this.comboBoxPayment.Items.AddRange(new object[] {
+            "Full",
+            "4 Mo",
+            "12 Mo",
+            "24 Mo"});
+            this.comboBoxPayment.Location = new System.Drawing.Point(652, 688);
+            this.comboBoxPayment.Name = "comboBoxPayment";
+            this.comboBoxPayment.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxPayment.TabIndex = 18;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(518, 717);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 20);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Add a Discount";
+            // 
+            // comboBoxDiscount
+            // 
+            this.comboBoxDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDiscount.FormattingEnabled = true;
+            this.comboBoxDiscount.Items.AddRange(new object[] {
+            "No Discount",
+            "10%",
+            "25%",
+            "50%"});
+            this.comboBoxDiscount.Location = new System.Drawing.Point(652, 716);
+            this.comboBoxDiscount.Name = "comboBoxDiscount";
+            this.comboBoxDiscount.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxDiscount.TabIndex = 20;
+            // 
             // frmShoppingCartOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1307, 796);
+            this.Controls.Add(this.comboBoxDiscount);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.comboBoxPayment);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonFind);
             this.Controls.Add(this.labelTotal);
@@ -280,5 +344,10 @@
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBoxPayment;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBoxDiscount;
     }
 }
