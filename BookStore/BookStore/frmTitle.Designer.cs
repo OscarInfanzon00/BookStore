@@ -77,6 +77,7 @@
             this.txtTitle.Location = new System.Drawing.Point(378, 53);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitle.MaxLength = 80;
+            this.txtTitle.Multiline = false;
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(223, 32);
             this.txtTitle.TabIndex = 2;
@@ -87,6 +88,7 @@
             this.txtType.Location = new System.Drawing.Point(378, 87);
             this.txtType.Margin = new System.Windows.Forms.Padding(2);
             this.txtType.MaxLength = 12;
+            this.txtType.Multiline = false;
             this.txtType.Name = "txtType";
             this.txtType.Size = new System.Drawing.Size(223, 35);
             this.txtType.TabIndex = 3;
@@ -97,6 +99,7 @@
             this.txtPrice.Location = new System.Drawing.Point(378, 124);
             this.txtPrice.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrice.MaxLength = 8;
+            this.txtPrice.Multiline = false;
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(223, 35);
             this.txtPrice.TabIndex = 4;
@@ -195,6 +198,7 @@
             this.txtAdvance.Location = new System.Drawing.Point(378, 161);
             this.txtAdvance.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdvance.MaxLength = 8;
+            this.txtAdvance.Multiline = false;
             this.txtAdvance.Name = "txtAdvance";
             this.txtAdvance.Size = new System.Drawing.Size(223, 35);
             this.txtAdvance.TabIndex = 13;
@@ -205,6 +209,7 @@
             this.txtRoyalty.Location = new System.Drawing.Point(378, 199);
             this.txtRoyalty.Margin = new System.Windows.Forms.Padding(2);
             this.txtRoyalty.MaxLength = 4;
+            this.txtRoyalty.Multiline = false;
             this.txtRoyalty.Name = "txtRoyalty";
             this.txtRoyalty.Size = new System.Drawing.Size(223, 35);
             this.txtRoyalty.TabIndex = 14;
@@ -215,6 +220,7 @@
             this.txtYTDSales.Location = new System.Drawing.Point(378, 236);
             this.txtYTDSales.Margin = new System.Windows.Forms.Padding(2);
             this.txtYTDSales.MaxLength = 4;
+            this.txtYTDSales.Multiline = false;
             this.txtYTDSales.Name = "txtYTDSales";
             this.txtYTDSales.Size = new System.Drawing.Size(223, 35);
             this.txtYTDSales.TabIndex = 15;

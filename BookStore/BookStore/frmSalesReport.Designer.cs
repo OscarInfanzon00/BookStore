@@ -45,11 +45,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(510, 36);
+            this.label1.Location = new System.Drawing.Point(554, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(280, 25);
+            this.label1.Size = new System.Drawing.Size(191, 25);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Select from what a dates range";
+            this.label1.Text = "Select a dates range";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -87,7 +88,7 @@
             // 
             // buttonApply
             // 
-            this.buttonApply.Location = new System.Drawing.Point(584, 176);
+            this.buttonApply.Location = new System.Drawing.Point(578, 175);
             this.buttonApply.Name = "buttonApply";
             this.buttonApply.Size = new System.Drawing.Size(141, 57);
             this.buttonApply.TabIndex = 5;

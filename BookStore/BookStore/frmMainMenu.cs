@@ -29,21 +29,16 @@ namespace BookStore
 
         private void MainMenu_Load(object sender, EventArgs e)
         {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                try
                 {
-                    connection.Open();
-                    comboBoxTable.SelectedIndex = 1;
-                    LoadDataInTable(sender, e);
+                comboBoxTable.SelectedIndex = 2;
+                LoadDataInTable(sender, e);
                     MessageBox.Show("Data base connection succesfully opened.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
 
         public void LoadDataInTable(object sender, EventArgs e)
@@ -140,6 +135,7 @@ namespace BookStore
             this.buttonNewOrder = new System.Windows.Forms.Button();
             this.buttonReports = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonLogOut = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.groupBoxUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
@@ -373,7 +369,8 @@ namespace BookStore
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = global::BookStore.Properties.Resources.Screenshot_2024_11_24_153804;
+            this.pictureBox1.InitialImage = global::BookStore.Properties.Resources.Screenshot_2024_11_24_153804;
             this.pictureBox1.Location = new System.Drawing.Point(277, 33);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(112, 102);
@@ -381,9 +378,20 @@ namespace BookStore
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // buttonLogOut
+            // 
+            this.buttonLogOut.Location = new System.Drawing.Point(1159, 226);
+            this.buttonLogOut.Name = "buttonLogOut";
+            this.buttonLogOut.Size = new System.Drawing.Size(121, 24);
+            this.buttonLogOut.TabIndex = 7;
+            this.buttonLogOut.Text = "Log out";
+            this.buttonLogOut.UseVisualStyleBackColor = true;
+            this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
+            // 
             // frmMainMenu
             // 
             this.ClientSize = new System.Drawing.Size(1307, 788);
+            this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.buttonReports);
             this.Controls.Add(this.buttonNewOrder);
             this.Controls.Add(this.label5);
@@ -411,7 +419,6 @@ namespace BookStore
         private void openDBToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MainMenu_Load(sender, e);
-            
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -494,6 +501,21 @@ namespace BookStore
         {
             frmAuthorInfo frmAuthorInfo = new frmAuthorInfo();
             frmAuthorInfo.Show();
+        }
+
+        private void buttonLogOut_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = null;
+
+            connection = new SqlConnection(connectionString);
+            if (connection != null && connection.State == ConnectionState.Open)
+            {
+                connection.Close();
+            }
+
+            frmLogin frmLogin = new frmLogin();
+            frmLogin.Show();
+            Close();
         }
     }
 }

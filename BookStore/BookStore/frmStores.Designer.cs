@@ -32,7 +32,6 @@
             this.txtStoreName = new System.Windows.Forms.RichTextBox();
             this.txtAddress = new System.Windows.Forms.RichTextBox();
             this.txtCity = new System.Windows.Forms.RichTextBox();
-            this.txtState = new System.Windows.Forms.RichTextBox();
             this.lblStoreName = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txtStoreName
@@ -49,6 +49,7 @@
             this.txtStoreName.Location = new System.Drawing.Point(381, 122);
             this.txtStoreName.Margin = new System.Windows.Forms.Padding(2);
             this.txtStoreName.MaxLength = 40;
+            this.txtStoreName.Multiline = false;
             this.txtStoreName.Name = "txtStoreName";
             this.txtStoreName.Size = new System.Drawing.Size(223, 32);
             this.txtStoreName.TabIndex = 3;
@@ -59,6 +60,7 @@
             this.txtAddress.Location = new System.Drawing.Point(381, 157);
             this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.MaxLength = 40;
+            this.txtAddress.Multiline = false;
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(223, 32);
             this.txtAddress.TabIndex = 4;
@@ -70,20 +72,11 @@
             this.txtCity.Location = new System.Drawing.Point(381, 191);
             this.txtCity.Margin = new System.Windows.Forms.Padding(2);
             this.txtCity.MaxLength = 20;
+            this.txtCity.Multiline = false;
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(223, 32);
             this.txtCity.TabIndex = 5;
             this.txtCity.Text = "";
-            // 
-            // txtState
-            // 
-            this.txtState.Location = new System.Drawing.Point(381, 226);
-            this.txtState.Margin = new System.Windows.Forms.Padding(2);
-            this.txtState.MaxLength = 2;
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(223, 32);
-            this.txtState.TabIndex = 6;
-            this.txtState.Text = "";
             // 
             // lblStoreName
             // 
@@ -120,7 +113,7 @@
             // 
             // txtZip
             // 
-            this.txtZip.Location = new System.Drawing.Point(381, 262);
+            this.txtZip.Location = new System.Drawing.Point(381, 257);
             this.txtZip.Margin = new System.Windows.Forms.Padding(2);
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(223, 22);
@@ -141,7 +134,7 @@
             // 
             this.lblZip.AutoSize = true;
             this.lblZip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.lblZip.Location = new System.Drawing.Point(255, 262);
+            this.lblZip.Location = new System.Drawing.Point(258, 257);
             this.lblZip.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblZip.Name = "lblZip";
             this.lblZip.Size = new System.Drawing.Size(98, 25);
@@ -181,11 +174,72 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // comboBoxState
+            // 
+            this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxState.FormattingEnabled = true;
+            this.comboBoxState.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.comboBoxState.Location = new System.Drawing.Point(381, 228);
+            this.comboBoxState.Name = "comboBoxState";
+            this.comboBoxState.Size = new System.Drawing.Size(223, 24);
+            this.comboBoxState.TabIndex = 18;
+            // 
             // frmStores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.comboBoxState);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -195,7 +249,6 @@
             this.Controls.Add(this.lblCity);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.lblStoreName);
-            this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtStoreName);
@@ -215,7 +268,6 @@
         private System.Windows.Forms.RichTextBox txtStoreName;
         private System.Windows.Forms.RichTextBox txtAddress;
         private System.Windows.Forms.RichTextBox txtCity;
-        private System.Windows.Forms.RichTextBox txtState;
         private System.Windows.Forms.Label lblStoreName;
         private System.Windows.Forms.Label lblAddress;
         private System.Windows.Forms.Label lblCity;
@@ -225,5 +277,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.ComboBox comboBoxState;
     }
 }

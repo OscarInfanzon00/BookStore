@@ -218,14 +218,13 @@
             // 
             // buttonFind
             // 
-            this.buttonFind.AutoSize = true;
             this.buttonFind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.buttonFind.Image = ((System.Drawing.Image)(resources.GetObject("buttonFind.Image")));
-            this.buttonFind.Location = new System.Drawing.Point(893, 86);
+            this.buttonFind.Location = new System.Drawing.Point(893, 82);
             this.buttonFind.Name = "buttonFind";
-            this.buttonFind.Size = new System.Drawing.Size(30, 30);
+            this.buttonFind.Size = new System.Drawing.Size(60, 39);
             this.buttonFind.TabIndex = 13;
             this.buttonFind.TabStop = false;
+            this.buttonFind.Text = "Find";
             this.buttonFind.UseVisualStyleBackColor = true;
             this.buttonFind.Click += new System.EventHandler(this.buttonFind_Click);
             // 

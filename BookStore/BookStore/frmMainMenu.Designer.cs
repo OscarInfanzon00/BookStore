@@ -44,6 +44,7 @@
         private System.Windows.Forms.Button buttonNewOrder;
         private System.Windows.Forms.Button buttonReports;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonLogOut;
     }
 }
 

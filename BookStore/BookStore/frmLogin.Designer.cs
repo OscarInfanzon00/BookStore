@@ -44,6 +44,7 @@
             this.txtEnterID.Location = new System.Drawing.Point(148, 141);
             this.txtEnterID.Margin = new System.Windows.Forms.Padding(2);
             this.txtEnterID.MaxLength = 12;
+            this.txtEnterID.Multiline = false;
             this.txtEnterID.Name = "txtEnterID";
             this.txtEnterID.Size = new System.Drawing.Size(223, 35);
             this.txtEnterID.TabIndex = 4;
@@ -73,6 +74,7 @@
             this.richTextBoxLastName.Location = new System.Drawing.Point(148, 225);
             this.richTextBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxLastName.MaxLength = 12;
+            this.richTextBoxLastName.Multiline = false;
             this.richTextBoxLastName.Name = "richTextBoxLastName";
             this.richTextBoxLastName.Size = new System.Drawing.Size(223, 35);
             this.richTextBoxLastName.TabIndex = 6;

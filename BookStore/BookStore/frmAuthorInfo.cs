@@ -72,7 +72,7 @@ namespace BookStore {
                 errorMessage += "Address is required. \n";
             if (string.IsNullOrEmpty(txtCity.Text))
                 errorMessage += "City is required. \n";
-            if (string.IsNullOrEmpty(txtState.Text))
+            if (comboBoxState.SelectedIndex==-1)
                 errorMessage += "State is required. \n";
             if (string.IsNullOrEmpty(zipCode) || (zipCode.Length != 5 && zipCode.Length != 9))
                 errorMessage += "ZIP code is missing or is not the required 5/9 digit length. \n";
@@ -92,7 +92,7 @@ namespace BookStore {
             txtPhoneNumber.Text = string.Empty;
             txtAddress.Text = string.Empty;
             txtCity.Text = string.Empty;
-            txtState.Text = string.Empty;
+            comboBoxState.SelectedIndex = -1;
             txtZip.Text = string.Empty;
         }
 

@@ -59,5 +59,25 @@ namespace BookStore.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2024_11_23_153305 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2024-11-23 153305", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2024_11_24_153804 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2024-11-24 153804", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

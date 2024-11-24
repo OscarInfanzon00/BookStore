@@ -36,9 +36,9 @@ namespace BookStore {
                 errorMessage += "Name is required. \n";
             if (string.IsNullOrEmpty(txtCity.Text))
                 errorMessage += "City is required. \n";
-            if (string.IsNullOrEmpty(txtState.Text))
+            if (comboBoxState.SelectedIndex==-1)
                 errorMessage += "State is required. \n";
-            if (string.IsNullOrEmpty(txtCountry.Text))
+            if (comboBoxCountry.SelectedIndex==-1)
                 errorMessage += "Country is required. \n";
 
             if (errorMessage != "") {
@@ -53,8 +53,8 @@ namespace BookStore {
         private void ClearForm () {
             txtName.Text = string.Empty;
             txtCity.Text = string.Empty;
-            txtState.Text = string.Empty;
-            txtCountry.Text = string.Empty;
+            comboBoxCountry.SelectedIndex = -1;
+            comboBoxState.SelectedIndex = -1;
         }
 
         private void btnClear_Click (object sender, EventArgs e) {

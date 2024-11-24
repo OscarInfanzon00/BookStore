@@ -52,9 +52,9 @@ namespace BookStore {
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtPhoneNumber = new System.Windows.Forms.MaskedTextBox();
-            this.txtState = new System.Windows.Forms.TextBox();
             this.txtZip = new System.Windows.Forms.MaskedTextBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblFirstName
@@ -148,7 +148,7 @@ namespace BookStore {
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(370, 96);
-            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(227, 22);
             this.txtFirstName.TabIndex = 0;
@@ -156,7 +156,7 @@ namespace BookStore {
             // txtLastName
             // 
             this.txtLastName.Location = new System.Drawing.Point(370, 122);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(227, 22);
             this.txtLastName.TabIndex = 1;
@@ -164,7 +164,7 @@ namespace BookStore {
             // txtAddress
             // 
             this.txtAddress.Location = new System.Drawing.Point(370, 174);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(227, 22);
             this.txtAddress.TabIndex = 3;
@@ -172,7 +172,7 @@ namespace BookStore {
             // txtCity
             // 
             this.txtCity.Location = new System.Drawing.Point(370, 200);
-            this.txtCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCity.Margin = new System.Windows.Forms.Padding(2);
             this.txtCity.Name = "txtCity";
             this.txtCity.Size = new System.Drawing.Size(227, 22);
             this.txtCity.TabIndex = 4;
@@ -182,7 +182,7 @@ namespace BookStore {
             this.rbYes.AutoSize = true;
             this.rbYes.Checked = true;
             this.rbYes.Location = new System.Drawing.Point(371, 289);
-            this.rbYes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbYes.Margin = new System.Windows.Forms.Padding(2);
             this.rbYes.Name = "rbYes";
             this.rbYes.Size = new System.Drawing.Size(52, 20);
             this.rbYes.TabIndex = 7;
@@ -194,7 +194,7 @@ namespace BookStore {
             // 
             this.rbNo.AutoSize = true;
             this.rbNo.Location = new System.Drawing.Point(441, 289);
-            this.rbNo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rbNo.Margin = new System.Windows.Forms.Padding(2);
             this.rbNo.Name = "rbNo";
             this.rbNo.Size = new System.Drawing.Size(46, 20);
             this.rbNo.TabIndex = 8;
@@ -204,7 +204,7 @@ namespace BookStore {
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(190, 435);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(141, 57);
             this.btnSave.TabIndex = 9;
@@ -215,7 +215,7 @@ namespace BookStore {
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(529, 435);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(141, 57);
             this.btnCancel.TabIndex = 10;
@@ -226,24 +226,16 @@ namespace BookStore {
             // txtPhoneNumber
             // 
             this.txtPhoneNumber.Location = new System.Drawing.Point(370, 148);
-            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhoneNumber.Mask = "(999) 000-0000";
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(227, 22);
             this.txtPhoneNumber.TabIndex = 2;
             // 
-            // txtState
-            // 
-            this.txtState.Location = new System.Drawing.Point(370, 226);
-            this.txtState.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtState.Name = "txtState";
-            this.txtState.Size = new System.Drawing.Size(227, 22);
-            this.txtState.TabIndex = 5;
-            // 
             // txtZip
             // 
             this.txtZip.Location = new System.Drawing.Point(370, 254);
-            this.txtZip.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtZip.Margin = new System.Windows.Forms.Padding(2);
             this.txtZip.Mask = "00000-9999";
             this.txtZip.Name = "txtZip";
             this.txtZip.Size = new System.Drawing.Size(227, 22);
@@ -252,7 +244,7 @@ namespace BookStore {
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(360, 435);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(141, 57);
             this.btnClear.TabIndex = 11;
@@ -260,11 +252,72 @@ namespace BookStore {
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
+            // comboBoxState
+            // 
+            this.comboBoxState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxState.FormattingEnabled = true;
+            this.comboBoxState.Items.AddRange(new object[] {
+            "AL",
+            "AK",
+            "AZ",
+            "AR",
+            "CA",
+            "CO",
+            "CT",
+            "DE",
+            "FL",
+            "GA",
+            "HI",
+            "ID",
+            "IL",
+            "IN",
+            "IA",
+            "KS",
+            "KY",
+            "LA",
+            "ME",
+            "MD",
+            "MA",
+            "MI",
+            "MN",
+            "MS",
+            "MO",
+            "MT",
+            "NE",
+            "NV",
+            "NH",
+            "NJ",
+            "NM",
+            "NY",
+            "NC",
+            "ND",
+            "OH",
+            "OK",
+            "OR",
+            "PA",
+            "RI",
+            "SC",
+            "SD",
+            "TN",
+            "TX",
+            "UT",
+            "VT",
+            "VA",
+            "WA",
+            "WV",
+            "WI",
+            "WY"});
+            this.comboBoxState.Location = new System.Drawing.Point(370, 225);
+            this.comboBoxState.Name = "comboBoxState";
+            this.comboBoxState.Size = new System.Drawing.Size(226, 24);
+            this.comboBoxState.TabIndex = 12;
+            // 
             // frmAuthorInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.comboBoxState);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtZip);
             this.Controls.Add(this.txtPhoneNumber);
@@ -272,7 +325,6 @@ namespace BookStore {
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.rbNo);
             this.Controls.Add(this.rbYes);
-            this.Controls.Add(this.txtState);
             this.Controls.Add(this.txtCity);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtLastName);
@@ -287,7 +339,7 @@ namespace BookStore {
             this.Controls.Add(this.lblFirstName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAuthorInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Author Info";
@@ -316,8 +368,8 @@ namespace BookStore {
         private Button btnSave;
         private Button btnCancel;
         private MaskedTextBox txtPhoneNumber;
-        private TextBox txtState;
         private MaskedTextBox txtZip;
         private Button btnClear;
+        private ComboBox comboBoxState;
     }
 }

@@ -48,9 +48,9 @@ namespace BookStoreTitleStores
             }
 
             // Validate txtState (Required and 2 characters)
-            if (string.IsNullOrWhiteSpace(txtState.Text) || txtState.Text.Length != 2)
+            if (comboBoxState.SelectedIndex==-1)
             {
-                errorMessage += "State must be a 2-character abbreviation (e.g., NY).\n";
+                errorMessage += "State is required.\n";
                 isValid = false;
             }
 
@@ -74,7 +74,7 @@ namespace BookStoreTitleStores
             txtStoreName.Text = "";
             txtAddress.Text = "";
             txtCity.Text = "";
-            txtState.Text = "";
+            comboBoxState.SelectedIndex = -1;
             txtZip.Text = "";
         }
         private void btnSave_Click(object sender, EventArgs e)
@@ -135,6 +135,7 @@ namespace BookStoreTitleStores
         {
             ClearStoreInputs();
         }
+
         //public frmStores(int storesId) : this()
         // {
         // this.storesId = storesId;
