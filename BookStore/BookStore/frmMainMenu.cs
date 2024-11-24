@@ -18,9 +18,13 @@ namespace BookStore
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
 
-        public frmMainMenu()
+        public frmMainMenu(String employeeName, String employeeMiddleName, String employeeLastName, String employeeLvl, DateTime employeeHiringDate)
         {
             InitializeComponent();
+
+            labelUsername.Text = "Username: " + employeeName + " " + employeeMiddleName + ". " + employeeLastName;
+            labelLvl.Text = "Job level: " + employeeLvl;
+            labelUserHiringDate.Text = employeeHiringDate.ToString();
         }
 
         private void MainMenu_Load(object sender, EventArgs e)
@@ -30,32 +34,10 @@ namespace BookStore
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
+                    comboBoxTable.SelectedIndex = 1;
+                    LoadDataInTable(sender, e);
+                    MessageBox.Show("Data base connection succesfully opened.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM employee", connection))
-                    {
-                        DataTable dataTable = new DataTable();
-                        adapter.Fill(dataTable);
-
-                        if (dataTable.Rows.Count > 0)
-                        {
-                            DataRow firstRow = dataTable.Rows[0];
-
-                            var employeeName = firstRow["fname"].ToString();
-                            var employeeMiddleName = firstRow["minit"].ToString();
-                            var employeeLastName = firstRow["lname"].ToString();
-                            var employeeLvl = firstRow["job_lvl"].ToString();
-                            var employeeHiringDate = firstRow["hire_date"].ToString();
-
-                            labelUsername.Text = "Username: " + employeeName + " " + employeeMiddleName + ". " + employeeLastName;
-                            labelLvl.Text = "Job level: " + employeeLvl;
-                            labelUserHiringDate.Text = employeeHiringDate.ToString();
-                            MessageBox.Show("Data base connection succesfully opened.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        else
-                        {
-                            MessageBox.Show("No data found in the table.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
                 }
             }
             catch (Exception ex)
@@ -157,9 +139,11 @@ namespace BookStore
             this.label5 = new System.Windows.Forms.Label();
             this.buttonNewOrder = new System.Windows.Forms.Button();
             this.buttonReports = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
             this.groupBoxUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -189,14 +173,14 @@ namespace BookStore
             // openDBToolStripMenuItem
             // 
             this.openDBToolStripMenuItem.Name = "openDBToolStripMenuItem";
-            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.openDBToolStripMenuItem.Text = "Open DB";
             this.openDBToolStripMenuItem.Click += new System.EventHandler(this.openDBToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -275,6 +259,7 @@ namespace BookStore
             // 
             // groupBoxUser
             // 
+            this.groupBoxUser.Controls.Add(this.pictureBox1);
             this.groupBoxUser.Controls.Add(this.labelUserHiringDate);
             this.groupBoxUser.Controls.Add(this.label3);
             this.groupBoxUser.Controls.Add(this.labelLvl);
@@ -385,6 +370,17 @@ namespace BookStore
             this.buttonReports.UseVisualStyleBackColor = true;
             this.buttonReports.Click += new System.EventHandler(this.buttonReports_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(277, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMainMenu
             // 
             this.ClientSize = new System.Drawing.Size(1307, 788);
@@ -406,6 +402,7 @@ namespace BookStore
             this.groupBoxUser.ResumeLayout(false);
             this.groupBoxUser.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

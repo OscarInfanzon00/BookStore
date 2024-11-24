@@ -19,3 +19,4 @@ C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug
 C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.frmShoppingCartOrder.resources
 C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.frmAuthorInfo.resources
 C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.frmPublisherInfo.resources
+C:\Users\oscar\OneDrive\Documents\GitHub\BookStore\BookStore\BookStore\obj\Debug\BookStore.frmLogin.resources

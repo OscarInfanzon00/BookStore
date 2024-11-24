@@ -43,6 +43,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonNewOrder;
         private System.Windows.Forms.Button buttonReports;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
