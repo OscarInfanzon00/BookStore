@@ -8,7 +8,6 @@ namespace WindowsFormsApp
     public partial class frmOrderSummary : Form
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
-        private decimal total;
 
         public frmOrderSummary(DataGridViewRowCollection cartData, decimal total)
         {

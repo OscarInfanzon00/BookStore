@@ -13,8 +13,15 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace BookStore {
     public partial class frmAuthorInfo : Form {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
+        private string objectID;
+
         public frmAuthorInfo () {
             InitializeComponent();
+        }
+
+        public frmAuthorInfo(string objectID)
+        {
+            this.objectID = objectID;
         }
 
         private void btnSave_Click (object sender, EventArgs e) {

@@ -12,9 +12,15 @@ using System.Windows.Forms;
 namespace BookStore {
     public partial class frmPublisherInfo : Form {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
+        private string objectID;
 
         public frmPublisherInfo () {
             InitializeComponent();
+        }
+
+        public frmPublisherInfo(string objectID)
+        {
+            this.objectID = objectID;
         }
 
         private void btnSave_Click (object sender, EventArgs e) {

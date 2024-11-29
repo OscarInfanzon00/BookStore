@@ -13,9 +13,16 @@ namespace BookStore
     public partial class frmDiscounts : Form
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
+        private string objectID;
+
         public frmDiscounts()
         {
             InitializeComponent();
+        }
+
+        public frmDiscounts(string objectID)
+        {
+            this.objectID = objectID;
         }
 
         public void ClearDiscountsInputs()

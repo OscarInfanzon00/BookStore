@@ -125,6 +125,7 @@ namespace BookStore
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBoxUser = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelUserHiringDate = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelLvl = new System.Windows.Forms.Label();
@@ -134,12 +135,12 @@ namespace BookStore
             this.label5 = new System.Windows.Forms.Label();
             this.buttonNewOrder = new System.Windows.Forms.Button();
             this.buttonReports = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonLogOut = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.groupBoxUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -169,14 +170,14 @@ namespace BookStore
             // openDBToolStripMenuItem
             // 
             this.openDBToolStripMenuItem.Name = "openDBToolStripMenuItem";
-            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openDBToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.openDBToolStripMenuItem.Text = "Open DB";
             this.openDBToolStripMenuItem.Click += new System.EventHandler(this.openDBToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(154, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -266,6 +267,18 @@ namespace BookStore
             this.groupBoxUser.TabIndex = 1;
             this.groupBoxUser.TabStop = false;
             this.groupBoxUser.Text = "User Logged In";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Image = global::BookStore.Properties.Resources.Screenshot_2024_11_24_153804;
+            this.pictureBox1.InitialImage = global::BookStore.Properties.Resources.Screenshot_2024_11_24_153804;
+            this.pictureBox1.Location = new System.Drawing.Point(277, 33);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(112, 102);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
             // 
             // labelUserHiringDate
             // 
@@ -366,18 +379,6 @@ namespace BookStore
             this.buttonReports.UseVisualStyleBackColor = true;
             this.buttonReports.Click += new System.EventHandler(this.buttonReports_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Image = global::BookStore.Properties.Resources.Screenshot_2024_11_24_153804;
-            this.pictureBox1.InitialImage = global::BookStore.Properties.Resources.Screenshot_2024_11_24_153804;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 33);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(112, 102);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // buttonLogOut
             // 
             this.buttonLogOut.Location = new System.Drawing.Point(1159, 226);
@@ -388,9 +389,20 @@ namespace BookStore
             this.buttonLogOut.UseVisualStyleBackColor = true;
             this.buttonLogOut.Click += new System.EventHandler(this.buttonLogOut_Click);
             // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Location = new System.Drawing.Point(237, 204);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(102, 31);
+            this.buttonEdit.TabIndex = 8;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.editObjectfromTable);
+            // 
             // frmMainMenu
             // 
             this.ClientSize = new System.Drawing.Size(1307, 788);
+            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.buttonReports);
             this.Controls.Add(this.buttonNewOrder);
@@ -409,8 +421,8 @@ namespace BookStore
             this.menuStrip.PerformLayout();
             this.groupBoxUser.ResumeLayout(false);
             this.groupBoxUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,6 +451,54 @@ namespace BookStore
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void GetSelectedRowValues(DataGridView dataGridView)
+        {
+            if (dataGridView.SelectedRows.Count > 0 && dataGridView.SelectedRows!=null)
+            {
+                DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+
+                DataGridViewCell cell = selectedRow.Cells[0];
+                String objectID = cell.Value.ToString();
+
+                switch (comboBoxTable.SelectedIndex)
+                {
+                    case 0:
+                        frmAuthorInfo frmAuthorInfo = new frmAuthorInfo(objectID);
+                        frmAuthorInfo.Show();
+                        break;
+                    case 1:
+                        frmPublisherInfo frmPublisherInfo = new frmPublisherInfo(objectID);
+                        frmPublisherInfo.Show();
+                        break;
+                    case 2:
+                        frmTitle frmTitle = new frmTitle(objectID);
+                        frmTitle.Show();
+                        break;
+                    case 3:
+                        frmStores frmStores = new frmStores(objectID);
+                        frmStores.Show();
+                        break;
+                    case 4:
+                        frmEmployee frmEmployee = new frmEmployee(objectID);
+                        frmEmployee.Show();
+                        break;
+                    case 5:
+                        frmDiscounts frmDiscounts = new frmDiscounts(objectID);
+                        frmDiscounts.Show();
+                        break;
+                    default:
+                        MessageBox.Show("Invalid type selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                }
+                MessageBox.Show("You are editing now. When click Save the data will be updated in the database.", "Editor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No row is selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void buttonReports_Click(object sender, EventArgs e)
         {
@@ -483,6 +543,10 @@ namespace BookStore
         {
             frmDiscounts frmDiscounts = new frmDiscounts();
             frmDiscounts.Show();
+        }
+        private void editObjectfromTable(object sender, EventArgs e)
+        {
+            GetSelectedRowValues(dataGridViewTable);
         }
 
         private void buttonNewOrder_Click(object sender, EventArgs e)
