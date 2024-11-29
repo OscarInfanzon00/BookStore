@@ -102,45 +102,67 @@ namespace BookStoreTitleStores
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateInputs()) 
+            { 
+            string query = bookId == null
+            ? "INSERT INTO titles (title, type, price, advance, royalty, ytd_Sales, notes, pubdate) VALUES (@title, @type, @price, @advance, @royalty, @ytd_ales, @notes, @pubdate)"
+            "UPDATE titles SET title = @title, type = @type, price = @price, advance = @advance, royalty = @royalty, ytd_Sales = @ytd_Sales, notes = @Notes, pubdate = @pubdate WHERE titles_id = @BookId";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@title", txtTitle.Text);
+            cmd.Parameters.AddWithValue("@type", txtType.Text);
+            cmd.Parameters.AddWithValue("@price", decimal.Parse(txtPrice.Text));
+            cmd.Parameters.AddWithValue("@advance", decimal.Parse(txtAdvance.Text));
+            cmd.Parameters.AddWithValue("@royalty", decimal.Parse(txtRoyalty.Text));
+            cmd.Parameters.AddWithValue("@ytd_sales", int.Parse(txtYTDSales.Text));
+            cmd.Parameters.AddWithValue("@notes", txtNotes.Text);
+            cmd.Parameters.AddWithValue("@pubdate", txtPubDate.Value); 
+
+
+            if (bookId != null)
+            {
+          cmd.Parameters.AddWithValue("@BookId", bookId);
+            }
+
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            }
+
+            
                 MessageBox.Show("Inputs are valid. Proceeding with save operation.");
                 ClearInputs();
+                this.Close();
             }
 
 
-            //string query = bookId == null
-            //? "INSERT INTO titles (title, type, price, advance, royalty, ytd_Sales, notes, pubdate) VALUES (@title, @type, @price, @advance, @royalty, @ytd_ales, @notes, @pubdate)"
-            //"UPDATE titles SET title = @title, type = @type, price = @price, advance = @advance, royalty = @royalty, ytd_Sales = @ytd_Sales, notes = @Notes, pubdate = @pubdate WHERE titles_id = @BookId";
-
-            // using (SqlConnection conn = new SqlConnection(connectionString))
-            //{
-            //SqlCommand cmd = new SqlCommand(query, conn);
-            // cmd.Parameters.AddWithValue("@title", txtTitle.Text);
-            //cmd.Parameters.AddWithValue("@type", txtType.Text);
-            // cmd.Parameters.AddWithValue("@price", decimal.Parse(txtPrice.Text));
-            //cmd.Parameters.AddWithValue("@advance", decimal.Parse(txtAdvance.Text));
-            // cmd.Parameters.AddWithValue("@royalty", decimal.Parse(txtRoyalty.Text));
-            //cmd.Parameters.AddWithValue("@ytd_sales", int.Parse(txtYTDSales.Text));
-            // cmd.Parameters.AddWithValue("@notes", txtNotes.Text);
-            // cmd.Parameters.AddWithValue("@pubdate", txtPubDate.Value); 
-
-
-            // if (bookId != null)
-            //{
-            // cmd.Parameters.AddWithValue("@BookId", bookId);
-            //}
-
-            // conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
-            // }
-
-            // this.Close();
+            
         }
 
         private void frmTitle_Load(object sender, EventArgs e)
         {
 
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+        SqlCommand cmd = new SqlCommand("SELECT * FROM titles WHERE title_id = @objectID", conn);
+        cmd.Parameters.AddWithValue("@objectID", objectID);
+        conn.Open();
+
+        SqlDataReader reader = cmd.ExecuteReader();
+         if (reader.Read())
+         {
+         txtTitle.Text = reader["title"].ToString();
+         txtType.Text = reader["type"].ToString();
+         txtPrice.Text = reader["price"].ToString();
+         txtAdvance.Text = reader["advance"].ToString();
+         txtRoyalty.Text = reader["royalty"].ToString();
+         txtYTDSales.Text = reader["ytd_sales"].ToString();
+         txtNotes.Text = reader["notes"].ToString();
+         txtPubDate.Value = Convert.ToDateTime(reader["pubdate"]);
+         }
+        conn.Close();
+        }
         }
 
         private void buttonClear_Click(object sender, EventArgs e)
@@ -148,35 +170,10 @@ namespace BookStoreTitleStores
             ClearInputs();
         }
 
-        //public frmTitle(int bookId) : this()
-        //{
-        //this.bookId = bookId;
-        // LoadBookData(bookId);
-        // }
+       
 
-        // private void LoadBookData(int bookId)
-        // {
-        //using (SqlConnection conn = new SqlConnection(connectionString))
-        //{
-        //SqlCommand cmd = new SqlCommand("SELECT * FROM titles WHERE title_id = @BookId", conn);
-        //cmd.Parameters.AddWithValue("@BookId", bookId);
-        //conn.Open();
-
-        //SqlDataReader reader = cmd.ExecuteReader();
-        //if (reader.Read())
-        //{
-        //txtTitle.Text = reader["title"].ToString();
-        // txtType.Text = reader["type"].ToString();
-        // txtPrice.Text = reader["price"].ToString();
-        // txtAdvance.Text = reader["advance"].ToString();
-        //txtRoyalty.Text = reader["royalty"].ToString();
-        //txtYTDSales.Text = reader["ytd_sales"].ToString();
-        // txtNotes.Text = reader["notes"].ToString();
-        //txtPubDate.Value = Convert.ToDateTime(reader["pubdate"]);
-        // }
-        //conn.Close();
-        //}
-        //}
+        
+        
     }
 }
     
