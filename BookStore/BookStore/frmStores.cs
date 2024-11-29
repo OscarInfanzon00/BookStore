@@ -26,6 +26,7 @@ namespace BookStoreTitleStores
         public frmStores(string objectID)
         {
             this.objectID = objectID;
+            InitializeComponent();
         }
 
         public bool ValidateStoreInputs()

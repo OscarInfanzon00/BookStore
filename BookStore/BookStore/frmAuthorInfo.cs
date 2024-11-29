@@ -22,6 +22,7 @@ namespace BookStore {
         public frmAuthorInfo(string objectID)
         {
             this.objectID = objectID;
+            InitializeComponent();
         }
 
         private void btnSave_Click (object sender, EventArgs e) {

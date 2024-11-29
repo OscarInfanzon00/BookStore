@@ -461,6 +461,8 @@ namespace BookStore
                 DataGridViewCell cell = selectedRow.Cells[0];
                 String objectID = cell.Value.ToString();
 
+                MessageBox.Show("You are editing now. When click Save the data will be updated in the database.", "Editor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 switch (comboBoxTable.SelectedIndex)
                 {
                     case 0:
@@ -491,7 +493,7 @@ namespace BookStore
                         MessageBox.Show("Invalid type selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                 }
-                MessageBox.Show("You are editing now. When click Save the data will be updated in the database.", "Editor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
             else
             {

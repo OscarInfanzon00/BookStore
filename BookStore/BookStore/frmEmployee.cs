@@ -24,6 +24,7 @@ namespace BookStore
         public frmEmployee(string objectID)
         {
             this.objectID = objectID;
+            InitializeComponent();
         }
 
         public bool ValidateEmployeeInputs()

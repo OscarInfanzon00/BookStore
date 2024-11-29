@@ -23,6 +23,7 @@ namespace BookStore
         public frmDiscounts(string objectID)
         {
             this.objectID = objectID;
+            InitializeComponent();
         }
 
         public void ClearDiscountsInputs()
