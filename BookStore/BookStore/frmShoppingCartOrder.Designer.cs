@@ -45,13 +45,14 @@
             this.labelSubtotal = new System.Windows.Forms.Label();
             this.labelTax = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.comboBoxPayment = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxDiscount = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxStoreID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTitle)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShoppingCart)).BeginInit();
@@ -129,6 +130,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.textBoxStoreID);
             this.groupBox1.Controls.Add(this.buttonRemove);
             this.groupBox1.Controls.Add(this.dataGridViewShoppingCart);
             this.groupBox1.Location = new System.Drawing.Point(51, 394);
@@ -213,15 +216,6 @@
             this.labelTotal.Text = "Total:";
             this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(191, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(10, 8);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // buttonFind
             // 
             this.buttonFind.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -255,10 +249,9 @@
             this.comboBoxPayment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPayment.FormattingEnabled = true;
             this.comboBoxPayment.Items.AddRange(new object[] {
-            "Full",
-            "4 Mo",
-            "12 Mo",
-            "24 Mo"});
+            "ON invoice",
+            "Net 60",
+            "Net 30"});
             this.comboBoxPayment.Location = new System.Drawing.Point(652, 688);
             this.comboBoxPayment.Name = "comboBoxPayment";
             this.comboBoxPayment.Size = new System.Drawing.Size(121, 24);
@@ -279,14 +272,30 @@
             this.comboBoxDiscount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDiscount.FormattingEnabled = true;
             this.comboBoxDiscount.Items.AddRange(new object[] {
-            "No Discount",
-            "10%",
-            "25%",
-            "50%"});
+            "Initial Customer",
+            "Volume Discount",
+            "Customer Discount"});
             this.comboBoxDiscount.Location = new System.Drawing.Point(652, 716);
             this.comboBoxDiscount.Name = "comboBoxDiscount";
             this.comboBoxDiscount.Size = new System.Drawing.Size(121, 24);
             this.comboBoxDiscount.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Store ID";
+            // 
+            // textBoxStoreID
+            // 
+            this.textBoxStoreID.Location = new System.Drawing.Point(95, 218);
+            this.textBoxStoreID.Name = "textBoxStoreID";
+            this.textBoxStoreID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStoreID.TabIndex = 22;
             // 
             // frmShoppingCartOrder
             // 
@@ -297,7 +306,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.comboBoxPayment);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonFind);
             this.Controls.Add(this.labelTotal);
             this.Controls.Add(this.labelTax);
@@ -319,6 +327,7 @@
             this.Load += new System.EventHandler(this.frmShoppingCartOrder_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTitle)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShoppingCart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -343,11 +352,12 @@
         private System.Windows.Forms.Label labelTax;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Button buttonFind;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox comboBoxPayment;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxDiscount;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxStoreID;
     }
 }

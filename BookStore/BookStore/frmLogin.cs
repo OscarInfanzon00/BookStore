@@ -17,10 +17,15 @@ namespace BookStore
         public frmLogin()
         {
             InitializeComponent();
+
+            txtEnterID.Text = "PTC11962M";
+            richTextBoxLastName.Text = "Cramer";
+            login();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void login()
         {
+
             string empId = txtEnterID.Text.Trim();
             string lastName = richTextBoxLastName.Text.Trim();
 
@@ -35,11 +40,11 @@ namespace BookStore
             if (employeeDetails != null)
             {
                 frmMainMenu mainMenu = new frmMainMenu(
-                    employeeDetails.Item1, 
-                    employeeDetails.Item2, 
-                    employeeDetails.Item3, 
-                    employeeDetails.Item4, 
-                    employeeDetails.Item5 
+                    employeeDetails.Item1,
+                    employeeDetails.Item2,
+                    employeeDetails.Item3,
+                    employeeDetails.Item4,
+                    employeeDetails.Item5
                 );
 
                 mainMenu.Show();
@@ -49,6 +54,11 @@ namespace BookStore
             {
                 MessageBox.Show("Invalid employee ID or last name.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            login();
         }
 
         private Tuple<string, string, string, string, DateTime> GetEmployeeDetails(string empId, string lastName)

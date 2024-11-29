@@ -7,7 +7,7 @@ using static System.Windows.Forms.AxHost;
 
 namespace BookStore
 {
-    internal class Sales
+    public class Sales
     {
         private string stor_id;
         private string ord_num;
@@ -17,10 +17,9 @@ namespace BookStore
         private string title_id;
 
         // Constructor
-        public Sales(string stor_id, string ord_num, DateTime ord_date, short qty, string payterms, string title_id)
+        public Sales(string stor_id, DateTime ord_date, short qty, string payterms, string title_id)
         {
             this.stor_id = stor_id;
-            this.ord_num = ord_num;
             this.ord_date = ord_date;
             this.qty = qty;
             this.payterms = payterms;

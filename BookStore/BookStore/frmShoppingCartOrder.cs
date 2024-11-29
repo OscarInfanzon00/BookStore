@@ -20,6 +20,7 @@ namespace BookStore
         private decimal Subtotal = 0;
         private decimal Total = 0;
         private decimal Tax = 0;
+        private List<Sales> salesList = new List<Sales>();
 
         public frmShoppingCartOrder()
         {
@@ -150,9 +151,25 @@ namespace BookStore
         {
             if (dataGridViewShoppingCart.Rows.Count > 0) {
                 if(comboBoxDiscount.SelectedIndex!=-1 && comboBoxPayment.SelectedIndex != -1) {
-                    frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total);
-                    orderSummaryForm.Show();
-                    Close();
+                    if (textBoxStoreID.Text != "")
+                    {
+                        if (storeIDExists())
+                        {
+                            fillOutSalesList();
+                            if (salesList.Count != 0) {
+                                frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total, salesList, this);
+                                orderSummaryForm.Show();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter a valid ID of your store", "Store info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter the ID of your store", "Store info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
@@ -163,6 +180,62 @@ namespace BookStore
             {
                 MessageBox.Show("Add some products to the cart", "The Cart is Empty", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private void fillOutSalesList()
+        {
+            string storeID = textBoxStoreID.Text.Trim();
+            string paymentTerms = comboBoxPayment.SelectedItem.ToString();
+
+            foreach (DataGridViewRow row in dataGridViewShoppingCart.Rows)
+            {
+                if (!row.IsNewRow) 
+                {
+                    string titleID = row.Cells["title_id"].Value.ToString();
+                    short qty = Convert.ToInt16(row.Cells["qty"].Value);
+
+                    Sales sale = new Sales(storeID,DateTime.Now,qty,paymentTerms,titleID);
+
+                    salesList.Add(sale);
+                }
+            }
+        }
+
+
+        private bool storeIDExists()
+        {
+            bool exist = false;
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string storeID = textBoxStoreID.Text.Trim();
+
+                    string query = @"
+                SELECT 1
+                FROM stores s
+                WHERE s.stor_id = @ID";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.Add("@ID", SqlDbType.Char, 4).Value = storeID;
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            exist = reader.HasRows;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return exist;
         }
 
 
