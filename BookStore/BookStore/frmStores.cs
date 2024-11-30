@@ -91,30 +91,7 @@ namespace BookStoreTitleStores
             if (ValidateStoreInputs())
             {
             
-            string query = storesId == null
-            ? "INSERT INTO stores  (stor_name,stor_address,city,state,zip) VALUES (@stor_name, @stor_address, @city, @state, @zip)"
-            : "UPDATE stores SET stor_name = @stor_name, stor_address = @stor_address, city = @city, state = @state, zip = @zip WHERE stor_id = @StoreId";
-
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-             SqlCommand cmd = new SqlCommand(query, conn);
-             cmd.Parameters.AddWithValue("@stor_name", txtStoreName.Text);
-             cmd.Parameters.AddWithValue("@stor_address", txtAddress.Text);
-             cmd.Parameters.AddWithValue("@city", txtCity.Text);
-             cmd.Parameters.AddWithValue("@state", txtState.Text);
-             cmd.Parameters.AddWithValue("@zip", decimal.Parse(txtZip.Text));
-
-
-
-             if (storesId != null)
-             {
-             cmd.Parameters.AddWithValue("@StoreId", storesId);
-             }
-
-             conn.Open();
-             cmd.ExecuteNonQuery();
-             conn.Close();
-            }
+           
 
                 MessageBox.Show("Inputs are valid. Proceeding with save operation.");
                 ClearStoreInputs();
@@ -133,24 +110,7 @@ namespace BookStoreTitleStores
 
         private void frmStores_Load(object sender, EventArgs e)
         {
-         using (SqlConnection conn = new SqlConnection(connectionString))
-        {
-         SqlCommand cmd = new SqlCommand("SELECT * FROM stores  WHERE stor_id = @StoreId", conn);
-         cmd.Parameters.AddWithValue("@StoreId", storesId);
-         conn.Open();
-
-         SqlDataReader reader = cmd.ExecuteReader();
-         if (reader.Read())
-         {
-         txtStoreName.Text = reader["stor_name"].ToString();
-         txtAddress.Text = reader["stor_address"].ToString();
-         txtCity.Text = reader["city"].ToString();
-         txtState.Text = reader["state"].ToString();
-         txtZip.Text = reader["zip"].ToString();
-
-        }
-         conn.Close();
-        }
+       
         }
 
         private void txtAddress_TextChanged(object sender, EventArgs e)
@@ -166,3 +126,5 @@ namespace BookStoreTitleStores
         
     }
 }
+
+
