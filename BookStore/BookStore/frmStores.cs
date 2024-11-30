@@ -110,8 +110,6 @@ namespace BookStoreTitleStores
 
         private void frmStores_Load(object sender, EventArgs e)
         {
-         using (SqlConnection conn = new SqlConnection(connectionString))
-        {
        
         }
 
