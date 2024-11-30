@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "BookStore\\frmTitle.cs",
               "ToolTip": "C:\\Users\\sethr\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs",
               "RelativeToolTip": "BookStore\\frmTitle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T23:38:04.812Z",
               "EditorCaption": ""
@@ -67,8 +67,7 @@
               "ToolTip": "C:\\Users\\sethr\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs [Design]",
               "RelativeToolTip": "BookStore\\frmPublisherInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T22:51:47.433Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-30T22:51:47.433Z"
             },
             {
               "$type": "Document",
@@ -79,8 +78,7 @@
               "ToolTip": "C:\\Users\\sethr\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs [Design]",
               "RelativeToolTip": "BookStore\\frmAuthorInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T22:51:24.168Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-30T22:51:24.168Z"
             }
           ]
         }
