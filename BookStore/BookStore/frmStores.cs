@@ -46,6 +46,24 @@ namespace BookStoreTitleStores
                 isValid = false;
             }
 
+            if (txtStoreName.Text.Length > 40)
+            {
+                errorMessage.AppendLine("Store Name exceeds the 40 characters, please fix.");
+                isValid = false;
+            }
+
+            if (txtAddress.Text.Length > 40)
+            {
+                errorMessage.AppendLine("Address exceeds the 40 characters, please fix.");
+                isValid = false;
+            }
+
+            if (txtCity.Text.Length > 20)
+            {
+                errorMessage.AppendLine("City exceeds the 20 characters, please fix.");
+                isValid = false;
+            }
+
             if (string.IsNullOrWhiteSpace(txtCity.Text))
             {
                 errorMessage.AppendLine("City is required.");

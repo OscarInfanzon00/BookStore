@@ -4,6 +4,7 @@ using System.Data;
 using System.Text;
 using System.Windows.Forms;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace BookStore
 {
@@ -162,6 +163,26 @@ namespace BookStore
 
             if (string.IsNullOrEmpty(txtAddress.Text))
                 errorMessage.AppendLine("Address is required.");
+
+            if (txtLastName.Text.Length > 40)
+            {
+                errorMessage.AppendLine("Last name exceeds the 40 characters, please fix.");
+            }
+
+            if (txtFirstName.Text.Length > 20)
+            {
+                errorMessage.AppendLine("First name exceeds the 20 characters, please fix.");
+            }
+
+            if (txtAddress.Text.Length > 40)
+            {
+                errorMessage.AppendLine("Address exceeds the 40 characters, please fix.");
+            }
+
+            if (txtCity.Text.Length > 20)
+            {
+                errorMessage.AppendLine("City exceeds the 20 characters, please fix.");
+            }
 
             if (string.IsNullOrEmpty(txtCity.Text))
                 errorMessage.AppendLine("City is required.");

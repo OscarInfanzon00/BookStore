@@ -68,6 +68,18 @@ namespace BookStoreTitleStores
                 isValid = false;
             }
 
+            if (txtTitle.Text.Length>80)
+            {
+                errorMessage.AppendLine("Title exceeds the 80 characters, please fix.");
+                isValid = false;
+            }
+
+            if (txtNotes.Text.Length > 200)
+            {
+                errorMessage.AppendLine("Notes exceeds the 200 characters, please fix.");
+                isValid = false;
+            }
+
             if (string.IsNullOrWhiteSpace(txtType.Text))
             {
                 errorMessage.AppendLine("Type is required.");

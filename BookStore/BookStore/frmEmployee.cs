@@ -51,6 +51,18 @@ namespace BookStore
                 isValid = false;
             }
 
+            if (txtFirstName.Text.Length > 20)
+            {
+                errorMessage.AppendLine("First name exceeds the 20 characters, please fix.");
+                isValid = false;
+            }
+
+            if (txtLastName.Text.Length > 30)
+            {
+                errorMessage.AppendLine("Last name exceeds the 30 characters, please fix.");
+                isValid = false;
+            }
+
             if (txtMiddleName.Text.Length>1)
             {
                 errorMessage.AppendLine("Only add the initial of the Middle name.");

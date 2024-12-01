@@ -55,6 +55,18 @@ namespace BookStore {
                 isValid = false;
             }
 
+            if (txtName.Text.Length > 40)
+            {
+                errorMessage.AppendLine("Publisher Name exceeds the 40 characters, please fix.");
+                isValid = false;
+            }
+
+            if (txtCity.Text.Length > 20)
+            {
+                errorMessage.AppendLine("City exceeds the 20 characters, please fix.");
+                isValid = false;
+            }
+
             if (comboBoxState.SelectedIndex == -1)
             {
                 errorMessage.AppendLine("State is required.");
