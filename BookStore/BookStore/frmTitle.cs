@@ -188,16 +188,24 @@ namespace BookStoreTitleStores
         private string GenerateRandomTitleID()
         {
             Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; 
-            char[] idChars = new char[10];
+            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
+            const string digits = "0123456789"; 
 
-            for (int i = 0; i < 10; i++)
+            char[] prefixChars = new char[2];
+            for (int i = 0; i < 2; i++)
             {
-                idChars[i] = chars[random.Next(chars.Length)];
+                prefixChars[i] = letters[random.Next(letters.Length)];
             }
 
-            return new string(idChars);
+            string numberPart = string.Empty;
+            for (int i = 0; i < 4; i++)
+            {
+                numberPart += digits[random.Next(digits.Length)];
+            }
+
+            return new string(prefixChars) + numberPart;
         }
+
 
 
         private void SaveOrUpdateEntity()

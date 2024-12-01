@@ -51,6 +51,12 @@ namespace BookStore
                 isValid = false;
             }
 
+            if (txtMiddleName.Text.Length>1)
+            {
+                errorMessage.AppendLine("Only add the initial of the Middle name.");
+                isValid = false;
+            }
+
             if (comboBoxJob.SelectedIndex == -1)
             {
                 errorMessage.AppendLine("Job level is required.");
@@ -148,27 +154,19 @@ namespace BookStore
         {
             StringBuilder empID = new StringBuilder();
 
-            bool isFormat2 = random.Next(0, 2) == 1;
-            if (isFormat2)
+            empID.Append(RandomChar());  
+            empID.Append(RandomChar());  
+            empID.Append(RandomChar()); 
+
+            for (int i = 0; i < 5; i++)
             {
-                empID.Append(RandomChar());      
-                empID.Append('-');             
-                empID.Append(RandomChar());      
-            }
-            else
-            {
-                empID.Append(RandomChar()); 
-                empID.Append(RandomChar()); 
-                empID.Append(RandomChar());      
+                empID.Append(random.Next(0, 10)); 
             }
 
-            empID.Append(random.Next(1, 10));   
-            for (int i = 0; i < 4; i++)         
-            {
-                empID.Append(random.Next(0, 10));
-            }
-
-            empID.Append("FM");
+            int ForM = random.Next(0, 2);
+            if(ForM==0)
+                empID.Append("F"); 
+            else empID.Append("M");
 
             return empID.ToString();
         }
@@ -177,6 +175,42 @@ namespace BookStore
         {
             return (char)random.Next('A', 'Z' + 1);
         }
+
+        private int GetMinLevelForJob(int lvl)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query = "SELECT min_lvl FROM jobs WHERE job_id = @Lvl";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Lvl", lvl);
+
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            return Convert.ToInt32(result);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"No job found for the level {lvl}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return -1; 
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error retrieving min level: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return -1; 
+            }
+        }
+
 
         private void SaveOrUpdateEntity()
         {
@@ -195,7 +229,7 @@ namespace BookStore
                     else
                     {
                         // Insert new record
-                        query = "INSERT INTO employee (emp_id, fname, minit, lname, job_id, hire_date) VALUES (@ID, @FirstName, @MiddleName, @LastName, @JobId, @HireDate)";
+                        query = "INSERT INTO employee (emp_id, fname, minit, lname, job_id, job_lvl, hire_date) VALUES (@ID, @FirstName, @MiddleName, @LastName, @JobId, @JobLvl, @HireDate)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -209,6 +243,7 @@ namespace BookStore
                             cmd.Parameters.AddWithValue("@ID", GenerateRandomEmployeeID());
                         }
 
+                        cmd.Parameters.AddWithValue("@JobLvl", GetMinLevelForJob(int.Parse(comboBoxJob.SelectedItem.ToString())));
                         cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
                         cmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
                         cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
