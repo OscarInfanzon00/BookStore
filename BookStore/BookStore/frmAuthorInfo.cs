@@ -23,8 +23,8 @@ namespace BookStore {
 
             try {
                 string insert =
-                "INSERT INTO Authors (Au_id, Au_lName, Au_fName, Phone, Address, City, State, Zip, Contract) " +
-                "VALUES (@Id, @LastName, @FirstName, @Phone, @Address, @City, @State, @Zip, @Contract)";
+                "INSERT INTO Authors (Au_lName, Au_fName, Phone, Address, City, State, Zip, Contract) " +
+                "VALUES (@LastName, @FirstName, @Phone, @Address, @City, @State, @Zip, @Contract)";
 
                 using SqlConnection connection = new(connectionString);
                 using SqlCommand command = new SqlCommand(insert, connection);
@@ -54,7 +54,7 @@ namespace BookStore {
         }
 
         private void btnCancel_Click (object sender, EventArgs e) {
-            Close();
+            this.Close();
         }
 
         private bool ValidateEntries () {

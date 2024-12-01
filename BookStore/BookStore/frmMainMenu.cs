@@ -1,25 +1,15 @@
 ﻿using BookStoreTitleStores;
+using Microsoft.Data.SqlClient;
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp;
 
-namespace BookStore
-{
-    public partial class frmMainMenu : Form
-    {
+namespace BookStore {
+    public partial class frmMainMenu : Form {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
 
-        public frmMainMenu(String employeeName, String employeeMiddleName, String employeeLastName, String employeeLvl, DateTime employeeHiringDate)
-        {
+        public frmMainMenu (String employeeName, String employeeMiddleName, String employeeLastName, String employeeLvl, DateTime employeeHiringDate) {
             InitializeComponent();
 
             labelUsername.Text = "Username: " + employeeName + " " + employeeMiddleName + ". " + employeeLastName;
@@ -27,28 +17,23 @@ namespace BookStore
             labelUserHiringDate.Text = employeeHiringDate.ToString();
         }
 
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-                try
-                {
+        private void MainMenu_Load (object sender, EventArgs e) {
+            try {
                 comboBoxTable.SelectedIndex = 2;
                 LoadDataInTable(sender, e);
-                    MessageBox.Show("Data base connection succesfully opened.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Data base connection succesfully opened.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) {
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        public void LoadDataInTable(object sender, EventArgs e)
-        {
+        public void LoadDataInTable (object sender, EventArgs e) {
             int type = comboBoxTable.SelectedIndex;
 
             string query = string.Empty;
 
-            switch (type)
-            {
+            switch (type) {
                 case 0:
                     query = "SELECT * FROM authors";
                     break;
@@ -72,14 +57,11 @@ namespace BookStore
                     return;
             }
 
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
+            try {
+                using (SqlConnection connection = new SqlConnection(connectionString)) {
                     connection.Open();
 
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection))
-                    {
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, connection)) {
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
@@ -87,17 +69,14 @@ namespace BookStore
                     }
                 }
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
-        private void FillTable(DataGridView dataGridView, DataTable dataTable)
-        {
-            if (dataGridView == null || dataTable == null)
-            {
+        private void FillTable (DataGridView dataGridView, DataTable dataTable) {
+            if (dataGridView == null || dataTable == null) {
                 throw new ArgumentNullException("DataGridView and DataTable cannot be null.");
             }
 
@@ -108,8 +87,7 @@ namespace BookStore
             dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
-        private void InitializeComponent()
-        {
+        private void InitializeComponent () {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -428,34 +406,27 @@ namespace BookStore
 
         }
 
-        private void openDBToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void openDBToolStripMenuItem_Click (object sender, EventArgs e) {
             MainMenu_Load(sender, e);
         }
 
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void exitToolStripMenuItem_Click (object sender, EventArgs e) {
             SqlConnection connection = null;
 
-            try
-            {
+            try {
                 connection = new SqlConnection(connectionString);
-                if (connection != null && connection.State == ConnectionState.Open)
-                {
+                if (connection != null && connection.State == ConnectionState.Open) {
                     connection.Close();
                 }
                 Close();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void GetSelectedRowValues(DataGridView dataGridView)
-        {
-            if (dataGridView.SelectedRows.Count > 0 && dataGridView.SelectedRows!=null)
-            {
+        private void GetSelectedRowValues (DataGridView dataGridView) {
+            if (dataGridView.SelectedRows.Count > 0 && dataGridView.SelectedRows != null) {
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
 
                 DataGridViewCell cell = selectedRow.Cells[0];
@@ -463,8 +434,7 @@ namespace BookStore
 
                 MessageBox.Show("You are editing now. When click Save the data will be updated in the database.", "Editor", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                switch (comboBoxTable.SelectedIndex)
-                {
+                switch (comboBoxTable.SelectedIndex) {
                     case 0:
                         frmAuthorInfo frmAuthorInfo = new frmAuthorInfo(objectID);
                         frmAuthorInfo.Show();
@@ -493,89 +463,74 @@ namespace BookStore
                         MessageBox.Show("Invalid type selected!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                 }
-                
+
             }
-            else
-            {
+            else {
                 MessageBox.Show("No row is selected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
-        private void buttonReports_Click(object sender, EventArgs e)
-        {
+        private void buttonReports_Click (object sender, EventArgs e) {
             frmSalesReport salesReport = new frmSalesReport();
             salesReport.Show();
         }
 
-        private void MainMenu_Load_1(object sender, EventArgs e)
-        {
+        private void MainMenu_Load_1 (object sender, EventArgs e) {
 
         }
 
-        private void addToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void addToolStripMenuItem_Click (object sender, EventArgs e) {
 
         }
 
-        private void titleToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void titleToolStripMenuItem_Click (object sender, EventArgs e) {
             frmTitle frmTitle = new frmTitle();
             frmTitle.Show();
         }
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void aboutToolStripMenuItem_Click (object sender, EventArgs e) {
             frmAbout frmAboutActivity = new frmAbout();
             frmAboutActivity.Show();
         }
 
-        private void storesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void storesToolStripMenuItem_Click (object sender, EventArgs e) {
             frmStores frmStores = new frmStores();
             frmStores.Show();
         }
 
-        private void employeeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void employeeToolStripMenuItem_Click (object sender, EventArgs e) {
             frmEmployee frmEmployee = new frmEmployee();
             frmEmployee.Show();
         }
 
-        private void discountToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void discountToolStripMenuItem_Click (object sender, EventArgs e) {
             frmDiscounts frmDiscounts = new frmDiscounts();
             frmDiscounts.Show();
         }
-        private void editObjectfromTable(object sender, EventArgs e)
-        {
+        private void editObjectfromTable (object sender, EventArgs e) {
             GetSelectedRowValues(dataGridViewTable);
         }
 
-        private void buttonNewOrder_Click(object sender, EventArgs e)
-        {
+        private void buttonNewOrder_Click (object sender, EventArgs e) {
             frmShoppingCartOrder frmShoppingCartOrder = new frmShoppingCartOrder();
             frmShoppingCartOrder.Show();
         }
 
-        private void publisherToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void publisherToolStripMenuItem_Click (object sender, EventArgs e) {
             frmPublisherInfo frmPublisherInfo = new frmPublisherInfo();
             frmPublisherInfo.Show();
         }
 
-        private void authorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        private void authorToolStripMenuItem_Click (object sender, EventArgs e) {
             frmAuthorInfo frmAuthorInfo = new frmAuthorInfo();
             frmAuthorInfo.Show();
         }
 
-        private void buttonLogOut_Click(object sender, EventArgs e)
-        {
+        private void buttonLogOut_Click (object sender, EventArgs e) {
             SqlConnection connection = null;
 
             connection = new SqlConnection(connectionString);
-            if (connection != null && connection.State == ConnectionState.Open)
-            {
+            if (connection != null && connection.State == ConnectionState.Open) {
                 connection.Close();
             }
 
