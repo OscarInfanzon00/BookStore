@@ -137,6 +137,7 @@ namespace BookStore
             this.buttonReports = new System.Windows.Forms.Button();
             this.buttonLogOut = new System.Windows.Forms.Button();
             this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonReloadResults = new System.Windows.Forms.Button();
             this.menuStrip.SuspendLayout();
             this.groupBoxUser.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -399,9 +400,20 @@ namespace BookStore
             this.buttonEdit.UseVisualStyleBackColor = true;
             this.buttonEdit.Click += new System.EventHandler(this.editObjectfromTable);
             // 
+            // buttonReloadResults
+            // 
+            this.buttonReloadResults.Location = new System.Drawing.Point(365, 204);
+            this.buttonReloadResults.Name = "buttonReloadResults";
+            this.buttonReloadResults.Size = new System.Drawing.Size(124, 31);
+            this.buttonReloadResults.TabIndex = 9;
+            this.buttonReloadResults.Text = "Reload results";
+            this.buttonReloadResults.UseVisualStyleBackColor = true;
+            this.buttonReloadResults.Click += new System.EventHandler(this.buttonReloadResults_Click);
+            // 
             // frmMainMenu
             // 
             this.ClientSize = new System.Drawing.Size(1307, 788);
+            this.Controls.Add(this.buttonReloadResults);
             this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.buttonLogOut);
             this.Controls.Add(this.buttonReports);
@@ -582,6 +594,11 @@ namespace BookStore
             frmLogin frmLogin = new frmLogin();
             frmLogin.Show();
             Close();
+        }
+
+        private void buttonReloadResults_Click(object sender, EventArgs e)
+        {
+            LoadDataInTable(sender, e);
         }
     }
 }

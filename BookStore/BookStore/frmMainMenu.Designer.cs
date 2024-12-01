@@ -46,6 +46,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonLogOut;
         private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonReloadResults;
     }
 }
 

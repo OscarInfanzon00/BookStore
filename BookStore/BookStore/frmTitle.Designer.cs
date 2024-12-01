@@ -277,10 +277,6 @@
             // 
             this.comboBoxPubInfo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPubInfo.FormattingEnabled = true;
-            this.comboBoxPubInfo.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.comboBoxPubInfo.Location = new System.Drawing.Point(378, 354);
             this.comboBoxPubInfo.Name = "comboBoxPubInfo";
             this.comboBoxPubInfo.Size = new System.Drawing.Size(223, 24);

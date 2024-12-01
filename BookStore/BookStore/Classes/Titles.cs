@@ -12,7 +12,7 @@ namespace BookStore
         private string title_id;
         private string title;
         private string type;
-        private char pub_id;
+        private string pub_id;
         private decimal price;
         private decimal advance;
         private int royalty;
@@ -20,7 +20,7 @@ namespace BookStore
         private string notes;
         private DateTime pubdate;
         
-    public Titles(string title_id, string title, string type, char pub_id, decimal price, decimal advance, int royalty, int ytd_sales, string notes, DateTime pubdate)
+    public Titles(string title_id, string title, string type, string pub_id, decimal price, decimal advance, int royalty, int ytd_sales, string notes, DateTime pubdate)
         {
             this.title_id = title_id;
             this.title = title;
@@ -49,7 +49,7 @@ namespace BookStore
             get { return type; }
             set { type = type; }
         }
-        public char Pub_id
+        public string Pub_id
         {
             get { return pub_id; }
             set { pub_id = value; }

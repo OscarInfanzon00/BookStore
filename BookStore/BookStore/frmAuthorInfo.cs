@@ -20,7 +20,7 @@ namespace BookStore
         private void btnSave_Click (object sender, EventArgs e) {
             if (!ValidateEntries())
                 return;
-
+            /*
             try {
                 string insert =
                 "INSERT INTO Authors (Au_id, Au_lName, Au_fName, Phone, Address, City, State, Zip, Contract) " +
@@ -51,6 +51,7 @@ namespace BookStore
 
             MessageBox.Show("Inputs are valid. Proceeding with save operation.");
             ClearForm();
+            */
         }
 
         private void btnCancel_Click (object sender, EventArgs e) {
