@@ -1,205 +1,25 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}</ProjectGuid>
+    <TargetFramework>net8.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>BookStore</RootNamespace>
-    <AssemblyName>BookStore</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Classes\Discounts.cs" />
-    <Compile Include="Classes\Employees.cs" />
-    <Compile Include="Classes\Sales.cs" />
-    <Compile Include="Classes\Stores.cs" />
-    <Compile Include="Classes\Titles.cs" />
-    <Compile Include="frmAuthorInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAuthorInfo.Designer.cs">
-      <DependentUpon>frmAuthorInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAbout.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAbout.Designer.cs">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmDiscounts.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDiscounts.Designer.cs">
-      <DependentUpon>frmDiscounts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEmployee.Designer.cs">
-      <DependentUpon>frmEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmStores.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStores.Designer.cs">
-      <DependentUpon>frmStores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTitle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTitle.Designer.cs">
-      <DependentUpon>frmTitle.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmOrderSummary.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOrderSummary.Designer.cs">
-      <DependentUpon>frmOrderSummary.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmReportWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReportWindow.Designer.cs">
-      <DependentUpon>frmReportWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmShoppingCartOrder.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmShoppingCartOrder.Designer.cs">
-      <DependentUpon>frmShoppingCartOrder.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSalesReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSalesReport.Designer.cs">
-      <DependentUpon>frmSalesReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMainMenu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMainMenu.Designer.cs">
-      <DependentUpon>frmMainMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmLogin.Designer.cs">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="frmPublisherInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPublisherInfo.Designer.cs">
-      <DependentUpon>frmPublisherInfo.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="frmAuthorInfo.resx">
-      <DependentUpon>frmAuthorInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAbout.resx">
-      <DependentUpon>frmAbout.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmDiscounts.resx">
-      <DependentUpon>frmDiscounts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployee.resx">
-      <DependentUpon>frmEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmStores.resx">
-      <DependentUpon>frmStores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTitle.resx">
-      <DependentUpon>frmTitle.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOrderSummary.resx">
-      <DependentUpon>frmOrderSummary.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReportWindow.resx">
-      <DependentUpon>frmReportWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmShoppingCartOrder.resx">
-      <DependentUpon>frmShoppingCartOrder.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSalesReport.resx">
-      <DependentUpon>frmSalesReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMainMenu.resx">
-      <DependentUpon>frmMainMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
-      <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="frmPublisherInfo.resx">
-      <DependentUpon>frmPublisherInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Screenshot 2024-11-23 153305.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Screenshot 2024-11-23 153305.png" />
-    <None Include="Resources\Screenshot 2024-11-23 1533051.png" />
-    <None Include="Resources\Screenshot 2024-11-24 153804.png" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ReportWindows.cs" />
+    <Compile Remove="ReportWindows.Designer.cs" />
+    <EmbeddedResource Remove="ReportWindows.resx" />
+  </ItemGroup>
 </Project>
