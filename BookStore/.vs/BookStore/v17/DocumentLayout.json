@@ -11,7 +11,7 @@
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmtitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\oscar\\onedrive\\documents\\github\\bookstore\\bookstore\\bookstore\\frmauthorinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\bookstore\\frmauthorinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmauthorinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -134,24 +134,11 @@
               "Title": "frmOrderSummary.cs [Design]",
               "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs",
               "RelativeDocumentMoniker": "BookStore\\frmOrderSummary.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs [Design]*",
-              "RelativeToolTip": "BookStore\\frmOrderSummary.cs [Design]*",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmOrderSummary.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmOrderSummary.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T19:26:06.799Z",
               "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "frmAuthorInfo.cs",
-              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
-              "RelativeDocumentMoniker": "BookStore\\frmAuthorInfo.cs",
-              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
-              "RelativeToolTip": "BookStore\\frmAuthorInfo.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAApwHQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T01:45:48.094Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -170,6 +157,27 @@
               "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_ONEDRIVE_DOCUMENTS_GITHUB_BOOKSTORE_BOOKSTORE_BOOKSTORE_BIN_DEBUG_BOOKSTORE.MDF/True/SqlTable/dbo.pub_info.sql",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
               "WhenOpened": "2024-12-01T02:58:04.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "dbo.discounts.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_ONEDRIVE_DOCUMENTS_GITHUB_BOOKSTORE_BOOKSTORE_BOOKSTORE_BIN_DEBUG_BOOKSTORE.MDF/True/SqlTable/dbo.discounts.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_ONEDRIVE_DOCUMENTS_GITHUB_BOOKSTORE_BOOKSTORE_BOOKSTORE_BIN_DEBUG_BOOKSTORE.MDF/True/SqlTable/dbo.discounts.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2024-12-01T04:42:44.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "frmAuthorInfo.cs",
+              "DocumentMoniker": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
+              "RelativeDocumentMoniker": "BookStore\\frmAuthorInfo.cs",
+              "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmAuthorInfo.cs",
+              "RelativeToolTip": "BookStore\\frmAuthorInfo.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAApwHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-01T01:45:48.094Z"
             },
             {
               "$type": "Document",
@@ -249,17 +257,7 @@
               "ToolTip": "C:\\Users\\oscar\\OneDrive\\Documents\\GitHub\\BookStore\\BookStore\\BookStore\\frmTitle.cs [Design]",
               "RelativeToolTip": "BookStore\\frmTitle.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T01:36:41.379Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "dbo.discounts.sql",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_ONEDRIVE_DOCUMENTS_GITHUB_BOOKSTORE_BOOKSTORE_BOOKSTORE_BIN_DEBUG_BOOKSTORE.MDF/True/SqlTable/dbo.discounts.sql",
-              "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_OSCAR_ONEDRIVE_DOCUMENTS_GITHUB_BOOKSTORE_BOOKSTORE_BOOKSTORE_BIN_DEBUG_BOOKSTORE.MDF/True/SqlTable/dbo.discounts.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-12-01T04:42:44.709Z"
+              "WhenOpened": "2024-12-01T01:36:41.379Z"
             },
             {
               "$type": "Document",
@@ -305,8 +303,7 @@
               "RelativeToolTip": "BookStore\\frmTitle.cs",
               "ViewState": "AgIAAMYAAAAAAAAAAAApwN8AAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T02:38:30.37Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-01T02:38:30.37Z"
             },
             {
               "$type": "Bookmark",
