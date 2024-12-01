@@ -7,16 +7,15 @@ using static System.Windows.Forms.AxHost;
 
 namespace BookStore.Classes
 {
-    internal class Discounts
+    public class Discounts
     {
         private string discounttype;
-        private char stor_id;
+        private string stor_id;
         private short lowqty;
         private short highqty;
         private decimal discount;
 
-        // Constructor
-        public Discounts(string discounttype, char stor_id, short lowqty, short highqty, decimal discount)
+        public Discounts(string discounttype, string stor_id, short lowqty, short highqty, decimal discount)
         {
             this.discounttype = discounttype;
             this.stor_id = stor_id;
@@ -25,13 +24,12 @@ namespace BookStore.Classes
             this.discount = discount;
         }
 
-        // Getters and Setters
         public string Discounttype
         {
             get { return discounttype; }
             set { discounttype = value; }
         }
-        public char Stor_id
+        public string Stor_id
         {
             get { return stor_id; }
             set { stor_id = value; }

@@ -11,16 +11,14 @@ namespace BookStore
     {
         private string emp_id;
         private string fname;
-        private string minit;
+        private char minit;
         private string lname;
         private short job_id;
         private short job_lvl;
-        private char pub_Id;
+        private string pub_Id;
         private DateTime hire_date;
 
-
-        // Constructor
-    public Employees(string emp_id, string fname, string minit, string lname, short job_id, short job_lvl, char pub_Id, DateTime hire_date)
+    public Employees(string emp_id, string fname, char minit, string lname, short job_id, short job_lvl, string pub_Id, DateTime hire_date)
         {
             this.emp_id = emp_id;
             this.fname = fname;
@@ -32,7 +30,6 @@ namespace BookStore
             this.hire_date = hire_date;
         }
 
-        // Getters and Setters
         public string Emp_id
         {
             get { return emp_id; }
@@ -43,7 +40,7 @@ namespace BookStore
             get { return fname; }
             set { fname = value; }
         }
-        public string Minit
+        public char Minit
         {
             get { return minit; }
             set { minit = value; }
@@ -63,7 +60,7 @@ namespace BookStore
             get { return job_lvl; }
             set { job_lvl = value; }
         }
-        public char Pub_Id
+        public string Pub_Id
         {
             get { return pub_Id; }
             set { pub_Id = value; }

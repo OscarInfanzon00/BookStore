@@ -14,33 +14,29 @@ namespace BookStore
         private string stor_address;
         private string city;
         private string state;
-        private short zip;
+        private string zip;
 
-        // Constructor
-        public Stores(string stor_id, DateTime ord_date, short qty, string payterms, string title_id)
+        public Stores(string stor_name, string stor_address, string city, string state, string zip)
         {
-            this.stor_id = stor_id;
             this.stor_name = stor_name;
             this.stor_address = stor_address;
             this.city = city;
             this.state = state;
-	    this.zip = zip;
+            this.zip = zip;
         }
-
-        // Getters and Setters
-        public string Storid
+        public string StorId
         {
             get { return stor_id; }
             set { stor_id = value; }
         }
 
-        public string Stor_name
+        public string StorName
         {
             get { return stor_name; }
             set { stor_name = value; }
         }
 
-        public string Stor_address
+        public string StorAddress
         {
             get { return stor_address; }
             set { stor_address = value; }
@@ -51,14 +47,12 @@ namespace BookStore
             get { return city; }
             set { city = value; }
         }
-
         public string State
         {
             get { return state; }
             set { state = value; }
         }
-
-        public short Zip
+        public string Zip
         {
             get { return zip; }
             set { zip = value; }

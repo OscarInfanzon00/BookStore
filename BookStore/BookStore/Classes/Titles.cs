@@ -13,16 +13,14 @@ namespace BookStore
         private string title;
         private string type;
         private char pub_id;
-        private int price;
-        private int advance;
+        private decimal price;
+        private decimal advance;
         private int royalty;
         private int ytd_sales;
         private string notes;
         private DateTime pubdate;
-
-
         
-    public Titles(string title_id, string title, string type, char pub_id, int price, int advance, int royalty, int ytd_sales, string notes, DateTime pubdate)
+    public Titles(string title_id, string title, string type, char pub_id, decimal price, decimal advance, int royalty, int ytd_sales, string notes, DateTime pubdate)
         {
             this.title_id = title_id;
             this.title = title;
@@ -36,7 +34,6 @@ namespace BookStore
 	    this.pubdate = pubdate;
         }
 
-        // Getters and Setters
         public string Title_id
         {
             get { return title_id; }
@@ -57,12 +54,12 @@ namespace BookStore
             get { return pub_id; }
             set { pub_id = value; }
         }
-        public int Price
+        public decimal Price
         {
             get { return price; }
             set { price = value; }
         }
-        public int Advance
+        public decimal Advance
         {
             get { return advance; }
             set { advance = value; }
@@ -77,7 +74,7 @@ namespace BookStore
             get { return ytd_sales; }
             set { ytd_sales = value; }
         }
-	public string Notes
+	    public string Notes
         {
             get{ return notes; }
 	    set{ notes = value; }

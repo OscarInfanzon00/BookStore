@@ -16,7 +16,6 @@ namespace BookStore
         private string payterms;
         private string title_id;
 
-        // Constructor
         public Sales(string stor_id, DateTime ord_date, short qty, string payterms, string title_id)
         {
             this.stor_id = stor_id;
@@ -26,7 +25,6 @@ namespace BookStore
             this.title_id = title_id;
         }
 
-        // Getters and Setters
         public string StorId
         {
             get { return stor_id; }
