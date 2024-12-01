@@ -1,6 +1,12 @@
-﻿using Microsoft.Data.SqlClient;
-using System;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BookStore {
@@ -12,7 +18,8 @@ namespace BookStore {
             InitializeComponent();
         }
 
-        public frmPublisherInfo (string objectID) {
+        public frmPublisherInfo(string objectID)
+        {
             this.objectID = objectID;
             InitializeComponent();
         }
@@ -20,27 +27,6 @@ namespace BookStore {
         private void btnSave_Click (object sender, EventArgs e) {
             if (!ValidateEntries())
                 return;
-
-            try {
-                string insert =
-                "INSERT INTO Publishers (pub_name, city, state, country) " +
-                "VALUES (@Name, @City, @State, @Country)";
-
-                using SqlConnection connection = new(connectionString);
-                using SqlCommand command = new SqlCommand(insert, connection);
-
-                command.Parameters.AddWithValue("@Name", txtName.Text);
-                command.Parameters.AddWithValue("@City", txtCity.Text);
-                command.Parameters.AddWithValue("@State", cboState.Text);
-                command.Parameters.AddWithValue("@Country", cboCountry.Text);
-
-                connection.Open();
-                command.ExecuteNonQuery();
-                btnCancel_Click(sender, e);
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
 
             MessageBox.Show("Inputs are valid. Proceeding with save operation.");
             ClearForm();
@@ -50,31 +36,37 @@ namespace BookStore {
             this.Close();
         }
 
-        private bool ValidateEntries () {
+        private bool ValidateEntries()
+        {
             StringBuilder errorMessage = new StringBuilder();
             bool isValid = true;
 
-            if (string.IsNullOrWhiteSpace(txtName.Text)) {
+            if (string.IsNullOrWhiteSpace(txtName.Text))
+            {
                 errorMessage.AppendLine("Name is required.");
                 isValid = false;
             }
 
-            if (string.IsNullOrWhiteSpace(txtCity.Text)) {
+            if (string.IsNullOrWhiteSpace(txtCity.Text))
+            {
                 errorMessage.AppendLine("City is required.");
                 isValid = false;
             }
 
-            if (cboState.SelectedIndex == -1) {
+            if (comboBoxState.SelectedIndex == -1)
+            {
                 errorMessage.AppendLine("State is required.");
                 isValid = false;
             }
 
-            if (cboCountry.SelectedIndex == -1) {
+            if (comboBoxCountry.SelectedIndex == -1)
+            {
                 errorMessage.AppendLine("Country is required.");
                 isValid = false;
             }
 
-            if (!isValid) {
+            if (!isValid)
+            {
                 errorMessage.AppendLine("Please fix listed entries and resubmit.");
                 MessageBox.Show(errorMessage.ToString(), "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -86,15 +78,16 @@ namespace BookStore {
         private void ClearForm () {
             txtName.Text = string.Empty;
             txtCity.Text = string.Empty;
-            cboCountry.SelectedIndex = -1;
-            cboState.SelectedIndex = -1;
+            comboBoxCountry.SelectedIndex = -1;
+            comboBoxState.SelectedIndex = -1;
         }
 
         private void btnClear_Click (object sender, EventArgs e) {
             ClearForm();
         }
 
-        private void frmPublisherInfo_Load (object sender, EventArgs e) {
+        private void frmPublisherInfo_Load(object sender, EventArgs e)
+        {
 
         }
     }
