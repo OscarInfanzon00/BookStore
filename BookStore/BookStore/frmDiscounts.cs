@@ -164,12 +164,32 @@ namespace BookStore
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-
                         cmd.Parameters.AddWithValue("@Type", comboBoxType.SelectedItem?.ToString() ?? string.Empty);
-                        cmd.Parameters.AddWithValue("@LowQty", int.Parse(txtLowQTY.Text));
-                        cmd.Parameters.AddWithValue("@HighQty", int.Parse(txtHighQTY.Text));
-                        cmd.Parameters.AddWithValue("@Discount", decimal.Parse(txtDiscount.Text));
-                        cmd.Parameters.AddWithValue("@StoreID", (txtBoxStoreID.Text));
+
+                        if (!int.TryParse(txtLowQTY.Text, out int lowQTY))
+                        {
+                            MessageBox.Show("Invalid Low Qty value.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        cmd.Parameters.AddWithValue("@LowQty", lowQTY);
+
+                        if (!int.TryParse(txtHighQTY.Text, out int highQTY))
+                        {
+                            MessageBox.Show("Invalid High Qty value.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        cmd.Parameters.AddWithValue("@HighQty", highQTY);
+
+                        decimal discount;
+                        if (!decimal.TryParse(txtDiscount.Text, out discount) || discount < -99.99m || discount > 99.99m)
+                        {
+                            MessageBox.Show("Discount must be a numeric value between -99.99 and 99.99.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        cmd.Parameters.Add("@Discount", SqlDbType.Decimal).Value = Math.Round(discount, 2);
+
+                        string storeId = txtBoxStoreID.Text.PadRight(4).Substring(0, 4);
+                        cmd.Parameters.AddWithValue("@StoreID", storeId);
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -180,13 +200,14 @@ namespace BookStore
             }
             catch (SqlException sqlEx)
             {
-                MessageBox.Show($"Check the store ID.", "Store ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error saving data: {sqlEx.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void btn_Click(object sender, EventArgs e)

@@ -109,6 +109,21 @@ namespace BookStoreTitleStores
             }
         }
 
+        private string GenerateRandomStoreID()
+        {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; 
+            char[] idChars = new char[4];
+
+            for (int i = 0; i < 4; i++)
+            {
+                idChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(idChars);
+        }
+
+
         private void SaveOrUpdateEntity()
         {
             try
@@ -126,7 +141,7 @@ namespace BookStoreTitleStores
                     else
                     {
                         // Insert new record
-                        query = "INSERT INTO stores (stor_name, stor_address, city, state, zip) VALUES (@StoreName, @Address, @City, @State, @Zip)";
+                        query = "INSERT INTO stores (stor_id, stor_name, stor_address, city, state, zip) VALUES (@ID, @StoreName, @Address, @City, @State, @Zip)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -135,6 +150,10 @@ namespace BookStoreTitleStores
                         if (!string.IsNullOrWhiteSpace(objectID))
                         {
                             cmd.Parameters.AddWithValue("@Id", objectID);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID", GenerateRandomStoreID());
                         }
 
                         cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);

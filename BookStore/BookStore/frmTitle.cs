@@ -185,6 +185,21 @@ namespace BookStoreTitleStores
             }
         }
 
+        private string GenerateRandomTitleID()
+        {
+            Random random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; 
+            char[] idChars = new char[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                idChars[i] = chars[random.Next(chars.Length)];
+            }
+
+            return new string(idChars);
+        }
+
+
         private void SaveOrUpdateEntity()
         {
             try
@@ -202,12 +217,20 @@ namespace BookStoreTitleStores
                     else
                     {
                         // Insert new record
-                        query = "INSERT INTO titles (title, type, price, advance, royalty, ytd_Sales, Notes, pubdate, pub_id) VALUES (@Title, @Type, @Price, @Advance, @Royalty, @YTDSales, @Notes, @PubDate, @PubInfo)";
+                        query = "INSERT INTO titles (title_id, title, type, price, advance, royalty, ytd_Sales, Notes, pubdate, pub_id) VALUES (@ID, @Title, @Type, @Price, @Advance, @Royalty, @Ytd_sales, @Notes, @PubDate, @PubInfo)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Id", objectID);
+                        if (!string.IsNullOrWhiteSpace(objectID))
+                        {
+                            cmd.Parameters.AddWithValue("@Id", objectID);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID", GenerateRandomTitleID());
+                        }
+                        
                         cmd.Parameters.AddWithValue("@Title", txtTitle.Text);
                         cmd.Parameters.AddWithValue("@Type", txtType.Text);
                         cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtPrice.Text));

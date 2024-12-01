@@ -71,6 +71,16 @@ namespace BookStore
             }
         }
 
+        private string GenerateAuId()
+        {
+            Random random = new Random();
+            string part1 = random.Next(100, 1000).ToString(); 
+            string part2 = random.Next(10, 100).ToString();   
+            string part3 = random.Next(1000, 10000).ToString(); 
+
+            return $"{part1}-{part2}-{part3}";
+        }
+
         private void SaveOrUpdateEntity()
         {
             try
@@ -88,7 +98,7 @@ namespace BookStore
                     else
                     {
                         // Insert new record
-                        query = "INSERT INTO authors (au_fname, au_lname, phone, address, city, state, zip, contract) VALUES (@FirstName, @LastName, @Phone, @Address, @City, @State, @Zip, @Contract)";
+                        query = "INSERT INTO authors (au_id, au_fname, au_lname, phone, address, city, state, zip, contract) VALUES (@ID, @FirstName, @LastName, @Phone, @Address, @City, @State, @Zip, @Contract)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -97,6 +107,11 @@ namespace BookStore
                         {
                             cmd.Parameters.AddWithValue("@Id", objectID);
                         }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID", GenerateAuId());
+                        }
+
 
                         cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
                         cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);

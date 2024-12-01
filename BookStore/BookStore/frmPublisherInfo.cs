@@ -124,6 +124,26 @@ namespace BookStore {
             }
         }
 
+        private string GenerateRandomPublisherID()
+        {
+            Random random = new Random();
+
+            string[] predefinedIDs = { "1756", "1622", "0877", "0736", "1389" };
+
+            string pubID;
+            if (random.NextDouble() > 0.5)  
+            {
+                pubID = predefinedIDs[random.Next(predefinedIDs.Length)];
+            }
+            else
+            {
+                pubID = "99" + random.Next(10, 100).ToString("D2");  
+            }
+
+            return pubID;
+        }
+
+
         private void SaveOrUpdateEntity()
         {
             try
@@ -141,7 +161,7 @@ namespace BookStore {
                     else
                     {
                         // Insert new record
-                        query = "INSERT INTO publishers (pub_name, city, state, country) VALUES (@PubName, @City, @State, @Country)";
+                        query = "INSERT INTO publishers (pub_id, pub_name, city, state, country) VALUES (@ID, @PubName, @City, @State, @Country)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -149,6 +169,10 @@ namespace BookStore {
                         if (!string.IsNullOrWhiteSpace(objectID))
                         {
                             cmd.Parameters.AddWithValue("@Id", objectID);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID", GenerateRandomPublisherID());
                         }
 
                         cmd.Parameters.AddWithValue("@PubName", txtName.Text);

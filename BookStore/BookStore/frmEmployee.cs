@@ -18,6 +18,7 @@ namespace BookStore
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
         private string objectID;
+        private static Random random = new Random();
 
         public frmEmployee()
         {
@@ -41,12 +42,6 @@ namespace BookStore
             if (string.IsNullOrWhiteSpace(txtFirstName.Text))
             {
                 errorMessage.AppendLine("Employee First Name is required.");
-                isValid = false;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtMiddleName.Text))
-            {
-                errorMessage.AppendLine("Employee Middle Name is required.");
                 isValid = false;
             }
 
@@ -149,6 +144,40 @@ namespace BookStore
             }
         }
 
+        public static string GenerateRandomEmployeeID()
+        {
+            StringBuilder empID = new StringBuilder();
+
+            bool isFormat2 = random.Next(0, 2) == 1;
+            if (isFormat2)
+            {
+                empID.Append(RandomChar());      
+                empID.Append('-');             
+                empID.Append(RandomChar());      
+            }
+            else
+            {
+                empID.Append(RandomChar()); 
+                empID.Append(RandomChar()); 
+                empID.Append(RandomChar());      
+            }
+
+            empID.Append(random.Next(1, 10));   
+            for (int i = 0; i < 4; i++)         
+            {
+                empID.Append(random.Next(0, 10));
+            }
+
+            empID.Append("FM");
+
+            return empID.ToString();
+        }
+
+        private static char RandomChar()
+        {
+            return (char)random.Next('A', 'Z' + 1);
+        }
+
         private void SaveOrUpdateEntity()
         {
             try
@@ -166,7 +195,7 @@ namespace BookStore
                     else
                     {
                         // Insert new record
-                        query = "INSERT INTO employee (fname, minit, lname, job_id, hire_date) VALUES (@FirstName, @MiddleName, @LastName, @JobId, @HireDate)";
+                        query = "INSERT INTO employee (emp_id, fname, minit, lname, job_id, hire_date) VALUES (@ID, @FirstName, @MiddleName, @LastName, @JobId, @HireDate)";
                     }
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -174,6 +203,10 @@ namespace BookStore
                         if (!string.IsNullOrWhiteSpace(objectID))
                         {
                             cmd.Parameters.AddWithValue("@Id", objectID);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ID", GenerateRandomEmployeeID());
                         }
 
                         cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
