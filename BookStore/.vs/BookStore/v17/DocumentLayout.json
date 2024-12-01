@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\bookstore\\frmpublisherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmpublisherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|c:\\users\\isaiah simon\\downloads\\new folder (6)\\bookstore\\bookstore\\bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmmainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\bookstore\\frmemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\bookstore\\frmpublisherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\frmpublisherinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E66FC6C0-407A-43C6-8C1D-BE101DE5FC8B}|BookStore\\BookStore.csproj|C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\bookstore\\frmlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,7 +54,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "frmEmployee.cs",
               "DocumentMoniker": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
               "RelativeDocumentMoniker": "BookStore\\frmEmployee.cs",
@@ -66,14 +66,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "frmPublisherInfo.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs",
               "RelativeDocumentMoniker": "BookStore\\frmPublisherInfo.cs",
-              "ToolTip": "C:\\Users\\Isaiah Simon\\Downloads\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs [Design]",
-              "RelativeToolTip": "..\\..\\..\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs [Design]",
+              "ToolTip": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\BookStore\\frmPublisherInfo.cs [Design]",
+              "RelativeToolTip": "BookStore\\frmPublisherInfo.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-01T00:51:44.049Z"
+              "WhenOpened": "2024-12-01T00:51:44.049Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
@@ -88,7 +89,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "frmEmployee.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\BookStore\\frmEmployee.cs",
               "RelativeDocumentMoniker": "BookStore\\frmEmployee.cs",
@@ -99,13 +100,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "frmMainMenu.cs",
               "DocumentMoniker": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
               "RelativeDocumentMoniker": "BookStore\\frmMainMenu.cs",
               "ToolTip": "C:\\Users\\Isaiah Simon\\Downloads\\New folder (6)\\BookStore\\BookStore\\BookStore\\frmMainMenu.cs",
               "RelativeToolTip": "BookStore\\frmMainMenu.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-01T00:51:10.426Z",
               "EditorCaption": ""
