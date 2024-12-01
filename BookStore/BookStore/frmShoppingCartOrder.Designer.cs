@@ -38,6 +38,8 @@
             this.textBoxQTY = new System.Windows.Forms.TextBox();
             this.buttonAddProduct = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxStoreID = new System.Windows.Forms.TextBox();
             this.buttonRemove = new System.Windows.Forms.Button();
             this.dataGridViewShoppingCart = new System.Windows.Forms.DataGridView();
             this.buttonCancelOrder = new System.Windows.Forms.Button();
@@ -51,8 +53,6 @@
             this.comboBoxPayment = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxDiscount = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBoxStoreID = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTitle)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewShoppingCart)).BeginInit();
@@ -96,6 +96,7 @@
             this.dataGridViewTitle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTitle.Location = new System.Drawing.Point(51, 131);
             this.dataGridViewTitle.Name = "dataGridViewTitle";
+            this.dataGridViewTitle.ReadOnly = true;
             this.dataGridViewTitle.RowHeadersWidth = 51;
             this.dataGridViewTitle.RowTemplate.Height = 24;
             this.dataGridViewTitle.Size = new System.Drawing.Size(1214, 165);
@@ -141,6 +142,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Shopping Cart";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 218);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Store ID";
+            // 
+            // textBoxStoreID
+            // 
+            this.textBoxStoreID.Location = new System.Drawing.Point(95, 218);
+            this.textBoxStoreID.Name = "textBoxStoreID";
+            this.textBoxStoreID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStoreID.TabIndex = 22;
+            // 
             // buttonRemove
             // 
             this.buttonRemove.Location = new System.Drawing.Point(538, 199);
@@ -160,6 +178,7 @@
             this.dataGridViewShoppingCart.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShoppingCart.Location = new System.Drawing.Point(22, 32);
             this.dataGridViewShoppingCart.Name = "dataGridViewShoppingCart";
+            this.dataGridViewShoppingCart.ReadOnly = true;
             this.dataGridViewShoppingCart.RowHeadersWidth = 51;
             this.dataGridViewShoppingCart.RowTemplate.Height = 24;
             this.dataGridViewShoppingCart.Size = new System.Drawing.Size(1170, 150);
@@ -279,23 +298,6 @@
             this.comboBoxDiscount.Name = "comboBoxDiscount";
             this.comboBoxDiscount.Size = new System.Drawing.Size(121, 24);
             this.comboBoxDiscount.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 218);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 20);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Store ID";
-            // 
-            // textBoxStoreID
-            // 
-            this.textBoxStoreID.Location = new System.Drawing.Point(95, 218);
-            this.textBoxStoreID.Name = "textBoxStoreID";
-            this.textBoxStoreID.Size = new System.Drawing.Size(100, 22);
-            this.textBoxStoreID.TabIndex = 22;
             // 
             // frmShoppingCartOrder
             // 

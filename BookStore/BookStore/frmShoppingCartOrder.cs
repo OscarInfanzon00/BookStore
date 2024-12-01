@@ -157,7 +157,7 @@ namespace BookStore
                         {
                             fillOutSalesList();
                             if (salesList.Count != 0) {
-                                frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total, salesList, this);
+                                frmOrderSummary orderSummaryForm = new frmOrderSummary(dataGridViewShoppingCart.Rows, Total, salesList, this, comboBoxDiscount.SelectedItem.ToString(), textBoxStoreID.Text);
                                 orderSummaryForm.Show();
                             }
                         }

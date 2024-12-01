@@ -1,8 +1,10 @@
 ﻿using BookStore;
+using BookStore.Classes;
 using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp
@@ -13,30 +15,99 @@ namespace WindowsFormsApp
         private List<Sales> salesList = new List<Sales>();
         private Form parentForm;
 
-        public frmOrderSummary(DataGridViewRowCollection cartData, decimal total, List<Sales> salesList, Form parent)
+        public frmOrderSummary(DataGridViewRowCollection cartData, decimal total, List<Sales> salesList, Form parent, string discountName, string storeID)
         {
             InitializeComponent();
             InitializeDatabaseConnection();
 
-            foreach (DataGridViewRow row in cartData)
+            decimal totalSavings = 0; 
+
+            this.salesList = salesList;
+
+            Discounts discount = LoadDiscountData(discountName, storeID);
+
+            if (discount != null)
             {
-                if (row.Cells["title"].Value != null) 
+                foreach (DataGridViewRow row in cartData)
                 {
-                    tableOrderItems.Rows.Add(
-                        row.Cells["title_id"].Value.ToString(),
-                        row.Cells["title"].Value.ToString(),
-                        row.Cells["price"].Value.ToString(),
-                        row.Cells["qty"].Value.ToString(),
-                        row.Cells["subtotal"].Value.ToString()
-                    );
+                    if (row.Cells["title"].Value != null)
+                    {
+                        decimal itemTotal = Convert.ToDecimal(row.Cells["subtotal"].Value);
+                        decimal itemDiscount = 0;
+
+                        if (discount.Discounttype == "Volume Discount")
+                        {
+                            if (itemTotal >= discount.Lowqty && itemTotal <= discount.Highqty)
+                            {
+                                itemDiscount = itemTotal * (discount.Discount / 100); 
+                            }
+                        }
+                        else if (discount.Discounttype == "Customer Discount" || discount.Discounttype == "Initial Customer")
+                        {
+                            itemDiscount = discount.Discount; 
+                        }
+
+                        totalSavings += itemDiscount;
+
+                        tableOrderItems.Rows.Add(
+                            row.Cells["title_id"].Value.ToString(),
+                            row.Cells["title"].Value.ToString(),
+                            row.Cells["price"].Value.ToString(),
+                            row.Cells["qty"].Value.ToString(),
+                            row.Cells["subtotal"].Value.ToString(),
+                            itemDiscount > 0 ? $"{itemDiscount:F2}" : "No Discount"  
+                        );
+                    }
                 }
             }
 
-            lblTotalPrice.Text = $"Total Price: ${total:F2}";
-            lblOrderNumber.Text = "Order Number: JHBDJS12";
-            this.salesList = salesList;
+            decimal finalTotal = total - totalSavings;
+
+            tableOrderItems.Rows.Add("Savings", "", "", "", "", $"-${totalSavings:F2}");
+
+            lblTotalPrice.Text = $"Total Price: ${finalTotal:F2}";
+
             this.parentForm = parent;
         }
+
+        private Discounts LoadDiscountData(string discountName, string storeID)
+        {
+            Discounts discount = null;
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))  
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM discounts WHERE discounttype = @Type AND stor_id = @StoreID";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = discountName;
+                        cmd.Parameters.Add("@StoreID", SqlDbType.NVarChar).Value = storeID;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                discount = new Discounts(reader["discounttype"]?.ToString(), reader["stor_id"]?.ToString(), Convert.ToInt16(reader["lowqty"]), Convert.ToInt16(reader["highqty"]), Convert.ToDecimal(reader["discount"]));
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Database error: {sqlEx.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading discount: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return discount;
+        }
+
 
         private void InitializeDatabaseConnection()
         {

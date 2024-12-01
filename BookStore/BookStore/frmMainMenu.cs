@@ -328,6 +328,7 @@ namespace BookStore
             this.dataGridViewTable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dataGridViewTable.Location = new System.Drawing.Point(27, 256);
             this.dataGridViewTable.Name = "dataGridViewTable";
+            this.dataGridViewTable.ReadOnly = true;
             this.dataGridViewTable.RowHeadersWidth = 51;
             this.dataGridViewTable.RowTemplate.Height = 24;
             this.dataGridViewTable.Size = new System.Drawing.Size(1253, 433);

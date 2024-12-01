@@ -56,6 +56,7 @@
             this.dataGridViewOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewOrder.Location = new System.Drawing.Point(13, 13);
             this.dataGridViewOrder.Name = "dataGridViewOrder";
+            this.dataGridViewOrder.ReadOnly = true;
             this.dataGridViewOrder.RowHeadersWidth = 51;
             this.dataGridViewOrder.RowTemplate.Height = 24;
             this.dataGridViewOrder.Size = new System.Drawing.Size(551, 602);

@@ -47,7 +47,7 @@ namespace BookStore
         public string Type
         {
             get { return type; }
-            set { type = type; }
+            set { type = value; }
         }
         public string Pub_id
         {

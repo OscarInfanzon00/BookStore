@@ -25,14 +25,15 @@
             this.lblOrderNumber = new System.Windows.Forms.Label();
             this.lblCustomerDetails = new System.Windows.Forms.Label();
             this.tableOrderItems = new System.Windows.Forms.DataGridView();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.ItemID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ItemName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Discount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTotalPrice = new System.Windows.Forms.Label();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tableOrderItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,9 +44,8 @@
             this.lblOrderNumber.Location = new System.Drawing.Point(23, 62);
             this.lblOrderNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOrderNumber.Name = "lblOrderNumber";
-            this.lblOrderNumber.Size = new System.Drawing.Size(134, 20);
+            this.lblOrderNumber.Size = new System.Drawing.Size(0, 20);
             this.lblOrderNumber.TabIndex = 0;
-            this.lblOrderNumber.Text = "Order Number:";
             // 
             // lblCustomerDetails
             // 
@@ -65,47 +65,19 @@
             this.tableOrderItems.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.tableOrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tableOrderItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ItemID,
             this.ItemName,
             this.Quantity,
             this.Price,
             this.Subtotal,
             this.Discount});
-            this.tableOrderItems.Location = new System.Drawing.Point(27, 98);
+            this.tableOrderItems.Location = new System.Drawing.Point(27, 29);
             this.tableOrderItems.Margin = new System.Windows.Forms.Padding(4);
             this.tableOrderItems.Name = "tableOrderItems";
+            this.tableOrderItems.ReadOnly = true;
             this.tableOrderItems.RowHeadersWidth = 51;
-            this.tableOrderItems.Size = new System.Drawing.Size(814, 254);
+            this.tableOrderItems.Size = new System.Drawing.Size(814, 323);
             this.tableOrderItems.TabIndex = 2;
-            // 
-            // ItemName
-            // 
-            this.ItemName.HeaderText = "Item Name";
-            this.ItemName.MinimumWidth = 6;
-            this.ItemName.Name = "ItemName";
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantity";
-            this.Quantity.MinimumWidth = 6;
-            this.Quantity.Name = "Quantity";
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 6;
-            this.Price.Name = "Price";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.MinimumWidth = 6;
-            this.Subtotal.Name = "Subtotal";
-            // 
-            // Discount
-            // 
-            this.Discount.HeaderText = "Discount";
-            this.Discount.MinimumWidth = 6;
-            this.Discount.Name = "Discount";
             // 
             // lblTotalPrice
             // 
@@ -140,6 +112,48 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // ItemID
+            // 
+            this.ItemID.HeaderText = "ItemID";
+            this.ItemID.MinimumWidth = 6;
+            this.ItemID.Name = "ItemID";
+            this.ItemID.ReadOnly = true;
+            // 
+            // ItemName
+            // 
+            this.ItemName.HeaderText = "Item Name";
+            this.ItemName.MinimumWidth = 6;
+            this.ItemName.Name = "ItemName";
+            this.ItemName.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.MinimumWidth = 6;
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.MinimumWidth = 6;
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
+            // 
+            // Discount
+            // 
+            this.Discount.HeaderText = "Discount";
+            this.Discount.MinimumWidth = 6;
+            this.Discount.Name = "Discount";
+            this.Discount.ReadOnly = true;
+            // 
             // frmOrderSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -168,13 +182,14 @@
         private System.Windows.Forms.Label lblOrderNumber;
         private System.Windows.Forms.Label lblCustomerDetails;
         private System.Windows.Forms.DataGridView tableOrderItems;
+        private System.Windows.Forms.Label lblTotalPrice;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ItemID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ItemName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn Discount;
-        private System.Windows.Forms.Label lblTotalPrice;
-        private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.Button btnCancel;
     }
 }
