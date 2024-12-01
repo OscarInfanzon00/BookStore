@@ -1,9 +1,9 @@
-using Microsoft.Data.SqlClient;
 using System;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BookStore {
+namespace BookStore
+{
     public partial class frmAuthorInfo : Form {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
         private string objectID;
