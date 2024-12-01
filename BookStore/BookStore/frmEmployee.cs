@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using System.Xml.Linq;
 
 namespace BookStore
 {
@@ -19,12 +22,15 @@ namespace BookStore
         public frmEmployee()
         {
             InitializeComponent();
+            loadJob_IdList();
         }
 
         public frmEmployee(string objectID)
         {
             this.objectID = objectID;
             InitializeComponent();
+            loadJob_IdList();
+            LoadEntityData(objectID);
         }
 
         public bool ValidateEmployeeInputs()
@@ -85,12 +91,117 @@ namespace BookStore
             this.Close();
         }
 
+        private void loadJob_IdList()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM jobs";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                comboBoxJob.Items.Add(reader["job_id"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadEntityData(string id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM employee WHERE emp_id = @Id";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtFirstName.Text = reader["fname"].ToString();
+                                txtMiddleName.Text = reader["minit"].ToString();
+                                txtLastName.Text = reader["lname"].ToString();
+                                comboBoxJob.SelectedItem = reader["job_id"].ToString();
+                                DateTime hireDate = Convert.ToDateTime(reader["hire_date"]);
+                                maskedTextBoxHiringDate.Text = hireDate.ToString("MM-dd-yyyy");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveOrUpdateEntity()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query;
+                    if (!string.IsNullOrWhiteSpace(objectID))
+                    {
+                        // Update existing record
+                        query = "UPDATE employee SET fname = @FirstName, minit = @MiddleName, lname = @LastName, job_id = @JobId, hire_date = @HireDate WHERE emp_id = @Id";
+                    }
+                    else
+                    {
+                        // Insert new record
+                        query = "INSERT INTO employee (fname, minit, lname, job_id, hire_date) VALUES (@FirstName, @MiddleName, @LastName, @JobId, @HireDate)";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        if (!string.IsNullOrWhiteSpace(objectID))
+                        {
+                            cmd.Parameters.AddWithValue("@Id", objectID);
+                        }
+
+                        cmd.Parameters.AddWithValue("@FirstName", txtFirstName.Text);
+                        cmd.Parameters.AddWithValue("@MiddleName", txtMiddleName.Text);
+                        cmd.Parameters.AddWithValue("@LastName", txtLastName.Text);
+                        cmd.Parameters.AddWithValue("@JobId", comboBoxJob.SelectedItem?.ToString());
+                        cmd.Parameters.AddWithValue("@HireDate", DateTime.Parse(maskedTextBoxHiringDate.Text));
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        ClearEmployeeInputs();
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateEmployeeInputs())
             {
-                MessageBox.Show("Inputs are valid. Proceeding with save operation.");
-                ClearEmployeeInputs();
+                SaveOrUpdateEntity();
             }
         }
 

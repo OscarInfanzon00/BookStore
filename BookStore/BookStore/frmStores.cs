@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 namespace BookStoreTitleStores
 {
-   
     public partial class frmStores : Form
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
@@ -27,6 +26,7 @@ namespace BookStoreTitleStores
         {
             this.objectID = objectID;
             InitializeComponent();
+            LoadEntityData(objectID);
         }
 
         public bool ValidateStoreInputs()
@@ -78,6 +78,85 @@ namespace BookStoreTitleStores
             return System.Text.RegularExpressions.Regex.IsMatch(zipCode, @"^\d{5}(-\d{4})?$");
         }
 
+        private void LoadEntityData(string id)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM stores WHERE stor_id = @Id";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtStoreName.Text = reader["stor_name"].ToString();
+                                txtAddress.Text = reader["stor_address"].ToString();
+                                txtCity.Text = reader["city"].ToString();
+                                comboBoxState.SelectedItem = reader["state"].ToString();
+                                txtZip.Text = reader["zip"].ToString();
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveOrUpdateEntity()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query;
+                    if (!string.IsNullOrWhiteSpace(objectID))
+                    {
+                        // Update existing record
+                        query = "UPDATE stores SET stor_name = @StoreName, stor_address = @Address, city = @City, state = @State, zip = @Zip WHERE stor_id = @Id";
+                    }
+                    else
+                    {
+                        // Insert new record
+                        query = "INSERT INTO stores (stor_name, stor_address, city, state, zip) VALUES (@StoreName, @Address, @City, @State, @Zip)";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // For Update, provide the ID
+                        if (!string.IsNullOrWhiteSpace(objectID))
+                        {
+                            cmd.Parameters.AddWithValue("@Id", objectID);
+                        }
+
+                        cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);
+                        cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
+                        cmd.Parameters.AddWithValue("@City", txtCity.Text);
+                        cmd.Parameters.AddWithValue("@State", comboBoxState.SelectedItem?.ToString());
+                        cmd.Parameters.AddWithValue("@Zip", txtZip.Text);
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearStoreInputs();
+                        this.Close();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
         public void ClearStoreInputs()
         {
             txtStoreName.Text = "";
@@ -90,16 +169,8 @@ namespace BookStoreTitleStores
         {
             if (ValidateStoreInputs())
             {
-            
-           
-
-                MessageBox.Show("Inputs are valid. Proceeding with save operation.");
-                ClearStoreInputs();
-                this.Close();
+                SaveOrUpdateEntity();
             }
-           
-
-            
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

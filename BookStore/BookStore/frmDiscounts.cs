@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,16 +15,19 @@ namespace BookStore
     {
         private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
         private string objectID;
+        private string storeID;
 
         public frmDiscounts()
         {
             InitializeComponent();
         }
 
-        public frmDiscounts(string objectID)
+        public frmDiscounts(string objectID, string storeID)
         {
             this.objectID = objectID;
+            this.storeID = storeID;
             InitializeComponent();
+            LoadEntityData(objectID, storeID);
         }
 
         public void ClearDiscountsInputs()
@@ -32,6 +36,7 @@ namespace BookStore
             txtDiscount.Text = "";
             txtHighQTY.Text = "";
             txtLowQTY.Text = "";
+            txtBoxStoreID.Text = "";
         }
 
         public bool ValidateDiscountsInputs()
@@ -96,10 +101,93 @@ namespace BookStore
         {
             if (ValidateDiscountsInputs())
             {
-                MessageBox.Show("Inputs are valid. Proceeding with save operation.");
-                ClearDiscountsInputs();
+                SaveOrUpdateEntity();
             }
         }
+
+        private void LoadEntityData(string type, string storeID)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT * FROM discounts WHERE discounttype = @Type";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.Add("@Type", SqlDbType.NVarChar).Value = type;
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                comboBoxType.SelectedItem = reader["discounttype"]?.ToString() ?? string.Empty;
+                                txtLowQTY.Text = reader["lowqty"]?.ToString() ?? string.Empty;
+                                txtHighQTY.Text = reader["highqty"]?.ToString() ?? string.Empty;
+                                txtDiscount.Text = reader["discount"]?.ToString() ?? string.Empty;
+                                txtBoxStoreID.Text = reader["stor_id"]?.ToString() ?? string.Empty;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Database error: {sqlEx.Message}", "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SaveOrUpdateEntity()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string query;
+                    if (!string.IsNullOrWhiteSpace(objectID))
+                    {
+                        // Update existing record
+                        query = "UPDATE discounts SET discounttype = @Type, stor_id = @StoreID, lowqty = @LowQty, highqty = @HighQty, discount = @Discount WHERE discounttype = @Type";
+                    }
+                    else
+                    {
+                        // Insert new record
+                        query = "INSERT INTO discounts (discounttype, lowqty, highqty, discount, stor_id) VALUES (@Type, @LowQty, @HighQty, @Discount, @StoreID)";
+                    }
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+
+                        cmd.Parameters.AddWithValue("@Type", comboBoxType.SelectedItem?.ToString() ?? string.Empty);
+                        cmd.Parameters.AddWithValue("@LowQty", int.Parse(txtLowQTY.Text));
+                        cmd.Parameters.AddWithValue("@HighQty", int.Parse(txtHighQTY.Text));
+                        cmd.Parameters.AddWithValue("@Discount", decimal.Parse(txtDiscount.Text));
+                        cmd.Parameters.AddWithValue("@StoreID", (txtBoxStoreID.Text));
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearDiscountsInputs();
+                        this.Close();
+                    }
+                }
+            }
+            catch (SqlException sqlEx)
+            {
+                MessageBox.Show($"Check the store ID.", "Store ID", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
 
         private void btn_Click(object sender, EventArgs e)
         {
@@ -115,6 +203,11 @@ namespace BookStore
         private void buttonClear_Click(object sender, EventArgs e)
         {
             ClearDiscountsInputs();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

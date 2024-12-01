@@ -471,7 +471,9 @@ namespace BookStore
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
 
                 DataGridViewCell cell = selectedRow.Cells[0];
+                DataGridViewCell id = selectedRow.Cells[2];
                 String objectID = cell.Value.ToString();
+                String stor_ID = id.Value.ToString();
 
                 MessageBox.Show("You are editing now. When click Save the data will be updated in the database.", "Editor", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -498,7 +500,7 @@ namespace BookStore
                         frmEmployee.Show();
                         break;
                     case 5:
-                        frmDiscounts frmDiscounts = new frmDiscounts(objectID);
+                        frmDiscounts frmDiscounts = new frmDiscounts(objectID, stor_ID);
                         frmDiscounts.Show();
                         break;
                     default:

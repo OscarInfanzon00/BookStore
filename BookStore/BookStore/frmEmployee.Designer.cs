@@ -173,10 +173,6 @@
             // 
             this.comboBoxJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxJob.FormattingEnabled = true;
-            this.comboBoxJob.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
             this.comboBoxJob.Location = new System.Drawing.Point(385, 207);
             this.comboBoxJob.Name = "comboBoxJob";
             this.comboBoxJob.Size = new System.Drawing.Size(227, 24);

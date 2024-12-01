@@ -40,6 +40,8 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxStoreID = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblType
@@ -58,9 +60,9 @@
             this.comboBoxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxType.FormattingEnabled = true;
             this.comboBoxType.Items.AddRange(new object[] {
-            "Type 1 ",
-            "Type 2",
-            "Type 3"});
+            "Initial Customer",
+            "Volume Discount",
+            "Customer Discount"});
             this.comboBoxType.Location = new System.Drawing.Point(367, 117);
             this.comboBoxType.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxType.Name = "comboBoxType";
@@ -71,7 +73,7 @@
             // 
             this.lblLowQTY.AutoSize = true;
             this.lblLowQTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLowQTY.Location = new System.Drawing.Point(230, 145);
+            this.lblLowQTY.Location = new System.Drawing.Point(230, 177);
             this.lblLowQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLowQTY.Name = "lblLowQTY";
             this.lblLowQTY.Size = new System.Drawing.Size(101, 25);
@@ -80,7 +82,7 @@
             // 
             // txtLowQTY
             // 
-            this.txtLowQTY.Location = new System.Drawing.Point(367, 149);
+            this.txtLowQTY.Location = new System.Drawing.Point(367, 181);
             this.txtLowQTY.Margin = new System.Windows.Forms.Padding(4);
             this.txtLowQTY.MaxLength = 100;
             this.txtLowQTY.Name = "txtLowQTY";
@@ -91,7 +93,7 @@
             // 
             this.lblHighQTY.AutoSize = true;
             this.lblHighQTY.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHighQTY.Location = new System.Drawing.Point(226, 179);
+            this.lblHighQTY.Location = new System.Drawing.Point(226, 211);
             this.lblHighQTY.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHighQTY.Name = "lblHighQTY";
             this.lblHighQTY.Size = new System.Drawing.Size(105, 25);
@@ -102,7 +104,7 @@
             // 
             this.lblDiscount.AutoSize = true;
             this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiscount.Location = new System.Drawing.Point(237, 209);
+            this.lblDiscount.Location = new System.Drawing.Point(237, 241);
             this.lblDiscount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDiscount.Name = "lblDiscount";
             this.lblDiscount.Size = new System.Drawing.Size(94, 25);
@@ -111,7 +113,7 @@
             // 
             // txtHighQTY
             // 
-            this.txtHighQTY.Location = new System.Drawing.Point(367, 179);
+            this.txtHighQTY.Location = new System.Drawing.Point(367, 211);
             this.txtHighQTY.Margin = new System.Windows.Forms.Padding(4);
             this.txtHighQTY.MaxLength = 100;
             this.txtHighQTY.Name = "txtHighQTY";
@@ -120,7 +122,7 @@
             // 
             // txtDiscount
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(367, 209);
+            this.txtDiscount.Location = new System.Drawing.Point(367, 241);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiscount.MaxLength = 100;
             this.txtDiscount.Name = "txtDiscount";
@@ -160,11 +162,34 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(242, 145);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 25);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Store ID:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtBoxStoreID
+            // 
+            this.txtBoxStoreID.Location = new System.Drawing.Point(367, 149);
+            this.txtBoxStoreID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBoxStoreID.MaxLength = 100;
+            this.txtBoxStoreID.Name = "txtBoxStoreID";
+            this.txtBoxStoreID.Size = new System.Drawing.Size(227, 22);
+            this.txtBoxStoreID.TabIndex = 12;
+            // 
             // frmDiscounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 514);
+            this.Controls.Add(this.txtBoxStoreID);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -200,5 +225,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtBoxStoreID;
     }
 }

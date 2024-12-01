@@ -134,8 +134,6 @@ namespace BookStoreTitleStores
             if (ValidateInputs())
             {
                 SaveOrUpdateEntity();
-                ClearInputs();
-                this.Close();
             }
         }
 
@@ -222,6 +220,8 @@ namespace BookStoreTitleStores
 
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ClearInputs();
+                        this.Close();
                     }
                 }
             }
