@@ -17,10 +17,6 @@ namespace BookStore
         public frmLogin()
         {
             InitializeComponent();
-
-            txtEnterID.Text = "PTC11962M";
-            richTextBoxLastName.Text = "Cramer";
-            login();
         }
 
         private void login()
