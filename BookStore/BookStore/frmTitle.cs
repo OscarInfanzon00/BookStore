@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStore.Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -14,7 +15,7 @@ namespace BookStoreTitleStores
 {
     public partial class frmTitle : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
+        public TitleBusinessLogic titleBusinessLogic = new TitleBusinessLogic();
         private string objectID;
 
         public frmTitle()
@@ -33,28 +34,7 @@ namespace BookStoreTitleStores
 
         private void loadPub_IdList()
         {
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = "SELECT * FROM titles";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                comboBoxPubInfo.Items.Add(reader["pub_id"].ToString());
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error loading data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            comboBoxPubInfo = titleBusinessLogic.titleDataAccess.loadPub_IdList(comboBoxPubInfo);
         }
 
         public bool ValidateInputs()
@@ -86,10 +66,10 @@ namespace BookStoreTitleStores
                 isValid = false;
             }
 
-            isValid &= ValidateNumericField(txtPrice.Text, "Price", errorMessage);
-            isValid &= ValidateNumericField(txtAdvance.Text, "Advance", errorMessage);
-            isValid &= ValidateNumericField(txtRoyalty.Text, "Royalty", errorMessage);
-            isValid &= ValidateNumericField(txtYTDSales.Text, "Year-to-date sales", errorMessage);
+            isValid &= titleBusinessLogic.ValidateNumericField(txtPrice.Text, "Price", errorMessage);
+            isValid &= titleBusinessLogic.ValidateNumericField(txtAdvance.Text, "Advance", errorMessage);
+            isValid &= titleBusinessLogic.ValidateNumericField(txtRoyalty.Text, "Royalty", errorMessage);
+            isValid &= titleBusinessLogic.ValidateNumericField(txtYTDSales.Text, "Year-to-date sales", errorMessage);
 
             if (txtPubDate.Value.Date > DateTime.Today)
             {
@@ -112,15 +92,6 @@ namespace BookStoreTitleStores
             return isValid;
         }
 
-        private bool ValidateNumericField(string inputText, string fieldName, StringBuilder errorMessage)
-        {
-            if (string.IsNullOrWhiteSpace(inputText) || !decimal.TryParse(inputText, out decimal result) || result < 0)
-            {
-                errorMessage.AppendLine($"{fieldName} must be a valid positive number.");
-                return false;
-            }
-            return true;
-        }
 
         public void ClearInputs()
         {
@@ -166,7 +137,7 @@ namespace BookStoreTitleStores
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(titleBusinessLogic.titleDataAccess.connectionString))
                 {
                     conn.Open();
                     string query = "SELECT * FROM titles WHERE title_id = @Id";
@@ -197,76 +168,13 @@ namespace BookStoreTitleStores
             }
         }
 
-        private string GenerateRandomTitleID()
-        {
-            Random random = new Random();
-            const string letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
-            const string digits = "0123456789"; 
-
-            char[] prefixChars = new char[2];
-            for (int i = 0; i < 2; i++)
-            {
-                prefixChars[i] = letters[random.Next(letters.Length)];
-            }
-
-            string numberPart = string.Empty;
-            for (int i = 0; i < 4; i++)
-            {
-                numberPart += digits[random.Next(digits.Length)];
-            }
-
-            return new string(prefixChars) + numberPart;
-        }
-
-
-
         private void SaveOrUpdateEntity()
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string query;
-                    if (!string.IsNullOrWhiteSpace(objectID))
-                    {
-                        // Update existing record
-                        query = "UPDATE titles SET title = @Title, type = @Type, price = @Price, advance = @Advance, royalty = @Royalty, ytd_Sales = @Ytd_sales, notes = @Notes, pubdate = @Pubdate, pub_id = @PubInfo WHERE title_id = @Id";
-                    }
-                    else
-                    {
-                        // Insert new record
-                        query = "INSERT INTO titles (title_id, title, type, price, advance, royalty, ytd_Sales, Notes, pubdate, pub_id) VALUES (@ID, @Title, @Type, @Price, @Advance, @Royalty, @Ytd_sales, @Notes, @PubDate, @PubInfo)";
-                    }
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        if (!string.IsNullOrWhiteSpace(objectID))
-                        {
-                            cmd.Parameters.AddWithValue("@Id", objectID);
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@ID", GenerateRandomTitleID());
-                        }
-                        
-                        cmd.Parameters.AddWithValue("@Title", txtTitle.Text);
-                        cmd.Parameters.AddWithValue("@Type", txtType.Text);
-                        cmd.Parameters.AddWithValue("@Price", decimal.Parse(txtPrice.Text));
-                        cmd.Parameters.AddWithValue("@Advance", decimal.Parse(txtAdvance.Text));
-                        cmd.Parameters.AddWithValue("@Royalty", int.Parse(txtRoyalty.Text));
-                        cmd.Parameters.AddWithValue("@Ytd_Sales", int.Parse(txtYTDSales.Text));
-                        cmd.Parameters.AddWithValue("@Notes", txtNotes.Text);
-                        cmd.Parameters.AddWithValue("@PubDate", txtPubDate.Value);
-                        cmd.Parameters.AddWithValue("@PubInfo", comboBoxPubInfo.SelectedItem.ToString());
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ClearInputs();
-                        this.Close();
-                    }
-                }
+                titleBusinessLogic.titleDataAccess.SaveOrUpdateEntity(objectID, txtTitle, txtType, txtPrice, txtAdvance, txtRoyalty, txtYTDSales, txtNotes, txtPubDate, comboBoxPubInfo);
+                ClearInputs();
+                this.Close();
             }
             catch (Exception ex)
             {

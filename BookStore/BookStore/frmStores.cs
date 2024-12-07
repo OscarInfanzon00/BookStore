@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookStore.BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,7 +15,7 @@ namespace BookStoreTitleStores
 {
     public partial class frmStores : Form
     {
-        private string connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=" + System.AppDomain.CurrentDomain.BaseDirectory + "BookStore.mdf;Integrated Security=True;Connect Timeout=30";
+        public StoresBusinessLogic storesBusinessLogic = new StoresBusinessLogic();
         private string objectID;
 
         public frmStores()
@@ -76,7 +77,7 @@ namespace BookStoreTitleStores
                 isValid = false;
             }
 
-            if (!IsValidZipCode(txtZip.Text))
+            if (!storesBusinessLogic.IsValidZipCode(txtZip.Text))
             {
                 errorMessage.AppendLine("ZIP code must be a valid 5-digit or 9-digit code (e.g., 12345 or 12345-6789).");
                 isValid = false;
@@ -91,16 +92,13 @@ namespace BookStoreTitleStores
             return isValid;
         }
 
-        private bool IsValidZipCode(string zipCode)
-        {
-            return System.Text.RegularExpressions.Regex.IsMatch(zipCode, @"^\d{5}(-\d{4})?$");
-        }
+
 
         private void LoadEntityData(string id)
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection conn = new SqlConnection(storesBusinessLogic.storesDataAccess.connectionString))
                 {
                     conn.Open();
                     string query = "SELECT * FROM stores WHERE stor_id = @Id";
@@ -127,69 +125,18 @@ namespace BookStoreTitleStores
             }
         }
 
-        private string GenerateRandomStoreID()
-        {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; 
-            char[] idChars = new char[4];
-
-            for (int i = 0; i < 4; i++)
-            {
-                idChars[i] = chars[random.Next(chars.Length)];
-            }
-
-            return new string(idChars);
-        }
-
 
         private void SaveOrUpdateEntity()
         {
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string query;
-                    if (!string.IsNullOrWhiteSpace(objectID))
-                    {
-                        // Update existing record
-                        query = "UPDATE stores SET stor_name = @StoreName, stor_address = @Address, city = @City, state = @State, zip = @Zip WHERE stor_id = @Id";
-                    }
-                    else
-                    {
-                        // Insert new record
-                        query = "INSERT INTO stores (stor_id, stor_name, stor_address, city, state, zip) VALUES (@ID, @StoreName, @Address, @City, @State, @Zip)";
-                    }
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        // For Update, provide the ID
-                        if (!string.IsNullOrWhiteSpace(objectID))
-                        {
-                            cmd.Parameters.AddWithValue("@Id", objectID);
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@ID", GenerateRandomStoreID());
-                        }
-
-                        cmd.Parameters.AddWithValue("@StoreName", txtStoreName.Text);
-                        cmd.Parameters.AddWithValue("@Address", txtAddress.Text);
-                        cmd.Parameters.AddWithValue("@City", txtCity.Text);
-                        cmd.Parameters.AddWithValue("@State", comboBoxState.SelectedItem?.ToString());
-                        cmd.Parameters.AddWithValue("@Zip", txtZip.Text);
-
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ClearStoreInputs();
-                        this.Close();
-                    }
-                }
+                storesBusinessLogic.storesDataAccess.SaveOrUpdateEntity(objectID, txtStoreName, txtAddress, txtCity, comboBoxState, txtZip);
+                 ClearStoreInputs();
+                 this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error saving data: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ex.ToString();
             }
         }
 
@@ -202,6 +149,7 @@ namespace BookStoreTitleStores
             comboBoxState.SelectedIndex = -1;
             txtZip.Text = "";
         }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (ValidateStoreInputs())
@@ -230,8 +178,6 @@ namespace BookStoreTitleStores
         {
             ClearStoreInputs();
         }
-
-        
     }
 }
 

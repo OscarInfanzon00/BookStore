@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\AuthorBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\DiscountsBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\EmployeeBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\PublisherBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\SalesBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\StoresBusinessLogic.cs" />
+    <Compile Include="BusinessLogic\TitleBusinessLogic.cs" />
     <Compile Include="Classes\Author.cs" />
     <Compile Include="Classes\Discounts.cs" />
     <Compile Include="Classes\Employees.cs" />
@@ -54,6 +61,13 @@
     <Compile Include="Classes\Sales.cs" />
     <Compile Include="Classes\Stores.cs" />
     <Compile Include="Classes\Titles.cs" />
+    <Compile Include="Data\AuthorDataAccess.cs" />
+    <Compile Include="Data\DiscountsDataAccess.cs" />
+    <Compile Include="Data\EmployeeDataAccess.cs" />
+    <Compile Include="Data\PublisherDataAccess.cs" />
+    <Compile Include="Data\SalesDataAccess.cs" />
+    <Compile Include="Data\StoresDataAccess.cs" />
+    <Compile Include="Data\TitleDataAccess.cs" />
     <Compile Include="frmAuthorInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,5 +218,6 @@
     <None Include="Resources\Screenshot 2024-11-23 1533051.png" />
     <None Include="Resources\Screenshot 2024-11-24 153804.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

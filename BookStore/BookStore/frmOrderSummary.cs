@@ -33,18 +33,19 @@ namespace WindowsFormsApp
                     if (row.Cells["title"].Value != null)
                     {
                         decimal itemTotal = Convert.ToDecimal(row.Cells["subtotal"].Value);
+                        int quantity = Convert.ToInt16(row.Cells["qty"].Value);
                         decimal itemDiscount = 0;
 
                         if (discount.Discounttype == "Volume Discount")
                         {
                             if (itemTotal >= discount.Lowqty && itemTotal <= discount.Highqty)
                             {
-                                itemDiscount = itemTotal * (discount.Discount / 100); 
+                                itemDiscount = itemTotal * (discount.Discount / 100) * quantity; 
                             }
                         }
                         else if (discount.Discounttype == "Customer Discount" || discount.Discounttype == "Initial Customer")
                         {
-                            itemDiscount = discount.Discount; 
+                            itemDiscount = discount.Discount * quantity; 
                         }
 
                         totalSavings += itemDiscount;
@@ -56,6 +57,28 @@ namespace WindowsFormsApp
                             row.Cells["qty"].Value.ToString(),
                             row.Cells["subtotal"].Value.ToString(),
                             itemDiscount > 0 ? $"{itemDiscount:F2}" : "No Discount"  
+                        );
+                    }
+                }
+            }
+            else
+            {
+                foreach (DataGridViewRow row in cartData)
+                {
+                    if (row.Cells["title"].Value != null)
+                    {
+                        decimal itemTotal = Convert.ToDecimal(row.Cells["subtotal"].Value);
+                        decimal itemDiscount = 0;
+
+                        totalSavings += itemDiscount;
+
+                        tableOrderItems.Rows.Add(
+                            row.Cells["title_id"].Value.ToString(),
+                            row.Cells["title"].Value.ToString(),
+                            row.Cells["price"].Value.ToString(),
+                            row.Cells["qty"].Value.ToString(),
+                            row.Cells["subtotal"].Value.ToString(),
+                            itemDiscount > 0 ? $"{itemDiscount:F2}" : "No Discount"
                         );
                     }
                 }

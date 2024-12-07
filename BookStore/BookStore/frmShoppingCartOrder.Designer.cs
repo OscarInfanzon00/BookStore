@@ -156,7 +156,7 @@
             // 
             this.textBoxStoreID.Location = new System.Drawing.Point(95, 218);
             this.textBoxStoreID.Name = "textBoxStoreID";
-            this.textBoxStoreID.Size = new System.Drawing.Size(100, 22);
+            this.textBoxStoreID.Size = new System.Drawing.Size(149, 22);
             this.textBoxStoreID.TabIndex = 22;
             // 
             // buttonRemove
@@ -207,9 +207,9 @@
             // labelSubtotal
             // 
             this.labelSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSubtotal.Location = new System.Drawing.Point(1100, 685);
+            this.labelSubtotal.Location = new System.Drawing.Point(983, 685);
             this.labelSubtotal.Name = "labelSubtotal";
-            this.labelSubtotal.Size = new System.Drawing.Size(165, 23);
+            this.labelSubtotal.Size = new System.Drawing.Size(282, 23);
             this.labelSubtotal.TabIndex = 10;
             this.labelSubtotal.Text = "Subtotal:";
             this.labelSubtotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,9 +218,9 @@
             // 
             this.labelTax.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTax.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
-            this.labelTax.Location = new System.Drawing.Point(1104, 717);
+            this.labelTax.Location = new System.Drawing.Point(987, 717);
             this.labelTax.Name = "labelTax";
-            this.labelTax.Size = new System.Drawing.Size(158, 23);
+            this.labelTax.Size = new System.Drawing.Size(275, 23);
             this.labelTax.TabIndex = 11;
             this.labelTax.Text = "Tax:";
             this.labelTax.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -228,9 +228,9 @@
             // labelTotal
             // 
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotal.Location = new System.Drawing.Point(1100, 751);
+            this.labelTotal.Location = new System.Drawing.Point(991, 751);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(162, 23);
+            this.labelTotal.Size = new System.Drawing.Size(271, 23);
             this.labelTotal.TabIndex = 12;
             this.labelTotal.Text = "Total:";
             this.labelTotal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -273,7 +273,7 @@
             "Net 30"});
             this.comboBoxPayment.Location = new System.Drawing.Point(652, 688);
             this.comboBoxPayment.Name = "comboBoxPayment";
-            this.comboBoxPayment.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxPayment.Size = new System.Drawing.Size(212, 24);
             this.comboBoxPayment.TabIndex = 18;
             // 
             // label5
@@ -296,7 +296,7 @@
             "Customer Discount"});
             this.comboBoxDiscount.Location = new System.Drawing.Point(652, 716);
             this.comboBoxDiscount.Name = "comboBoxDiscount";
-            this.comboBoxDiscount.Size = new System.Drawing.Size(121, 24);
+            this.comboBoxDiscount.Size = new System.Drawing.Size(212, 24);
             this.comboBoxDiscount.TabIndex = 20;
             // 
             // frmShoppingCartOrder
